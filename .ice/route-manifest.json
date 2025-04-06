@@ -1,0 +1,170 @@
+[
+  {
+    "id": "layout",
+    "file": "layout.tsx",
+    "componentName": "layout",
+    "layout": true,
+    "exports": [
+      "default"
+    ],
+    "children": [
+      {
+        "path": "StateCard",
+        "id": "StateCard",
+        "parentId": "layout",
+        "file": "index/StateCard.tsx",
+        "componentName": "index-statecard",
+        "layout": false,
+        "exports": [
+          "StateCard"
+        ]
+      },
+      {
+        "path": "option/filedata",
+        "id": "option/filedata",
+        "parentId": "layout",
+        "file": "option/filedata.ts",
+        "componentName": "option-filedata",
+        "layout": false,
+        "exports": [
+          "fileData"
+        ]
+      },
+      {
+        "path": "PlayDota",
+        "id": "PlayDota",
+        "parentId": "layout",
+        "file": "index/PlayDota.tsx",
+        "componentName": "index-playdota",
+        "layout": false,
+        "exports": [
+          "PlayDota"
+        ]
+      },
+      {
+        "path": "option/FileRew",
+        "id": "option/FileRew",
+        "parentId": "layout",
+        "file": "option/FileRew.tsx",
+        "componentName": "option-filerew",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "path": "about/updates",
+        "id": "about/updates",
+        "parentId": "layout",
+        "file": "about/updates.tsx",
+        "componentName": "about-updates",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "path": "option/opdata",
+        "id": "option/opdata",
+        "parentId": "layout",
+        "file": "option/opdata.ts",
+        "componentName": "option-opdata",
+        "layout": false,
+        "exports": [
+          "DotaSource"
+        ]
+      },
+      {
+        "path": "newBox",
+        "id": "newBox",
+        "parentId": "layout",
+        "file": "index/newBox.tsx",
+        "componentName": "index-newbox",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "path": "option",
+        "index": true,
+        "id": "option",
+        "parentId": "layout",
+        "file": "option/index.tsx",
+        "componentName": "option-index",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "path": "option/start",
+        "id": "option/start",
+        "parentId": "layout",
+        "file": "option/start.tsx",
+        "componentName": "option-start",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "path": "about",
+        "index": true,
+        "id": "about",
+        "parentId": "layout",
+        "file": "about/index.tsx",
+        "componentName": "about-index",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "index": true,
+        "id": "/",
+        "parentId": "layout",
+        "file": "index/index.tsx",
+        "componentName": "index-index",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      },
+      {
+        "path": "strat",
+        "id": "strat",
+        "parentId": "layout",
+        "file": "index/strat.ts",
+        "componentName": "index-strat",
+        "layout": false,
+        "exports": [
+          "stratDota",
+          "stratSteam"
+        ]
+      },
+      {
+        "path": "protocol",
+        "id": "protocol",
+        "parentId": "layout",
+        "file": "protocol.tsx",
+        "componentName": "protocol",
+        "layout": false,
+        "exports": [
+          "UserProtocol"
+        ]
+      },
+      {
+        "path": "*",
+        "id": "*",
+        "parentId": "layout",
+        "file": "$.tsx",
+        "componentName": "$",
+        "layout": false,
+        "exports": [
+          "default"
+        ]
+      }
+    ]
+  }
+]

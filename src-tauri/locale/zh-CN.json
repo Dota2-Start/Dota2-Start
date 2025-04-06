@@ -1,0 +1,124 @@
+{
+    "value": "schinese",
+    "label": "简体中文",
+    "navigation": {
+        "/": "开始",
+        "/about": "关于",
+        "/settings": "设置",
+        "/option": "选项",
+        "/strat": "攻略"
+    },
+    "/": {
+        "stateCord": [
+            "{g}安装状态",
+            "{g}是否可启动"
+        ],
+        "description": "欢迎使用",
+        "startBtn": "启动 {}",
+        "service": "{} 运行中"
+    },
+    "option": {
+        "anchor": {
+            "part-1": "启动项",
+            "part-2": "文件注入"
+        },
+        "part-1": {
+            "basic_settings": "基本设置",
+            "performance_optimization": "性能优化",
+            "network_settings": "网络设置",
+            "developer_options": "开发者选项",
+            "miscellaneous_settings": "其他设置",
+            "-novid": "跳过启动动画",
+            "-novid_des": "跳过{g}启动时的动画，直接进入主界面。",
+            "-perfectworld": "国服模式",
+            "-perfectworld_des": "以国服模式启动{g}，适用于中国地区玩家。",
+            "-console": "启用控制台",
+            "-console_des": "在{g}内启用开发者控制台，允许输入调试命令。",
+            "-language schinese": "设置语言为简体中文",
+            "-language schinese_des": "将{g}界面语言设置为简体中文，但保留英文配音。",
+            "-high": "高优先级运行",
+            "-high_des": "将{g}进程的CPU优先级设为高，可能提升{g}性能。",
+            "-fullscreen": "全屏模式",
+            "-fullscreen_des": "以全屏模式启动{g}。",
+            "-windowed -noborder": "无边框窗口模式",
+            "-windowed -noborder_des": "以无边框窗口模式运行{g}。",
+            "-w 1920 -h 1080": "设置分辨率",
+            "-w 1920 -h 1080_des": "将{g}分辨率设置为1920x1080。",
+            "+fps_max 60": "限制帧率",
+            "+fps_max 60_des": "将{g}的最大帧率限制为60帧每秒。",
+            "-tcp": "使用TCP协议",
+            "-tcp_des": "强制{g}使用TCP协议进行网络连接，适用于解决UDP连接问题。",
+            "-udp": "使用UDP协议",
+            "-udp_des": "强制{g}使用UDP协议进行网络连接，这是默认设置。",
+            "-dev": "启用开发者模式",
+            "-dev_des": "启用开发者模式，解锁额外的调试功能。",
+            "-enable_addons": "允许加载自定义内容",
+            "-enable_addons_des": "允许引擎加载{g}文件夹内的自定义内容并替换VPK文件。",
+            "-override_vpk": "覆盖VPK文件",
+            "-override_vpk_des": "允许引擎搜索{g}文件夹内的自定义内容并替换VPK文件。使用后可能影响匹配功能。",
+            "-nomicsettings": "禁用麦克风设置",
+            "-nomicsettings_des": "防止{g}修改麦克风的输出值，适用于使用其他语音软件的玩家。",
+            "-nosound": "禁用声音",
+            "-nosound_des": "关闭{g}内所有声音。",
+            "-map dota": "加载地图",
+            "-map dota_des": "启动时预先加载地图，减少进入{g}时的加载时间。",
+            "-32bit": "使用32位模式",
+            "-32bit_des": "以32位模式运行{g}，适用于旧款系统或硬件。"
+        },
+        "part-2": {
+            "cn-harmony": "国服反和谐",
+            "cn-harmony_des": "开启后黑血变红血，部分技能/装备图标与国际版一致"
+        }
+    },
+    "about": {
+        "title": "关于程序",
+        "description": "{D} 是一款专为《Dota2》玩家设计的智能启动工具，通过它你可以快速管理{g}的启动项、提供定制化功能模块，助力玩家快速进入战场，释放竞技潜能。",
+        "version": "当前版本",
+        "author": "开发人员",
+        "copyright": "版权声明",
+        "license": "开源协议",
+        "blurbTitle": "程序简介",
+        "blurb": "{D} 是一个专业的 {} 启动器，提供便捷的{g}管理和优化功能。",
+        "UserAgreement": "用户协议",
+        "BtnA": "访问官网",
+        "BtnB": "访问源码仓库"
+    },
+    "$ShowMeg": {
+        "detection": "检测{g}状态中",
+        "content": "是否要退出{g}？",
+        "loading": "等待{} 启动...",
+        "gameEnd": "{} 已退出！",
+        "timeout": "{} 启动超时！",
+        "sNotStarted": "{s} 未启动！",
+        "logOn": "正在登录{s}...",
+        "sstart": "{s}启动成功",
+        "sloading": "等待{s}启动...",
+        "gameReady": "即将启动{}",
+        "sReady": "启动{s}中...",
+        "serror": "启动{s}失败！"
+    },
+    "$upModal": {
+        "textA": [
+            "正在检查：",
+            "发现新版本",
+            "已是最新版"
+        ],
+        "textB": [
+            "更新......",
+            "查看更新",
+            "检查更新"
+        ],
+        "title": "程序有新版本：",
+        "cancelText": "取消",
+        "okText": "前往更新",
+        "upData": "更新日志",
+        "noText": "忽略本次更新"
+    },
+    "$": {
+        "gameName": "Dota 2",
+        "D": "Dota2 Strat",
+        "g": "游戏",
+        "s": "Steam",
+        "git": "Github"
+    }
+}

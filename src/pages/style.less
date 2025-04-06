@@ -1,0 +1,91 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.video-background {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+}
+p{
+  margin: 0;
+}
+.ms-track:hover {
+  background: transparent !important;
+  border-color: transparent !important
+}
+
+.logo {
+  width: 26px;
+}
+
+.container {
+  margin: 0;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.TitleBn {
+  padding-inline: 8px !important
+}
+
+.HeaderAx {
+   position: absolute;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+}
+.ms-track{
+  margin-top: 50px;
+}
+.Hamburg {
+  left: 5px;
+  top: 6px;
+  z-index: 999;
+}
+
+.selector {
+  height: 100vh;
+  position: sticky;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 0;
+  scrollbar-width: thin;
+}
+
+.vague {
+  -webkit-backdrop-filter: saturate(180%) blur(16px) !important;
+  backdrop-filter: saturate(180%) blur(16px) !important;
+}
+
+
+.theme-switch .ant-segmented-item-label {
+  min-height: 24px !important;
+  line-height: 24px !important;
+  padding: 0 7px !important;
+}
+ 

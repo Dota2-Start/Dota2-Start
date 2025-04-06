@@ -1,0 +1,51 @@
+{
+  "name": "tauri_ice_ant_mould",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "项目描述",
+  "scripts": {
+    "start": "ice start --speedup --port 3680 --no-open",
+    "build": "ice build",
+    "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"src/**/*.{css,scss,less}\" --cache",
+    "stylelint:fix": "npm run stylelint -- --fix",
+    "tauri": "tauri",
+    "dev": "tauri dev"
+  },
+  "dependencies": {
+    "@ant-design/happy-work-theme": "^1.0.0",
+    "@ant-design/icons": "^5.6.1",
+    "@ant-design/pro-components": "^2.8.6",
+    "@ice/runtime": "^1.4.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-http": "~2",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-os": "~2",
+    "ahooks": "^3.8.4",
+    "antd": "^5.24.3",
+    "framer-motion": "^12.6.2",
+    "mac-scrollbar": "^0.13.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@applint/spec": "^1.2.3",
+    "@ice/app": "^3.4.0",
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^18.11.17",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^8.35.0",
+    "file-loader": "^6.2.0",
+    "stylelint": "^15.2.0",
+    "typescript": "~5.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

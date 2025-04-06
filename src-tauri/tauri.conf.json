@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Dota2 Strat",
+  "version": "0.1.0",
+  "identifier": "com.Dota2_Strat.app",
+  "build": {
+    "beforeDevCommand": "pnpm start",
+    "devUrl": "http://localhost:3680",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../build"
+  },
+  "app": {
+    "windows": [
+      {
+        "width": 1246,
+        "height": 702,
+        "decorations": false,
+        "focus": false,
+        "transparent": true,
+        "center": true,
+        "resizable": true,
+        "minHeight": 572,
+        "minWidth": 360
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
