@@ -1,15 +1,14 @@
 import {
     ProCard,
-    ProFormGroup,
-    ProFormSwitch,
 } from '@ant-design/pro-components';
 import { fileData } from './filedata';
 import { LocalStor } from '@/mod/locale_load';
+import { Tooltip, Button, Space, Switch } from 'antd';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { SwitchChangeEventHandler } from 'antd/es/switch';
 export default () => {
     const { Local } = LocalStor()
     const iLocal = Local?.option?.['part-2']
-    console.log(iLocal);
-    
     return (
         <>
             {
@@ -17,18 +16,24 @@ export default () => {
                     <ProCard
                         title={iLocal?.[item.value]}
                         bordered
+                        size='small'
                         extra={
-                            <ProFormGroup>
-                                <ProFormSwitch
-                                    name="Enable"
-                                    noStyle
+                            <Space>
+                                <Tooltip title={iLocal?.[item.value + '_tip']}>
+                                    <Button
+                                        size='small'
+                                        icon={<InfoCircleOutlined />}
+                                        type='text'
+                                    ></Button>
+                                </Tooltip>
+                                <Switch
+                                    onChange={item.onchange as unknown as SwitchChangeEventHandler}
                                 />
-
-                            </ProFormGroup>
+                            </Space>
                         }
                         style={{ maxWidth: 300 }}
                     >
-                        <div>{iLocal?.[item.value+'_des']}</div>
+                        <div>{iLocal?.[item.value + '_des']}</div>
                     </ProCard>
                 ))
             }

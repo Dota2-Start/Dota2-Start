@@ -1,8 +1,14 @@
-export const fileData = [
+import { SwitchProps } from 'antd';
+export interface FileData {
+    value: string,
+    onchange: (e: SwitchProps['onChange']) => void
+}
+export const fileData: FileData[] = [
     {
-        "title": "国服反和谐",
-        "value": "cn-harmony",
-        "description": "开启后黑血变红血，部分技能/装备图标与国际版一致"
+        value: "cn-harmony",
+        onchange: (e) => {
+            console.log(e)
+        }
     },
-   
+
 ]

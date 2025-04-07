@@ -67,7 +67,8 @@
         },
         "part-2": {
             "cn-harmony": "国服反和谐",
-            "cn-harmony_des": "开启后黑血变红血，部分技能/装备图标与国际版一致"
+            "cn-harmony_des": "开启后黑血变红血，部分技能/装备图标与国际版一致",
+            "cn-harmony_tip": "由Bilibili @iFuStudio 提供特效文件"
         }
     },
     "about": {

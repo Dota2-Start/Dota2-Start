@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Typography, Descriptions, Tag, Collapse, Space, Button } from 'antd';
 import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import { getVersion } from '@tauri-apps/api/app';
@@ -6,6 +6,7 @@ import { UserProtocol } from '../protocol';
 import { MacScrollbar } from 'mac-scrollbar';
 import UpDatebtn from './updates'
 import { LocalStor } from '@/mod/locale_load';
+import { AuthorT } from './author';
 
 const { Title, Paragraph, Link } = Typography;
 const { Panel } = Collapse;
@@ -19,11 +20,7 @@ interface ProgramInfo {
     description: string;
     website: string;
     repository: string;
-    updateHistory: {
-        version: string;
-        date: string;
-        changes: string[];
-    }[];
+    
 }
 const version = await getVersion();
 
@@ -37,28 +34,10 @@ const AboutProgramPage: React.FC = () => {
         copyright: '© 2025 Tuyang',
         description: about?.description,
         website: 'https://dota2.com',
-        repository: 'https://github.com/dota2-launcher',
-        updateHistory: [
-            {
-                version: '2.3.4',
-                date: '2024-02-25',
-                changes: [
-                    '新增 Vulkan 渲染支持',
-                    '优化内存占用表现',
-                    '修复已知崩溃问题'
-                ]
-            },
-            {
-                version: '2.3.3',
-                date: '2024-02-18',
-                changes: [
-                    '改进网络连接稳定性',
-                    '更新翻译文件',
-                    '新增性能监控面板'
-                ]
-            }
-        ]
+        repository: 'https://github.com/Dota2-Start/Dota2-Start',
+ 
     };
+  
     return (
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
             <Card title={about?.title} >
@@ -77,8 +56,11 @@ const AboutProgramPage: React.FC = () => {
                     <Descriptions.Item label={about?.copyright}>
                         {programData.copyright}
                     </Descriptions.Item>
+                    <Descriptions.Item label={about?.author}>
+                      <AuthorT />
+                    </Descriptions.Item>
                     <Descriptions.Item label={about?.license}>
-                        <Link href={programData.repository} target="_blank">
+                        <Link href={`${programData.repository}/blob/master/LICENSE`} target="_blank">
                             {programData.license}
                         </Link>
                     </Descriptions.Item>
@@ -90,31 +72,7 @@ const AboutProgramPage: React.FC = () => {
                     {programData.description}
                 </Paragraph>
 
-                {/* 版本更新历史 */}
-                <Collapse ghost defaultActiveKey={['current-version']}>
-                    <Panel
-                        header="版本更新历史"
-                        key="update-history"
-                        extra={`共 ${programData.updateHistory.length} 个版本`}
-                    >
-                        {programData.updateHistory.map((update, index) => (
-                            <div key={update.version} style={{ marginBottom: 16 }}>
-                                <Space>
-                                    <Tag color={index === 0 ? 'green' : 'default'}>
-                                        {update.version}
-                                    </Tag>
-                                    <span style={{ color: '#666' }}>{update.date}</span>
-                                </Space>
-                                <ul style={{ marginTop: 8, marginLeft: 24 }}>
-                                    {update.changes.map((change, i) => (
-                                        <li key={i}>{change}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </Panel>
-                </Collapse>
-
+             
                 {/* 完整协议内容 */}
                 <Card
                     title={about?.UserAgreement}

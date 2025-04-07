@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { AutoComplete, Input } from 'antd';
-import type { AutoCompleteProps } from 'antd';
+import { AutoComplete, Badge, Button, Dropdown, Input, Popconfirm } from 'antd';
+import type { AutoCompleteProps, MenuProps } from 'antd';
 import { invoke } from '@tauri-apps/api/core';
 import { AppDataStore } from '../store';
+import { GlobalOutlined } from '@ant-design/icons';
+import { ItemType } from 'antd/es/menu/interface';
 
 
 const Local_i: string = await invoke('locale_load_i');
 const App: React.FC = () => {
     const { Language, setAppData } = AppDataStore()
-    const [options, setOptions] = useState<AutoCompleteProps['options']>([]);
+    const [options, setOptions] = useState<MenuProps['items']>([]);
     const setLanguage = (e: string) => {
-        if(e === Language) return
+        if (e === Language) return
         setAppData({ Language: e })
         setTimeout(() => {
             location.href = location.origin
@@ -19,12 +21,14 @@ const App: React.FC = () => {
 
     useEffect(() => {
         try {
-            let opdata: AutoCompleteProps['options'] = []
+            let opdata: MenuProps['items'] = []
             const Local_Json = JSON.parse(Local_i);
             for (let key in Local_Json) {
                 const item = {
                     label: Local_Json[key]?.label,
-                    value: key,
+                    key: key,
+                    disabled: key === Language,
+                    extra: key === Language ?  <Badge status="success" /> : '',
                 }
                 opdata.push(item)
             }
@@ -34,18 +38,24 @@ const App: React.FC = () => {
         }
 
     }, [])
-    const valueText = options?.find(item => item.value === Language)?.label
 
     return (
-        <AutoComplete
-            popupMatchSelectWidth={120}
-            style={{ width: 120 }}
-            options={options}
-            onChange={setLanguage}
-            variant="filled"
-            value={valueText}
+        <Dropdown
+            arrow 
+            menu={{
+                items: options,
+                onClick: e => setLanguage(e.key),
+            }}
         >
-        </AutoComplete>
+            <Button
+                icon={<GlobalOutlined />}
+                shape="circle"
+                type='text'
+            >
+            </Button>
+        </Dropdown>
+
+
     );
 };
 

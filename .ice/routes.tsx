@@ -181,6 +181,31 @@ const createRoutes: CreateRoutes = ({
       exact: true,
       exports: ["DotaSource"],
     },{
+      path: 'about/author',
+      async lazy() {
+      const componentModule = await import(/* webpackChunkName: "p_about-author" */ '@/pages/about/author');
+      return {
+        ...componentModule,
+        Component: () => WrapRouteComponent({
+          routeId: 'about/author',
+          isLayout: false,
+          routeExports: componentModule,
+        }),
+        loader: createRouteLoader({
+          routeId: 'about/author',
+          requestContext,
+          renderMode,
+          module: componentModule,
+        }),
+      };
+    },
+      errorElement: <RouteErrorComponent />,
+      componentName: 'about-author',
+      index: undefined,
+      id: 'about/author',
+      exact: true,
+      exports: ["AuthorT"],
+    },{
       path: 'newBox',
       async lazy() {
       const componentModule = await import(/* webpackChunkName: "p_index-newbox" */ '@/pages/index/newBox');

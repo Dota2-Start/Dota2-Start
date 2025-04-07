@@ -33,7 +33,7 @@ export interface UpdateType {
   }
   
   export async function checkForUpdates(currentVersion: string): Promise<UpdateType | null> {
-    const repo = "tuyangJs/Dota2-Start";
+    const repo = "Dota2-Start/Dota2-Start";
     const apiUrl = `https://api.github.com/repos/${repo}/releases?per_page=100`;
     try {
       const response = await fetch(apiUrl);

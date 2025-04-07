@@ -75,6 +75,17 @@
         ]
       },
       {
+        "path": "about/author",
+        "id": "about/author",
+        "parentId": "layout",
+        "file": "about/author.tsx",
+        "componentName": "about-author",
+        "layout": false,
+        "exports": [
+          "AuthorT"
+        ]
+      },
+      {
         "path": "newBox",
         "id": "newBox",
         "parentId": "layout",
