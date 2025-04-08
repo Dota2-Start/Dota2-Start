@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "Dota2-Strat"
-version = "1.0.1-beta.2549"
+version = "1.0.1-beta.2552"
 dependencies = [
  "anyhow",
  "dirs",

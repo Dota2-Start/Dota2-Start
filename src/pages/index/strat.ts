@@ -90,14 +90,18 @@ export const stratSteam = async (
     }
 
 }
+let dota2_err = -1
 export const stratDota = async (dota2Path: string, megLocal: any, backCall: (err: boolean, e?: string) => void) => {
-
     let dota2_i = 0
+    dota2_err = -1
     const DotaOld = (count?: number) => {
         setTimeout(async () => {
             const DotaServe: number = await invoke('start_monitoring', { exePath: dota2Path });
             let err = DotaServe > 0
-            backCall(err)
+            if (dota2_err != DotaServe) {
+                backCall(err)
+                dota2_err = DotaServe
+            }
             if (err) {
                 if (typeof count === 'number') {
                     if (count > 10) {

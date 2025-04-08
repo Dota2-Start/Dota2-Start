@@ -10,6 +10,7 @@ const DotaKey = "start_start-104"
 import { Window } from '@tauri-apps/api/window'; // 引入 appWindow
 import { LocalStor } from "@/mod/locale_load";
 const appWindow = new Window('main');
+
 export const PlayDota = () => {
     const { Local } = LocalStor()
     const iLocal = Local['/']
@@ -18,9 +19,7 @@ export const PlayDota = () => {
     const { args } = Dota2ArgsLite()
     const [loading, setLoading] = useState(false);
     const [shake, setShake] = useState(false);
-
     const [ButtonText, setButtonText] = useState(iLocal?.startBtn);
-
     const [messageApi, contextHolder] = message.useMessage();
     const [ButtonDisabled, setButtonDisabled] = useState(true);
     const Shake = () => {
@@ -120,6 +119,9 @@ export const PlayDota = () => {
             let DotaServe: number = await invoke('start_monitoring', { exePath: exe });
             if (DotaServe < 1) {
                 DotaServe = await invoke('start_monitoring', { exePath: exe });
+            }
+            if (DotaServe > 0) {
+                handleStartGame()
             }
 
             setButtonText(DotaServe > 0 ? iLocal?.service : iLocal?.startBtn)
