@@ -79,6 +79,8 @@
 ---
 
 > 🔗 **开源地址**: [github.com/tuyangJs/Dota2-Star]([https://github.com/dota2-start](https://github.com/tuyangJs/Dota2-Star))  
+> 📧 **QQ群** : [703623743](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=IVNKPTJ9WqoIHHCsy7UMkQd16NLnfjeD&authKey=WVTDqfUgdv9oV0d8%2BZz5krS98IIlB1Kuvm%2BS3pfMU1H6FBCV1b2xoG5pWsggiAgt&noverify=0&group_code=703623743)  
 > 📧 **反馈合作**: ihanlong@qq.com
+
 
 **从启动到超神，一个工具全搞定！** 🎮⚡️

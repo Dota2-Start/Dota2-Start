@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Card, Typography, Descriptions, Tag, Collapse, Space, Button } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';
 import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import { getVersion } from '@tauri-apps/api/app';
 import { UserProtocol } from '../protocol';
@@ -7,39 +7,56 @@ import { MacScrollbar } from 'mac-scrollbar';
 import UpDatebtn from './updates'
 import { LocalStor } from '@/mod/locale_load';
 import { AuthorT } from './author';
+import { motion } from 'framer-motion';
+import { parseVersion, VersionInfo } from '@/mod/V_analysis';
 
 const { Title, Paragraph, Link } = Typography;
-const { Panel } = Collapse;
 
 // 程序信息类型
 interface ProgramInfo {
     name: string;
-    version: string;
+    version: VersionInfo;
     license: string;
     copyright: string;
     description: string;
     website: string;
     repository: string;
-    
+
 }
-const version = await getVersion();
+
 
 const AboutProgramPage: React.FC = () => {
     const { Local } = LocalStor()
     const about = Local?.about
+    const [version, setVersion] = useState<VersionInfo>({version:"1.0.0"});
     const programData: ProgramInfo = {
         name: 'Dota 2 Start',
         version: version,
         license: 'GNU General Public License v3.0',
-        copyright: '© 2025 Tuyang',
+        copyright: '© 2025 Made with love by TuyangJs',
         description: about?.description,
         website: 'https://dota2.com',
         repository: 'https://github.com/Dota2-Start/Dota2-Start',
- 
+
     };
-  
+    useEffect(() => {
+        (async () => {
+            const version = await getVersion();
+            setVersion(parseVersion(version))
+        })()
+    }, []);
     return (
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }} // Start slightly below
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                type: "spring", // Use spring for elastic effect
+                stiffness: 150, // Controls speed of the bounce
+                damping: 25, // Controls how smooth the bounce is
+                duration: 0.36, // Controls the overall duration 
+            }}
+            style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}
+        >
             <Card title={about?.title} >
                 {/* 基础信息区块 */}
                 <Descriptions
@@ -49,7 +66,14 @@ const AboutProgramPage: React.FC = () => {
                 >
                     <Descriptions.Item label={about?.version}>
                         <Space>
-                            <Tag color="blue">{programData.version} </Tag>
+                            {
+                                programData.version?.beta && <Tag color="gold">Beta.{programData.version.beta}</Tag>
+                            }
+                            {
+                                programData.version?.alpha && <Tag color="red">Alpha.{programData.version.alpha}</Tag>
+                            }
+                            {programData.version.version}
+
                             <UpDatebtn />
                         </Space>
                     </Descriptions.Item>
@@ -57,7 +81,7 @@ const AboutProgramPage: React.FC = () => {
                         {programData.copyright}
                     </Descriptions.Item>
                     <Descriptions.Item label={about?.author}>
-                      <AuthorT />
+                        <AuthorT />
                     </Descriptions.Item>
                     <Descriptions.Item label={about?.license}>
                         <Link href={`${programData.repository}/blob/master/LICENSE`} target="_blank">
@@ -72,7 +96,7 @@ const AboutProgramPage: React.FC = () => {
                     {programData.description}
                 </Paragraph>
 
-             
+
                 {/* 完整协议内容 */}
                 <Card
                     title={about?.UserAgreement}
@@ -110,7 +134,7 @@ const AboutProgramPage: React.FC = () => {
                     </Button>
                 </Space>
             </Card>
-        </div>
+        </motion.div>
     );
 };
 

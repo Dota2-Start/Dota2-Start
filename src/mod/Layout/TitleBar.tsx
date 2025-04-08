@@ -1,26 +1,57 @@
 import React, { useEffect, useState } from 'react';
 import { FullscreenExitOutlined, FullscreenOutlined } from '@ant-design/icons';
-import { Button, ButtonProps, Divider, Flex, MenuProps } from 'antd';
-//import { motion } from 'framer-motion'; // 引入 framer-motion
+import { Button, ButtonProps, Divider, Flex } from 'antd';
 import { CloseIcon, ShrinkIcon } from "@/mod/svg";
 import { Window } from '@tauri-apps/api/window'; // 引入 appWindow
-import { getCurrentWebview } from '@tauri-apps/api/webview'; import Locale from './Locale';
-;
+import { getCurrentWebview } from '@tauri-apps/api/webview';
+import Locale from './Locale';
+
 const appWindow = new Window('main');
-const isMax = await appWindow.isMaximized();
-const Webview = await getCurrentWebview()
+
 interface Props {
     locale?: string
 }
+
 let times: any = null
-const items: MenuProps['items'] = [
-    {
-        label: 'Submit and continue',
-        key: '1',
-    },
-];
+
 const App: React.FC<Props> = () => {
-    const [isMaximized, setIsMaximized] = useState(isMax);
+    // 设置状态来存储 isMaximized 和 Webview
+    const [isMaximized, setIsMaximized] = useState<boolean | null>(null);
+    const [webview, setWebview] = useState<any>(null);
+
+    // 获取isMax和webview
+    useEffect(() => {
+        const fetchWindowData = async () => {
+            const isMax = await appWindow.isMaximized();
+            const Webview = await getCurrentWebview();
+
+            setIsMaximized(isMax); // 更新最大化状态
+            setWebview(Webview); // 设置Webview
+        };
+
+        fetchWindowData();
+    }, []); // 只在组件加载时获取一次
+    useEffect(() => {
+        // 监听窗口大小变化
+        clearTimeout(times);
+        times = setTimeout(() => {
+            appWindow.onResized(async () => {
+                const isMinimized = await appWindow.isMinimized();
+                setIsMaximized(await appWindow.isMaximized());
+                if (isMinimized) {
+                    webview.hide();
+                } else {
+                    webview.show();
+                }
+            });
+        }, 500);
+
+    }, [webview]); // 只有当 webview 改变时才重新执行
+    // 如果没有获取到 isMax 和 Webview，不渲染界面
+    if (isMaximized === null || webview === null) {
+        return null; // 或者你可以显示一个加载状态
+    }
+
     const TitleButton: ButtonProps[] = [
         {
             icon: <ShrinkIcon />,
@@ -46,7 +77,6 @@ const App: React.FC<Props> = () => {
                         appWindow.unmaximize()
                     } else {
                         appWindow.maximize()
-
                     }
                 })
             }
@@ -64,23 +94,7 @@ const App: React.FC<Props> = () => {
             }
         }
     ]
-    useEffect(() => {
-        // 监听窗口大小变化
-        clearTimeout(times)
-        times = setTimeout(() => {
-            appWindow.onResized(async () => {
-                const isMinimized = await appWindow.isMinimized()
-                setIsMaximized(await appWindow.isMaximized())
-                if (isMinimized) {
-                    Webview.hide()
-                } else {
-                    Webview.show()
-                }
-            });
 
-        }, 500);
-
-    }, [])
 
 
     return (
@@ -101,20 +115,18 @@ const App: React.FC<Props> = () => {
                         minWidth: 110
                     }}
                 >
-
                     {TitleButton.map((item, index) => (
                         <React.Fragment key={`fragment-${index}`}>
-                            {index > 0 ?
+                            {index > 0 ? (
                                 <Divider
                                     style={{ marginInline: 2, marginBlock: 0 }}
                                     type='vertical' />
-                                : null}
+                            ) : null}
                             <Button
                                 className='TitleBn'
                                 {...item}
                             />
                         </React.Fragment>
-
                     ))}
                 </Flex>
 

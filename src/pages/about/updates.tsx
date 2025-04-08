@@ -5,10 +5,6 @@ import { UpdateType, checkForUpdates } from "@/mod/update";
 import { AppDataStore } from "@/mod/store";
 import { getVersion } from "@tauri-apps/api/app";
 import { LocalStor } from "@/mod/locale_load";
-
-
-
-const version = await getVersion();
 const { Text } = Typography;
 const Updates: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,8 +17,9 @@ const Updates: React.FC = () => {
     setAppData({ Skipversion: update?.latestVersion })
     setIsModalOpen(false);
   }
-  const updates = () => {
+  const updates = async () => {
     setBtnLoad(true)
+    const version = await getVersion();
     checkForUpdates(version).then((update) => {
       if (update) {
         setUpdate(update)
@@ -35,7 +32,7 @@ const Updates: React.FC = () => {
       setBtnLoad(false)
     });
   }
-  useEffect(updates, [])
+  useEffect(() => { updates() }, [])
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -89,14 +86,14 @@ const Updates: React.FC = () => {
             onClick={nomitCancel}>
             {upModal?.noText}
           </Button>,
-          <Button
-            key="submit"
-            type="primary"
-            href="https://gitee.com/ilinxuan/windows_-auto-theme/releases/latest"
-            target="_blank"
-            onClick={handleCancel}>
-            {upModal?.okText} (Gitee)
-          </Button>,
+          /*     <Button
+                key="submit"
+                type="primary"
+                href="https://gitee.com/ilinxuan/windows_-auto-theme/releases/latest"
+                target="_blank"
+                onClick={handleCancel}>
+                {upModal?.okText} (Gitee)
+              </Button>, */
           <Button
             key="link"
             href={update?.releaseUrl}

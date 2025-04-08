@@ -1,124 +1,128 @@
 {
-    "value": "english",
-    "label": "English",
-    "navigation": {
-      "/": "Home",
-      "/about": "About",
-      "/settings": "Settings",
-      "/option": "Options",
-      "/strat": "Guides"
+  "value": "english",
+  "label": "English",
+  "navigation": {
+    "/": "Start",
+    "/about": "About",
+    "/settings": "Settings",
+    "/option": "Options",
+    "/strat": "Strategy"
+  },
+  "/": {
+    "stateCord": [
+      "{g} Installation Status",
+      "{g} Is Startable"
+    ],
+    "description": "Welcome to use",
+    "startBtn": "Start {}",
+    "service": "{} Running"
+  },
+  "option": {
+    "anchor": {
+      "part-1": "Startup Items",
+      "part-2": "File Injection"
     },
-    "/": {
-      "stateCord": [
-        "{g} Installation Status",
-        "{g} Launchable"
-      ],
-      "description": "Welcome",
-      "startBtn": "Launch {}",
-      "service": "{} Running"
+    "part-1": {
+      "basic_settings": "Basic Settings",
+      "performance_optimization": "Performance Optimization",
+      "network_settings": "Network Settings",
+      "developer_options": "Developer Options",
+      "miscellaneous_settings": "Other Settings",
+      "-novid": "Skip Startup Animation",
+      "-novid_des": "Skip the animation at the beginning of {g} startup and go directly to the main interface.",
+      "-perfectworld": "Perfect World Mode",
+      "-perfectworld_des": "Start {g} in Perfect World mode, suitable for players in China.",
+      "-console": "Enable Console",
+      "-console_des": "Enable the developer console in {g} to allow inputting debugging commands.",
+      "-language schinese": "Set Language to Simplified Chinese",
+      "-language schinese_des": "Set the {g} interface language to Simplified Chinese, but keep the English voiceover.",
+      "-high": "High Priority Run",
+      "-high_des": "Set the CPU priority of the {g} process to high, which may improve {g} performance.",
+      "-fullscreen": "Fullscreen Mode",
+      "-fullscreen_des": "Start {g} in fullscreen mode.",
+      "-windowed -noborder": "Borderless Window Mode",
+      "-windowed -noborder_des": "Run {g} in borderless window mode.",
+      "-w 1920 -h 1080": "Set Resolution",
+      "-w 1920 -h 1080_des": "Set the {g} resolution to 1920x1080.",
+      "+fps_max 60": "Limit Frame Rate",
+      "+fps_max 60_des": "Limit the maximum frame rate of {g} to 60 frames per second.",
+      "-tcp": "Use TCP Protocol",
+      "-tcp_des": "Force {g} to use the TCP protocol for network connections, suitable for solving UDP connection problems.",
+      "-udp": "Use UDP Protocol",
+      "-udp_des": "Force {g} to use the UDP protocol for network connections, which is the default setting.",
+      "-dev": "Enable Developer Mode",
+      "-dev_des": "Enable developer mode to unlock additional debugging features.",
+      "-enable_addons": "Allow Loading Custom Content",
+      "-enable_addons_des": "Allow the engine to load custom content in the {g} folder and replace VPK files.",
+      "-override_vpk": "Override VPK Files",
+      "-override_vpk_des": "Allow the engine to search for custom content in the {g} folder and replace VPK files. Using this may affect matchmaking functionality.",
+      "-nomicsettings": "Disable Microphone Settings",
+      "-nomicsettings_des": "Prevent {g} from modifying microphone output values, suitable for players using other voice software.",
+      "-nosound": "Disable Sound",
+      "-nosound_des": "Turn off all sound in {g}.",
+      "-map dota": "Load Map",
+      "-map dota_des": "Preload the map when starting, reducing loading time when entering {g}.",
+      "-32bit": "Use 32-bit Mode",
+      "-32bit_des": "Run {g} in 32-bit mode, suitable for older systems or hardware."
     },
-    "option": {
-      "anchor": {
-        "part-1": "Launch Options",
-        "part-2": "File Injection"
-      },
-      "part-1": {
-        "basic_settings": "Basic Settings",
-        "performance_optimization": "Performance Optimization",
-        "network_settings": "Network Settings",
-        "developer_options": "Developer Options",
-        "miscellaneous_settings": "Miscellaneous Settings",
-        "-novid": "Skip Startup Movie",
-        "-novid_des": "Skips the startup movie when launching {g}, going directly to the main menu.",
-        "-perfectworld": "Perfect World Mode",
-        "-perfectworld_des": "Launches {g} in Perfect World mode, intended for players in China.",
-        "-console": "Enable Console",
-        "-console_des": "Enables the developer console within {g}, allowing input of debug commands.",
-        "-language schinese": "Set Language to Simplified Chinese",
-        "-language schinese_des": "Sets the {g} interface language to Simplified Chinese, but keeps English voice-overs.",
-        "-high": "Run with High Priority",
-        "-high_des": "Sets the CPU priority of the {g} process to high, which may improve {g} performance.",
-        "-fullscreen": "Fullscreen Mode",
-        "-fullscreen_des": "Launches {g} in fullscreen mode.",
-        "-windowed -noborder": "Borderless Window Mode",
-        "-windowed -noborder_des": "Runs {g} in a borderless window.",
-        "-w 1920 -h 1080": "Set Resolution",
-        "-w 1920 -h 1080_des": "Sets the {g} resolution to 1920x1080.",
-        "+fps_max 60": "Limit Frame Rate",
-        "+fps_max 60_des": "Limits the maximum frame rate of {g} to 60 frames per second.",
-        "-tcp": "Use TCP Protocol",
-        "-tcp_des": "Forces {g} to use the TCP protocol for network connections, useful for resolving UDP connection issues.",
-        "-udp": "Use UDP Protocol",
-        "-udp_des": "Forces {g} to use the UDP protocol for network connections, which is the default setting.",
-        "-dev": "Enable Developer Mode",
-        "-dev_des": "Enables developer mode, unlocking additional debugging features.",
-        "-enable_addons": "Allow Loading Custom Content",
-        "-enable_addons_des": "Allows the engine to load custom content within the {g} folder and replace VPK files.",
-        "-override_vpk": "Override VPK Files",
-        "-override_vpk_des": "Allows the engine to search for custom content within the {g} folder and replace VPK files. Using this may affect matchmaking functionality.",
-        "-nomicsettings": "Disable Microphone Settings",
-        "-nomicsettings_des": "Prevents {g} from modifying microphone output values, useful for players using other voice software.",
-        "-nosound": "Disable Sound",
-        "-nosound_des": "Turns off all sounds within {g}.",
-        "-map dota": "Load Map",
-        "-map dota_des": "Pre-loads the map at startup, reducing loading times when entering {g}.",
-        "-32bit": "Use 32-bit Mode",
-        "-32bit_des": "Runs {g} in 32-bit mode, suitable for older systems or hardware."
-      },
-      "part-2": {
-        "cn-harmony": "China Anti-Harmony",
-        "cn-harmony_des": "Changes black blood to red blood and aligns some skill/item icons with the international version."
-      }
-    },
-    "about": {
-      "title": "About",
-      "description": "{D} is a smart launch tool designed specifically for {} players. It allows you to quickly manage {g} launch options and provides customizable functional modules, helping players get into the battlefield quickly and unleash their competitive potential.",
-      "version": "Current Version",
-      "author": "Developers",
-      "copyright": "Copyright",
-      "license": "License",
-      "blurbTitle": "Program Introduction",
-      "blurb": "{D} is a professional {} launcher, providing convenient {g} management and optimization features.",
-      "UserAgreement": "User Agreement",
-      "BtnA": "Visit Website",
-      "BtnB": "Visit Source Code Repository"
-    },
-    "$ShowMeg": {
-      "detection": "Detecting {g} status",
-      "content": "Do you want to exit {g}?",
-      "loading": "Waiting for {} to launch...",
-      "gameEnd": "{} has exited!",
-      "timeout": "{} launch timed out!",
-      "sNotStarted": "{s} is not running!",
-      "logOn": "Logging into {s}...",
-      "sstart": "{s} launched successfully",
-      "sloading": "Waiting for {s} to launch...",
-      "gameReady": "Launching {}",
-      "sReady": "Launching {s}...",
-      "serror": "Failed to launch {s}!"
-    },
-    "$upModal": {
-      "textA": [
-        "Checking:",
-        "New version found",
-        "Already the latest version"
-      ],
-      "textB": [
-        "Updating......",
-        "View Updates",
-        "Check for Updates"
-      ],
-      "title": "A new version of the program is available:",
-      "cancelText": "Cancel",
-      "okText": "Go to Update",
-      "upData": "Update Log",
-      "noText": "Ignore This Update"
-    },
-    "$": {
-      "gameName": "Dota 2",
-      "D": "Dota2 Strat",
-      "g": "Game",
-      "s": "Steam",
-      "git": "Github"
+    "part-2": {
+      "cn-harmony": "China Harmony Patch",
+      "cn-harmony_des": "When enabled, black blood becomes red blood, and some skill/equipment icons are consistent with the international version.",
+      "cn-harmony_tip": "Special effects files provided by Bilibili @iFuStudio"
     }
+  },
+  "about": {
+    "title": "About the Program",
+    "description": "{D} is an intelligent startup tool designed for Dota 2 players. It allows you to quickly manage {g} startup items, provide customized functional modules, and help players quickly enter the battlefield and unleash their competitive potential.",
+    "version": "Current Version",
+    "author": "Developer",
+    "copyright": "Copyright Statement",
+    "license": "Open Source License",
+    "blurbTitle": "Program Introduction",
+    "blurb": "{D} is a professional {g} launcher that provides convenient {g} management and optimization functions.",
+    "UserAgreement": "User Agreement",
+    "BtnA": "Visit Official Website",
+    "BtnB": "Visit Source Code Repository"
+  },
+  "$ShowMeg": {
+    "detection": "Detecting {g} status...",
+    "content": "Do you want to exit {g}?",
+    "loading": "Waiting for {} to start...",
+    "gameEnd": "{} has exited!",
+    "timeout": "{} startup timeout!",
+    "sNotStarted": "{s} not started!",
+    "logOn": "Logging into {s}...",
+    "sstart": "{s} started successfully",
+    "sloading": "Waiting for {s} to start...",
+    "gameReady": "Starting {}...",
+    "sReady": "Starting {s}...",
+    "serror": "Failed to start {s}!"
+  },
+  "$upModal": {
+    "textA": [
+      "Checking for updates:",
+      "New version found",
+      "Already the latest version"
+    ],
+    "textB": [
+      "Updating...",
+      "Check for Updates",
+      "Check for Updates"
+    ],
+    "title": "New version of the program is available:",
+    "cancelText": "Cancel",
+    "okText": "Go to Update",
+    "upData": "Update Log",
+    "noText": "Ignore this update"
+  },
+  "$error": {
+    "403": "Sorry, the current page is not yet open, please wait patiently for unlocking."
+  },
+  "$": {
+    "gameName": "Dota 2",
+    "D": "Dota2 Strat",
+    "g": "game",
+    "s": "Steam",
+    "git": "Github"
   }
+}

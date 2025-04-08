@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Avatar, Tooltip } from 'antd';
-import { ContributorService } from '@/mod/http/contributorService';
 import { motion } from 'framer-motion';
+import { ContributorService } from '@/mod/http/contributorService';
 export interface AuthorGtype {
     id: string
     avatarUrl: string
@@ -10,7 +10,7 @@ export const AuthorT: React.FC = () => {
     const [AvatarG, setAvatarG] = useState<AuthorGtype[]>();
     useEffect(() => {
         const service = new ContributorService();
-        service.getContributors('ant-design', 'ant-design')
+        service.getContributors('Dota2-Start', 'Dota2-Start')
             .then(contributors => {
                 setAvatarG(contributors);
             })
@@ -31,7 +31,7 @@ export const AuthorT: React.FC = () => {
                             stiffness: 150, // Controls speed of the bounce
                             damping: 25, // Controls how smooth the bounce is
                             duration: 0.36, // Controls the overall duration
-                            delay: index * 0.1,
+                            delay: (index + 0.5) + 0.1,
                         }}
                     >
                         <Tooltip title={item.id} placement="top" >

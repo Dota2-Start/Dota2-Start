@@ -6,13 +6,21 @@ import NewBox from "./newBox";
 import { motion } from "framer-motion";
 import { StateCard } from "./StateCard";
 import { LocalStor } from "@/mod/locale_load";
-const videoData: VideoBackgroundProps = await video()
+import { useEffect, useState } from "react";
+//const videoData = await video()
 function App() {
   const { Local } = LocalStor()
   const iLocal = Local['/']
+  const [videoData, setVideoData] = useState<VideoBackgroundProps>({ videoUrl: '', poster: 'video/mp4' });
+  useEffect(() => {
+    (async () => {
+      const data = await video()
+      setVideoData(data)
+    })()
+  }, [])
   return (
     <>
-      <Bgvideo {...videoData} />
+      <Bgvideo {...videoData}></Bgvideo>
       <motion.div
         key="anchor"
         style={{ minHeight: '60vh' }}
@@ -41,12 +49,12 @@ function App() {
           >
             <Flex vertical align="center">
               <motion.span
-                key={iLocal?.description}  
+                key={iLocal?.description}
                 initial={{ opacity: 0, filter: "blur(5px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 0.5, }}
               >
-                <h1 style={{ margin: 0 }}>{iLocal?.description+' Dota2 Start'} </h1>
+                <h1 style={{ margin: 0 }}>{iLocal?.description + ' Dota2 Start'} </h1>
               </motion.span>
             </Flex>
             <PlayDota />

@@ -20,6 +20,7 @@ export default function Document() {
         <Main />
         <Scripts />
       </body>
+    
     </html>
   );
 }
