@@ -1,6 +1,6 @@
 [package]
 name = "Dota2-Strat"
-version = "1.0.1-beta.2552"
+version = "1.0.2-beta.2552"
 description = "Dota2 Strat"
 authors = ["you"]
 edition = "2021"
