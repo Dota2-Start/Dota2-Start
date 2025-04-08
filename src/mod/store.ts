@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { VersionInfo } from './V_analysis';
 
 export const navigatorlLanguage = navigator.language
 export interface Dota2PathType {
@@ -10,16 +11,28 @@ export interface Dota2PathType {
     setDota2File: (e: Partial<Dota2PathType>) => void
 }
 
-export interface Dota2ArgsLiteType {
-    args: string[];
-    setArgs: (e: Dota2ArgsLiteType['args']) => void
-}
+
 export const Dota2File = create<Dota2PathType>((set) => ({
     path: '',
     exe: '',
     isExe: false,
     steamExt: '',
     setDota2File: (e) => set((state) => ({
+        ...state, // 保留现有的状态
+        ...e,     // 更新传入的字段
+    })),
+}
+))
+
+export interface AppinfoType {
+    v: VersionInfo;
+    name:string
+    setAppinfo: (e: Partial<AppinfoType>) => void
+}
+export const Appinfo = create<AppinfoType>((set) => ({
+    v: { version: '0.0.1' },
+    name: 'Dota 2 Start',
+    setAppinfo: (e) => set((state) => ({
         ...state, // 保留现有的状态
         ...e,     // 更新传入的字段
     })),
@@ -46,7 +59,10 @@ export const AppDataStore = create<AppDataType>()(
         }
     )
 );
-
+export interface Dota2ArgsLiteType {
+    args: string[];
+    setArgs: (e: Dota2ArgsLiteType['args']) => void
+}
 // 使用双调用语法创建 store
 export const Dota2ArgsLite = create<Dota2ArgsLiteType>()(
     persist(

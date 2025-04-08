@@ -9,6 +9,7 @@ import { LocalStor } from '@/mod/locale_load';
 import { AuthorT } from './author';
 import { motion } from 'framer-motion';
 import { parseVersion, VersionInfo } from '@/mod/V_analysis';
+import { Appinfo } from '@/mod/store';
 
 const { Title, Paragraph, Link } = Typography;
 
@@ -28,10 +29,10 @@ interface ProgramInfo {
 const AboutProgramPage: React.FC = () => {
     const { Local } = LocalStor()
     const about = Local?.about
-    const [version, setVersion] = useState<VersionInfo>({version:"1.0.0"});
+    const { v, name } = Appinfo()
     const programData: ProgramInfo = {
-        name: 'Dota 2 Start',
-        version: version,
+        name: name,
+        version: v,
         license: 'GNU General Public License v3.0',
         copyright: '© 2025 Made with love by TuyangJs',
         description: about?.description,
@@ -39,12 +40,7 @@ const AboutProgramPage: React.FC = () => {
         repository: 'https://github.com/Dota2-Start/Dota2-Start',
 
     };
-    useEffect(() => {
-        (async () => {
-            const version = await getVersion();
-            setVersion(parseVersion(version))
-        })()
-    }, []);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }} // Start slightly below

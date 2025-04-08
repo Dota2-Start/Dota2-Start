@@ -1,12 +1,11 @@
 /* eslint-disable react/no-array-index-key */
-import React, { ReactNode, useEffect, useState } from 'react';
-import { Flex, Typography } from 'antd';
+import React, { ReactNode, useEffect } from 'react';
+import { Flex, Tag, Typography } from 'antd';
 import { useLocation } from 'ice';
-import { Window } from '@tauri-apps/api/window';
 import routes from "@/mod/navigation/routes"
-const { Text, Title } = Typography;
+import { Appinfo } from '../store';
+const { Title } = Typography;
 export interface LogoProps {
-    name: ReactNode
     logo: ReactNode
 }
 function getLabelByKey(key) {
@@ -14,8 +13,9 @@ function getLabelByKey(key) {
     // @ts-ignore
     return item ? item?.label : null;
 }
-const App: React.FC<LogoProps> = ({ name, logo }) => {
+const App: React.FC<LogoProps> = ({ logo }) => {
     const { pathname } = useLocation();
+    const { name, v } = Appinfo()
     useEffect(() => {
         const pagesName = getLabelByKey(pathname)
         const newTitle = name + (pagesName ? ` - ${pagesName}` : "")
@@ -41,7 +41,8 @@ const App: React.FC<LogoProps> = ({ name, logo }) => {
             >
                 {name}
             </Title>
-
+            {v?.beta && <Tag >Beta</Tag>}
+            {v?.alpha && <Tag color="red">Alpha</Tag>}
         </Flex>
     );
 };
