@@ -1,6 +1,6 @@
-import { LocalStor } from "@/mod/locale_load";
 import { invoke } from "@tauri-apps/api/core";
 import { ArgsProps } from "antd/es/message/interface";
+import { create } from "zustand";
 const SteamKey = "start_start-204"
 export const stratSteam = async (
     messageApi: (e: ArgsProps | string) => void,
@@ -91,36 +91,37 @@ export const stratSteam = async (
 
 }
 let dota2_err = -1
-export const stratDota = async (dota2Path: string, megLocal: any, backCall: (err: boolean, e?: string) => void) => {
-    let dota2_i = 0
+// 检测循环dota2进程状态
+export const Dota2_detection = async (
+    dota2Path: string,
+    backCall: (e: boolean) => boolean
+) => {
     dota2_err = -1
-    const DotaOld = (count?: number) => {
+    const DotaOld = () => {
         setTimeout(async () => {
             const DotaServe: number = await invoke('start_monitoring', { exePath: dota2Path });
-            let err = DotaServe > 0
+            const err = DotaServe > 0
+            console.log(0, 'DotaServe',dota2Path);
             if (dota2_err != DotaServe) {
+                //如果返回true则终止检测
                 backCall(err)
                 dota2_err = DotaServe
             }
-            if (err) {
-                if (typeof count === 'number') {
-                    if (count > 10) {
-                        backCall(false, megLocal?.timeout)
-                        return
-                    }
-                    count++
-                }
-                DotaOld(count)
-            }
-
+            DotaOld()
         }, 2000);
     }
-    const DotaServe: number = await invoke('start_monitoring', { exePath: dota2Path });
-    if (DotaServe > 0) {
-        DotaOld()
-    } else {
-        //dota2未启动，等待启动
-        DotaOld(dota2_i)
-    }
-
+    DotaOld()
 }
+// 检测dota2进程状态
+export const stratDota = async (dota2Path: string) => {
+    const DotaServe: number = await invoke('start_monitoring', { exePath: dota2Path });
+    return DotaServe
+}
+export interface Dota2stateStoreType {
+    Dota2State: boolean;
+    setDota2State: (e: Dota2stateStoreType['Dota2State']) => void
+}
+export const Dota2stateStore = create<Dota2stateStoreType>((set) => ({
+    Dota2State: false,
+    setDota2State: (e) => set({ Dota2State: e }),
+}))

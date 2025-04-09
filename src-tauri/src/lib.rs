@@ -50,7 +50,7 @@ fn getDota_path() -> String {
 fn start_monitoring(exe_path: &str) -> i32 {
     match ProcessStatus::check_process(exe_path) {
         Ok(status) => {
-            println!("进程状态: {}", status.status);
+            println!("进程状态: {} {}",exe_path, status.status);
             status.status // 直接返回状态码
         }
         Err(err) => {

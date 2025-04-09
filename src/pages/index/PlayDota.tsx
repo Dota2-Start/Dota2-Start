@@ -3,25 +3,31 @@ import { HappyProvider } from "@ant-design/happy-work-theme";
 import { Button, message } from "antd";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { stratDota, stratSteam } from "./strat";
-import { invoke } from "@tauri-apps/api/core";
 import { ArgsProps } from "antd/es/message/interface";
 const DotaKey = "start_start-104"
-import { Window } from '@tauri-apps/api/window'; // 引入 appWindow
 import { LocalStor } from "@/mod/locale_load";
-const appWindow = new Window('main');
+import { Dota2stateStore, stratSteam } from "@/mod/status";
 
 export const PlayDota = () => {
     const { Local } = LocalStor()
     const iLocal = Local['/']
     const megLocal = Local?.$ShowMeg
-    const { isExe, exe, steamExt } = Dota2File();
+    const { isExe,steamExt } = Dota2File();
     const { args } = Dota2ArgsLite()
     const [loading, setLoading] = useState(false);
     const [shake, setShake] = useState(false);
     const [ButtonText, setButtonText] = useState(iLocal?.startBtn);
     const [messageApi, contextHolder] = message.useMessage();
     const [ButtonDisabled, setButtonDisabled] = useState(true);
+    const { Dota2State, setDota2State } = Dota2stateStore()
+    useEffect(() => {
+        if (Dota2State) {
+            Dota2ok()
+        } else {
+            initializeBtn()
+        }
+    }, [Dota2State,iLocal])
+
     const Shake = () => {
         setShake(true);
         setTimeout(() => setShake(false), 500); // 500ms 后恢复正常
@@ -37,10 +43,12 @@ export const PlayDota = () => {
         ShowMeg(DotaKey)
         setButtonDisabled(true)
         setLoading(false)
-        setTimeout(() => {
-            appWindow.minimize()
-        }, 3000);
+        /*  setTimeout(() => {
+             appWindow.minimize()
+         }, 3000); */
     }
+    console.log('loading', loading);
+
     message.config({
         top: 100,
     })
@@ -58,77 +66,39 @@ export const PlayDota = () => {
             )
         }
     const handleStartGame = () => {
+        setDota2State(false)
         setLoading(true);
         // 模拟游戏启动失败（可以根据实际逻辑来判断是否失败）
         if (!isExe) {
             // 如果未找到 exe 文件，触发抖动动画
 
-            setLoading(false);
-
         } else {
             let steamArgs = ['-applaunch', '570', ...args]
-            ShowMeg(
-                {
-                    content: megLocal?.detection,
-                    type: 'loading',
-                    duration: 0
-                }
-            )
-            setTimeout(
-                () => stratSteam(ShowMeg, steamExt, steamArgs, megLocal, e => {
-                    if (e) {
-                        ShowMeg(
-                            {
-                                content: megLocal?.loading,
-                                type: 'loading',
-                                duration: 0
-                            }
-                        )
-                        stratDota(exe, megLocal, (err, e) => {
-                            if (err) {
-                                Dota2ok()
-                            } else {
-                                ShowMeg(
-                                    {
-                                        content: e || megLocal?.gameEnd,
-                                        type: 'info',
-                                        duration: 4
-                                    }
-                                )
-                                initializeBtn()
-                            }
-                        })
-                    } else {
-                        ShowMeg(
-                            {
-                                content: megLocal?.sNotStarted,
-                                type: 'error',
-                                duration: 5
-                            }
-                        )
-                        initializeBtn()
-                    }
+            stratSteam(ShowMeg, steamExt, steamArgs, megLocal, (e) => {
+                if (e) {
+                    ShowMeg(
+                        {
+                            content: megLocal?.loading,
+                            type: 'success',
+                            duration: 3
+                        }
+                    )
 
-                })
-                , 800
-            )
+                    setDota2State(true)
+                    //Dota2ok()
+                } else {
+                    ShowMeg(
+                        {
+                            content: megLocal?.sNotStarted,
+                            type: 'error',
+                            duration: 3
+                        }
+                    )
+                    initializeBtn()
+                }
+            })
         }
     };
-    useEffect(() => {
-        const checkDota2 = async () => {
-            let DotaServe: number = await invoke('start_monitoring', { exePath: exe });
-            if (DotaServe < 1) {
-                DotaServe = await invoke('start_monitoring', { exePath: exe });
-            }
-            if (DotaServe > 0) {
-                handleStartGame()
-            }
-
-            setButtonText(DotaServe > 0 ? iLocal?.service : iLocal?.startBtn)
-            setButtonDisabled(DotaServe > 0)
-        }
-        setTimeout(checkDota2, 10);
-    }, [iLocal]);
 
     return (
         <motion.div

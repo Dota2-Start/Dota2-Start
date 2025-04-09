@@ -143,18 +143,6 @@
         ]
       },
       {
-        "path": "strat",
-        "id": "strat",
-        "parentId": "layout",
-        "file": "index/strat.ts",
-        "componentName": "index-strat",
-        "layout": false,
-        "exports": [
-          "stratDota",
-          "stratSteam"
-        ]
-      },
-      {
         "path": "protocol",
         "id": "protocol",
         "parentId": "layout",

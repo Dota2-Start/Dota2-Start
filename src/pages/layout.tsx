@@ -1,6 +1,6 @@
 
 import { Outlet } from 'ice';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ConfigProvider, Flex, Layout } from 'antd';
 import Navigation from '@/mod/navigation'
 import "./style.less"
@@ -12,15 +12,16 @@ import onTitleChange from "@/mod/TitleChange"
 import 'mac-scrollbar/dist/mac-scrollbar.css';
 import { MacScrollbar } from 'mac-scrollbar';
 import { invoke } from '@tauri-apps/api/core';
-import { AppDataStore, Appinfo } from '@/mod/store';
+import { AppDataStore, Appinfo, Dota2File } from '@/mod/store';
 import { LocalStor } from '@/mod/locale_load';
 import { getVersion } from '@tauri-apps/api/app';
 import { parseVersion } from '@/mod/V_analysis';
+import { Dota2_detection, Dota2stateStore } from '@/mod/status';
 const { Header, Content } = Layout;
 const AppInit = {
   logo: <img className='logo' src={logoimg}></img>
 }
-let times: NodeJS.Timeout
+
 document.addEventListener('keydown', function (e) {
   if ((e.key === 'F5') || (e.ctrlKey && e.key === 'r')) {
     e.preventDefault(); // 禁止刷新
@@ -35,12 +36,17 @@ document.addEventListener('contextmenu', function (e) {
   // 其它情况（非 input 或 input 处于禁用状态）都阻止右键菜单
   e.preventDefault();
 });
+
+let times: NodeJS.Timeout
 const App: React.FC = () => {
   const { antdToken, themeConfig } = useTheme()
   const { colorBgContainer, colorBorder } = antdToken
   const { Language } = AppDataStore()
   const { setLocal } = LocalStor()
   const { setAppinfo } = Appinfo()
+  const { setDota2State } = Dota2stateStore()
+  const { exe } = Dota2File();
+
   useEffect(() => {
     const Locals = async () => {
       const LocalText: string = await invoke('locale_load', { key: Language });
@@ -48,14 +54,20 @@ const App: React.FC = () => {
         const json = JSON.parse(LocalText);
         setLocal(json)
       } catch (error) {
-        console.log(error)
       }
       const version = await getVersion();
       setAppinfo({ v: parseVersion(version) })
+
     }
     clearTimeout(times)
     times = setTimeout(Locals, 500);
-
+  }, [])
+  useEffect(() => {
+    if (!exe) return
+    Dota2_detection(exe, err => {
+      setDota2State(err)
+      return exe !== ''
+    })
   }, [])
   //同步全局标题
   onTitleChange()

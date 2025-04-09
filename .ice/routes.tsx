@@ -331,31 +331,6 @@ const createRoutes: CreateRoutes = ({
       exact: true,
       exports: ["default"],
     },{
-      path: 'strat',
-      async lazy() {
-      const componentModule = await import(/* webpackChunkName: "p_index-strat" */ '@/pages/index/strat');
-      return {
-        ...componentModule,
-        Component: () => WrapRouteComponent({
-          routeId: 'strat',
-          isLayout: false,
-          routeExports: componentModule,
-        }),
-        loader: createRouteLoader({
-          routeId: 'strat',
-          requestContext,
-          renderMode,
-          module: componentModule,
-        }),
-      };
-    },
-      errorElement: <RouteErrorComponent />,
-      componentName: 'index-strat',
-      index: undefined,
-      id: 'strat',
-      exact: true,
-      exports: ["stratDota","stratSteam"],
-    },{
       path: 'protocol',
       async lazy() {
       const componentModule = await import(/* webpackChunkName: "p_protocol" */ '@/pages/protocol');
