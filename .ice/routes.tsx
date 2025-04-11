@@ -331,6 +331,31 @@ const createRoutes: CreateRoutes = ({
       exact: true,
       exports: ["default"],
     },{
+      path: 'windowEvent',
+      async lazy() {
+      const componentModule = await import(/* webpackChunkName: "p_windowevent" */ '@/pages/windowEvent');
+      return {
+        ...componentModule,
+        Component: () => WrapRouteComponent({
+          routeId: 'windowEvent',
+          isLayout: false,
+          routeExports: componentModule,
+        }),
+        loader: createRouteLoader({
+          routeId: 'windowEvent',
+          requestContext,
+          renderMode,
+          module: componentModule,
+        }),
+      };
+    },
+      errorElement: <RouteErrorComponent />,
+      componentName: 'windowevent',
+      index: undefined,
+      id: 'windowEvent',
+      exact: true,
+      exports: [],
+    },{
       path: 'protocol',
       async lazy() {
       const componentModule = await import(/* webpackChunkName: "p_protocol" */ '@/pages/protocol');

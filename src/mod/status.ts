@@ -92,25 +92,27 @@ export const stratSteam = async (
 }
 let dota2_err = -1
 // 检测循环dota2进程状态
-export const Dota2_detection = async (
+export const Dota2_detection = (
     dota2Path: string,
-    backCall: (e: boolean) => boolean
+    backCall: (e: boolean,) => boolean
 ) => {
     dota2_err = -1
     const DotaOld = () => {
         setTimeout(async () => {
             const DotaServe: number = await invoke('start_monitoring', { exePath: dota2Path });
             const err = DotaServe > 0
-            console.log(0, 'DotaServe',dota2Path);
+            console.log(0, 'DotaServe', dota2Path);
             if (dota2_err != DotaServe) {
+                const end = backCall(err)
                 //如果返回true则终止检测
-                backCall(err)
+                if (end) return
                 dota2_err = DotaServe
             }
             DotaOld()
         }, 2000);
     }
     DotaOld()
+    return
 }
 // 检测dota2进程状态
 export const stratDota = async (dota2Path: string) => {

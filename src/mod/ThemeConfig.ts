@@ -33,7 +33,7 @@ const useTheme = () => {
             },
         },
         token: {
-            colorPrimary: '#fa511a',
+            colorPrimary: '#277700',
             colorBgContainer: '#1c1c1cba',
         },
     };

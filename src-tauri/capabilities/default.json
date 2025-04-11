@@ -32,10 +32,12 @@
         },
         {
           "url": "https://*.dota2.com"
-        },{
+        },
+        {
           "url": "https://store.steampowered.com"
         }
       ]
-    }
+    },
+    "fs:default"
   ]
 }

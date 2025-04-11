@@ -1,8 +1,9 @@
 
-import { Outlet } from 'ice';
-import React, { useEffect, useState } from 'react';
+import { Outlet, useLocation } from 'ice';
+import React, { useEffect, useRef, useState } from 'react';
 import { ConfigProvider, Flex, Layout } from 'antd';
 import Navigation from '@/mod/navigation'
+import { Window } from '@tauri-apps/api/window'; // 引入 appWindow
 import "./style.less"
 import { useTheme } from '@/mod/ThemeConfig';
 import TitleBar from '@/mod/Layout/TitleBar'
@@ -17,6 +18,7 @@ import { LocalStor } from '@/mod/locale_load';
 import { getVersion } from '@tauri-apps/api/app';
 import { parseVersion } from '@/mod/V_analysis';
 import { Dota2_detection, Dota2stateStore } from '@/mod/status';
+import { windowEvent } from './windowEvent';
 const { Header, Content } = Layout;
 const AppInit = {
   logo: <img className='logo' src={logoimg}></img>
@@ -36,17 +38,20 @@ document.addEventListener('contextmenu', function (e) {
   // 其它情况（非 input 或 input 处于禁用状态）都阻止右键菜单
   e.preventDefault();
 });
-
+window.appWindow = new Window('main');
 let times: NodeJS.Timeout
 const App: React.FC = () => {
   const { antdToken, themeConfig } = useTheme()
   const { colorBgContainer, colorBorder } = antdToken
   const { Language } = AppDataStore()
   const { setLocal } = LocalStor()
-  const { setAppinfo } = Appinfo()
+  const { setAppinfo, isMaximized } = Appinfo()
   const { setDota2State } = Dota2stateStore()
   const { exe } = Dota2File();
-
+  const { isMinimized } = windowEvent()
+  const location = useLocation();
+  const locationRef = useRef(location);
+  const isMinimi = useRef(isMinimized);
   useEffect(() => {
     const Locals = async () => {
       const LocalText: string = await invoke('locale_load', { key: Language });
@@ -62,13 +67,23 @@ const App: React.FC = () => {
     clearTimeout(times)
     times = setTimeout(Locals, 500);
   }, [])
+
+  useEffect(() => {
+    locationRef.current = location;
+  }, [location]);
+  
+  useEffect(() => {
+    isMinimi.current = isMinimized;
+  }, [isMinimized]);
   useEffect(() => {
     if (!exe) return
     Dota2_detection(exe, err => {
       setDota2State(err)
-      return exe !== ''
+      const pathname = locationRef.current.pathname
+      const end = pathname !== '/'
+      return end || isMinimi.current
     })
-  }, [exe])
+  }, [exe, location, isMinimized])
   //同步全局标题
   onTitleChange()
 

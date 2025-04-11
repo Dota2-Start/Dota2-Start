@@ -5,7 +5,6 @@ import { fileData } from './filedata';
 import { LocalStor } from '@/mod/locale_load';
 import { Tooltip, Button, Space, Switch, Result } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
-import { SwitchChangeEventHandler } from 'antd/es/switch'; 
 export default () => {
     const { Local } = LocalStor()
     const iLocal = Local?.option?.['part-2']
@@ -38,9 +37,13 @@ export default () => {
                                             type='text'
                                         ></Button>
                                     </Tooltip>
-                                    <Switch
-                                        onChange={item?.onchange as unknown as SwitchChangeEventHandler}
-                                    />
+                                    <Button
+                                        size='small'
+                                        onClick={item?.onchange}
+                                    >
+                                        {item.btnText}
+                                    </Button>
+
                                 </Space>
                             }
                             style={{ maxWidth: 300 }}

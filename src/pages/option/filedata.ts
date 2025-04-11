@@ -1,15 +1,22 @@
 import { SwitchProps } from 'antd';
+import { MouseEventHandler } from 'react';
 export interface FileData {
     value: string,
     disabled?: boolean
-    onchange: (e: SwitchProps['onChange']) => void
+    btnText?: string
+    onchange?: MouseEventHandler<HTMLElement>
 }
 export const fileData: FileData[] = [
     {
         value: "cn-harmony",
-        disabled: true,
-        onchange: (e) => {
-            console.log(e)
+        btnText:"注入",
+        onchange:  (e) => {
+            return new Promise<void>((resolve) => {
+                setTimeout(() => {
+                    console.log(e);
+                    resolve(); // 延迟结束后解析 Promise
+                }, 1000);
+            });
         }
     },
 

@@ -47,7 +47,6 @@ export const PlayDota = () => {
              appWindow.minimize()
          }, 3000); */
     }
-    console.log('loading', loading);
 
     message.config({
         top: 100,

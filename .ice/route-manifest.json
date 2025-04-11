@@ -143,6 +143,15 @@
         ]
       },
       {
+        "path": "windowEvent",
+        "id": "windowEvent",
+        "parentId": "layout",
+        "file": "windowEvent.ts",
+        "componentName": "windowevent",
+        "layout": false,
+        "exports": []
+      },
+      {
         "path": "protocol",
         "id": "protocol",
         "parentId": "layout",

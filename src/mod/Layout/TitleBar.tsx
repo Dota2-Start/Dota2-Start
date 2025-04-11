@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, {  } from 'react';
 import { FullscreenExitOutlined, FullscreenOutlined } from '@ant-design/icons';
 import { Button, ButtonProps, Divider, Flex } from 'antd';
 import { CloseIcon, ShrinkIcon } from "@/mod/svg";
 import { Window } from '@tauri-apps/api/window'; // 引入 appWindow
-import { getCurrentWebview } from '@tauri-apps/api/webview';
+
 import Locale from './Locale';
+import { Appinfo } from '../store';
 
 const appWindow = new Window('main');
 
@@ -12,45 +13,9 @@ interface Props {
     locale?: string
 }
 
-let times: any = null
-
 const App: React.FC<Props> = () => {
     // 设置状态来存储 isMaximized 和 Webview
-    const [isMaximized, setIsMaximized] = useState<boolean | null>(null);
-    const [webview, setWebview] = useState<any>(null);
-
-    // 获取isMax和webview
-    useEffect(() => {
-        const fetchWindowData = async () => {
-            const isMax = await appWindow.isMaximized();
-            const Webview = await getCurrentWebview();
-
-            setIsMaximized(isMax); // 更新最大化状态
-            setWebview(Webview); // 设置Webview
-        };
-
-        fetchWindowData();
-    }, []); // 只在组件加载时获取一次
-    useEffect(() => {
-        // 监听窗口大小变化
-        clearTimeout(times);
-        times = setTimeout(() => {
-            appWindow.onResized(async () => {
-                const isMinimized = await appWindow.isMinimized();
-                setIsMaximized(await appWindow.isMaximized());
-                if (isMinimized) {
-                    webview.hide();
-                } else {
-                    webview.show();
-                }
-            });
-        }, 500);
-
-    }, [webview]); // 只有当 webview 改变时才重新执行
-    // 如果没有获取到 isMax 和 Webview，不渲染界面
-    if (isMaximized === null || webview === null) {
-        return null; // 或者你可以显示一个加载状态
-    }
+    const { isMaximized } = Appinfo()
 
     const TitleButton: ButtonProps[] = [
         {

@@ -27,11 +27,13 @@ export const Dota2File = create<Dota2PathType>((set) => ({
 export interface AppinfoType {
     v: VersionInfo;
     name:string
+    isMaximized:boolean
     setAppinfo: (e: Partial<AppinfoType>) => void
 }
 export const Appinfo = create<AppinfoType>((set) => ({
     v: { version: '0.0.1' },
     name: 'Dota 2 Start',
+    isMaximized:false,
     setAppinfo: (e) => set((state) => ({
         ...state, // 保留现有的状态
         ...e,     // 更新传入的字段
