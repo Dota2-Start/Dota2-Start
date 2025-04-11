@@ -68,7 +68,7 @@ const App: React.FC = () => {
       setDota2State(err)
       return exe !== ''
     })
-  }, [])
+  }, [exe])
   //同步全局标题
   onTitleChange()
 

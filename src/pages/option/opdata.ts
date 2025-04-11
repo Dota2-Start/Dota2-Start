@@ -32,7 +32,7 @@ export const DotaSource = [
                 "value": "-w 1920 -h 1080"
             },
             {
-                "value": "+fps_max 60"
+                "value": "+fps_max 999"
             }
         ]
     },
