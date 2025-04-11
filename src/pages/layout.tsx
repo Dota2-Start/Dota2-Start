@@ -45,7 +45,7 @@ const App: React.FC = () => {
   const { colorBgContainer, colorBorder } = antdToken
   const { Language } = AppDataStore()
   const { setLocal } = LocalStor()
-  const { setAppinfo, isMaximized } = Appinfo()
+  const { setAppinfo } = Appinfo()
   const { setDota2State } = Dota2stateStore()
   const { exe } = Dota2File();
   const { isMinimized } = windowEvent()

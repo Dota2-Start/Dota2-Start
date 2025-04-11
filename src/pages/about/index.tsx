@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, {  } from 'react';
 import { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';
 import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
-import { getVersion } from '@tauri-apps/api/app';
 import { UserProtocol } from '../protocol';
 import { MacScrollbar } from 'mac-scrollbar';
 import UpDatebtn from './updates'
 import { LocalStor } from '@/mod/locale_load';
 import { AuthorT } from './author';
 import { motion } from 'framer-motion';
-import { parseVersion, VersionInfo } from '@/mod/V_analysis';
+import { VersionInfo } from '@/mod/V_analysis';
 import { Appinfo } from '@/mod/store';
+import { createAndClickLink } from '@/mod/createAndClickLink';
 
 const { Title, Paragraph, Link } = Typography;
 
@@ -118,13 +118,13 @@ const AboutProgramPage: React.FC = () => {
                     <Button
                         type="primary"
                         icon={<GlobalOutlined />}
-                        onClick={() => window.open(programData.website)}
+                        onClick={() => createAndClickLink(programData.website)}
                     >
                         {about?.BtnA}
                     </Button>
                     <Button
                         icon={<GithubOutlined />}
-                        onClick={() => window.open(programData.repository)}
+                        onClick={() =>createAndClickLink(programData.repository)}
                     >
                         {about?.BtnB}
                     </Button>

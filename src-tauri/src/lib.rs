@@ -6,6 +6,7 @@ use std::process::Command;
 use steam::dota_finder::find_dota2_dir;
 use steam::dota_finder::get_steam_path;
 use steam::ProcessStatus;
+use std::fs;
 use Local::language_file;
 use Local::LocaleManager;
 #[tauri::command]
@@ -59,7 +60,33 @@ fn start_monitoring(exe_path: &str) -> i32 {
         }
     }
 }
+#[tauri::command]
+async fn copy_file_command(source: String, destination_dir: String) -> Result<String, String> {
+    let source_path = Path::new(&source);
+    
+    // 检查源文件是否存在
+    if !source_path.exists() {
+        return Err(format!("源文件 '{}' 不存在。", source));
+    }
 
+    // 目标目录路径处理
+    let destination_path = Path::new(&destination_dir);
+    if !destination_path.exists() {
+        return Err(format!("目标目录 '{}' 不存在。", destination_dir));
+    }
+
+    // 拼接目标文件路径
+    let destination_file_path = destination_path.join(source_path.file_name().unwrap());
+    
+    // 确保路径字符串正确
+    println!("准备复制文件: 源路径: {:?}, 目标路径: {:?}", source_path, destination_file_path);
+
+    // 执行文件复制操作
+    match fs::copy(&source_path, &destination_file_path) {
+        Ok(_) => Ok("".to_string()),  // 复制成功，返回空字符串
+        Err(e) => Err(format!("文件复制失败: {}", e)),
+    }
+}
 #[tauri::command]
 fn exists(path: &str) -> bool {
     let path = Path::new(path);
@@ -89,7 +116,8 @@ pub fn run() {
             getsteam_path,
             start_monitoring,
             locale_load_i,
-            locale_load
+            locale_load,
+            copy_file_command
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
