@@ -354,7 +354,7 @@ const createRoutes: CreateRoutes = ({
       index: undefined,
       id: 'windowEvent',
       exact: true,
-      exports: [],
+      exports: ["windowEvent"],
     },{
       path: 'protocol',
       async lazy() {

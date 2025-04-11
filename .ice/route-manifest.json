@@ -149,7 +149,9 @@
         "file": "windowEvent.ts",
         "componentName": "windowevent",
         "layout": false,
-        "exports": []
+        "exports": [
+          "windowEvent"
+        ]
       },
       {
         "path": "protocol",

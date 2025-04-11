@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { StateCard } from "./StateCard";
 import { LocalStor } from "@/mod/locale_load";
 import { useEffect, useState } from "react";
+import Updates from "../about/updates";
 //const videoData = await video()
 function App() {
   const { Local } = LocalStor()
@@ -20,6 +21,7 @@ function App() {
   }, [])
   return (
     <>
+ 
       <Bgvideo {...videoData}></Bgvideo>
       <motion.div
         key="anchor"
@@ -39,9 +41,9 @@ function App() {
             style={{
               width: '100%',
               height: 'auto',
-              marginBlock: 36
+              marginBlock: 0
             }}
-            gap={16}
+            gap={8}
             vertical
             align="center"
             wrap="nowrap"
@@ -58,7 +60,7 @@ function App() {
               </motion.span>
             </Flex>
             <PlayDota />
-
+            <Updates />
           </Flex>
 
           <NewBox />
