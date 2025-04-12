@@ -30,6 +30,7 @@
     "antd": "^5.24.3",
     "framer-motion": "^12.6.2",
     "mac-scrollbar": "^0.13.8",
+    "rc-queue-anim": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",

@@ -7,13 +7,14 @@ import { ArgsProps } from "antd/es/message/interface";
 const DotaKey = "start_start-104"
 import { LocalStor } from "@/mod/locale_load";
 import { Dota2stateStore, stratSteam } from "@/mod/status";
+import { Start_cmd } from "./Start_cmd";
 
 export const PlayDota = () => {
     const { Local } = LocalStor()
     const iLocal = Local['/']
     const megLocal = Local?.$ShowMeg
-    const { isExe,steamExt } = Dota2File();
-    const { args } = Dota2ArgsLite()
+    const { isExe, steamExt } = Dota2File();
+    const { args, replace } = Dota2ArgsLite()
     const [loading, setLoading] = useState(false);
     const [shake, setShake] = useState(false);
     const [ButtonText, setButtonText] = useState(iLocal?.startBtn);
@@ -26,7 +27,7 @@ export const PlayDota = () => {
         } else {
             initializeBtn()
         }
-    }, [Dota2State,iLocal])
+    }, [Dota2State, iLocal])
 
     const Shake = () => {
         setShake(true);
@@ -72,7 +73,7 @@ export const PlayDota = () => {
             // 如果未找到 exe 文件，触发抖动动画
 
         } else {
-            let steamArgs = ['-applaunch', '570', ...args]
+            const steamArgs = Start_cmd(args, replace,true)
             stratSteam(ShowMeg, steamExt, steamArgs, megLocal, (e) => {
                 if (e) {
                     ShowMeg(

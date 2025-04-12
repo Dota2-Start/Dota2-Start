@@ -26,14 +26,14 @@ export const Dota2File = create<Dota2PathType>((set) => ({
 
 export interface AppinfoType {
     v: VersionInfo;
-    name:string
-    isMaximized:boolean
+    name: string
+    isMaximized: boolean
     setAppinfo: (e: Partial<AppinfoType>) => void
 }
 export const Appinfo = create<AppinfoType>((set) => ({
     v: { version: '0.0.1' },
     name: 'Dota 2 Start',
-    isMaximized:false,
+    isMaximized: false,
     setAppinfo: (e) => set((state) => ({
         ...state, // 保留现有的状态
         ...e,     // 更新传入的字段
@@ -63,14 +63,18 @@ export const AppDataStore = create<AppDataType>()(
 );
 export interface Dota2ArgsLiteType {
     args: string[];
+    replace: { fps: number }
     setArgs: (e: Dota2ArgsLiteType['args']) => void
+    setReplace: (e: Partial<Dota2ArgsLiteType['replace']>) => void
 }
 // 使用双调用语法创建 store
 export const Dota2ArgsLite = create<Dota2ArgsLiteType>()(
     persist(
         (set) => ({
             args: [],
+            replace: { fps: 60 },
             setArgs: (args: Dota2ArgsLiteType['args']) => set({ args }),
+            setReplace: (replace: Dota2ArgsLiteType['replace']) => set(e => ({ ...e, replace })),
         }),
         {
             name: 'Dota2Start-local-Dota2SargsLite', // 存储在 localStorage 中的 key

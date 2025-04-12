@@ -1,4 +1,4 @@
-export const DotaSource = [
+export const DotaSource= [
     {
         "value": "basic_settings",
         "children": [
@@ -32,7 +32,7 @@ export const DotaSource = [
                 "value": "-w 1920 -h 1080"
             },
             {
-                "value": "+fps_max 999"
+                "value": "+fps_max {fps}"
             }
         ]
     },

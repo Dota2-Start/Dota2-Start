@@ -31,6 +31,31 @@ const createRoutes: CreateRoutes = ({
     exports: ["default"],
     layout: true,
     children: [{
+      path: 'Start_cmd',
+      async lazy() {
+      const componentModule = await import(/* webpackChunkName: "p_index-start_cmd" */ '@/pages/index/Start_cmd');
+      return {
+        ...componentModule,
+        Component: () => WrapRouteComponent({
+          routeId: 'Start_cmd',
+          isLayout: false,
+          routeExports: componentModule,
+        }),
+        loader: createRouteLoader({
+          routeId: 'Start_cmd',
+          requestContext,
+          renderMode,
+          module: componentModule,
+        }),
+      };
+    },
+      errorElement: <RouteErrorComponent />,
+      componentName: 'index-start_cmd',
+      index: undefined,
+      id: 'Start_cmd',
+      exact: true,
+      exports: ["Start_cmd"],
+    },{
       path: 'StateCard',
       async lazy() {
       const componentModule = await import(/* webpackChunkName: "p_index-statecard" */ '@/pages/index/StateCard');
@@ -55,6 +80,31 @@ const createRoutes: CreateRoutes = ({
       id: 'StateCard',
       exact: true,
       exports: ["StateCard"],
+    },{
+      path: 'option/Cardbody',
+      async lazy() {
+      const componentModule = await import(/* webpackChunkName: "p_option-cardbody" */ '@/pages/option/Cardbody');
+      return {
+        ...componentModule,
+        Component: () => WrapRouteComponent({
+          routeId: 'option/Cardbody',
+          isLayout: false,
+          routeExports: componentModule,
+        }),
+        loader: createRouteLoader({
+          routeId: 'option/Cardbody',
+          requestContext,
+          renderMode,
+          module: componentModule,
+        }),
+      };
+    },
+      errorElement: <RouteErrorComponent />,
+      componentName: 'option-cardbody',
+      index: undefined,
+      id: 'option/Cardbody',
+      exact: true,
+      exports: ["Cardbody"],
     },{
       path: 'option/filedata',
       async lazy() {

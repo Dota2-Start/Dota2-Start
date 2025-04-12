@@ -9,6 +9,17 @@
     ],
     "children": [
       {
+        "path": "Start_cmd",
+        "id": "Start_cmd",
+        "parentId": "layout",
+        "file": "index/Start_cmd.ts",
+        "componentName": "index-start_cmd",
+        "layout": false,
+        "exports": [
+          "Start_cmd"
+        ]
+      },
+      {
         "path": "StateCard",
         "id": "StateCard",
         "parentId": "layout",
@@ -17,6 +28,17 @@
         "layout": false,
         "exports": [
           "StateCard"
+        ]
+      },
+      {
+        "path": "option/Cardbody",
+        "id": "option/Cardbody",
+        "parentId": "layout",
+        "file": "option/Cardbody.tsx",
+        "componentName": "option-cardbody",
+        "layout": false,
+        "exports": [
+          "Cardbody"
         ]
       },
       {

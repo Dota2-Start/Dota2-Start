@@ -30,7 +30,7 @@
   "bundle": {
     "active": true,
     "targets": ["nsis"],
-    "resources": ["locale/*"] ,
+    "resources": ["locale/*","gMod/*"] ,
     "windows": {
       "nsis": {
         "languages": [
