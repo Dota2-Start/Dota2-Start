@@ -9,23 +9,35 @@ export interface UpdateType {
   }
   
   export function compareVersions(a: string, b: string): number {
-    const aParts = a.split(".").map(Number);
-    const bParts = b.split(".").map(Number);
+    const [aBase, aPre] = splitPreRelease(a);
+    const [bBase, bPre] = splitPreRelease(b);
+  
+    // 先比较主版本号部分
+    const aParts = aBase.split(".").map(Number);
+    const bParts = bBase.split(".").map(Number);
     const len = Math.max(aParts.length, bParts.length);
     for (let i = 0; i < len; i++) {
-      const aNum = aParts[i] || 0;
-      const bNum = bParts[i] || 0;
-      if (aNum !== bNum) {
-        return aNum - bNum;
-      }
+      const diff = (aParts[i] || 0) - (bParts[i] || 0);
+      if (diff !== 0) return diff;
+    }
+  
+    // 主版本相等，再比较 prerelease
+    // 无 prerelease > 有 prerelease（稳定版优先）
+    if (aPre === null && bPre !== null) return 1;
+    if (aPre !== null && bPre === null) return -1;
+    // 如果两者都有 prerelease，则按数字比大小
+    if (aPre !== null && bPre !== null) {
+      return aPre - bPre;
     }
     return 0;
   }
-  
   export function isNewerVersion(current: string, latest: string): boolean {
     return compareVersions(current, latest) < 0;
   }
-  
+  export function splitPreRelease(ver: string): [string, number | null] {
+    const [base, pre] = ver.replace(/^v/, "").trim().split("-beta.");
+    return [base, pre !== undefined ? Number(pre) : null];
+  }
   export function parseBetaVersion(version: string): { base: string; beta: number } | null {
     const parts = version.split("-beta.");
     if (parts.length !== 2) return null;

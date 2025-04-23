@@ -43,7 +43,6 @@ export default () => {
                 >
                     {Start_cmd(args, replace).map((e, i) =>
                         <Tag key={i} color='cyan' bordered={false}>{e}</Tag>
-
                     )}
                 </QueueAnim>
             </Flex>

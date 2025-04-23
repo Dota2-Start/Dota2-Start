@@ -14,14 +14,18 @@ export interface DotaSourceItem {
     children?: DotaSourceItem[];  // 可能包含 children
 }
 function parseResolution(args: string) {
-    if (typeof args !== 'string') return { w: 1920, h: 1080 };
+    const input = '-w 1924 -h 1080';
+    const regex = /-(\w+)\s+(\d+)/g;
 
-    const wMatch = args.match(/-w\\s*(\\d+)/);
-    const hMatch = args.match(/-h\\s*(\\d+)/);
-    return {
-        w: wMatch ? parseInt(wMatch[1], 10) : 1920,
-        h: hMatch ? parseInt(hMatch[1], 10) : 1080,
-    };
+    const result: Record<string, string> = {};
+    let match;
+
+    while ((match = regex.exec(input)) !== null) {
+        const key = match[1]; // 'w'
+        const value = match[2]; // '1924'
+        result[key] = value;
+    } 
+    return result
 }
 // 将组件转为 React 函数组件
 export const Cardbody = (es: ComponentProps) => {
@@ -56,16 +60,18 @@ export const Cardbody = (es: ComponentProps) => {
                 break;
             case 'ppi':
                 const result = parseResolution(iValue);
+                console.log('result', result);
+                
+                let newjson = result;
                 const onPpi = (type: 'w' | 'h', value: number | null) => {
                     console.log('onPpi', type, value);
-                    const newjson = {
-                        ...result,
+                    newjson = {
+                        ...newjson,
                         [type]: value,
                     }
-                    console.log(newjson);
-
                     debouncedUpdate(`-w ${newjson.w} -h ${newjson.h}`)
                 }
+                console.log('newjson', iValue)
                 backDiv = (
                     <div onClick={(e) => e.stopPropagation()}>
                         <Space >
@@ -73,7 +79,7 @@ export const Cardbody = (es: ComponentProps) => {
                                 size="small"
                                 min={100}
                                 max={100000}
-                                defaultValue={result.w || 1920}
+                                defaultValue={newjson.w || 1920}
                                 onChange={ev => onPpi('w', ev)}
                             />
                             *
@@ -81,7 +87,7 @@ export const Cardbody = (es: ComponentProps) => {
                                 size="small"
                                 min={100}
                                 max={100000}
-                                defaultValue={result.h || 1080}
+                                defaultValue={newjson.h || 1080}
                                 onChange={ev => onPpi('h', ev)}
                             />
                         </Space>
