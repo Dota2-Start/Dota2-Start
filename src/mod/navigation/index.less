@@ -14,7 +14,7 @@ nav.nav
 nav.nav a
 {
     position: relative;
-    width: 33.333%;
+    width: auto;
     display: table-cell;
     text-align: center;
     color: #949494;
@@ -79,7 +79,15 @@ nav.nav a:nth-child(3):after
 {
     background-color: palevioletred;
 }
+nav.nav a:nth-child(4):before
+{
+    background-color: rgb(217, 255, 0);
+}
 
+nav.nav a:nth-child(4):after
+{
+    background-color: rgb(255, 217, 0)
+}
 #indicator
 {
     position: absolute;
@@ -113,9 +121,13 @@ nav.nav a:nth-child(2):hover ~ #indicator
    // left: 34% !important;
     background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
-
 nav.nav a:nth-child(3):hover ~ #indicator
 {
    // left: 70% !important;
-    background: linear-gradient(130deg, purple, palevioletred);
+   background: linear-gradient(130deg, purple, palevioletred);
+}
+
+nav.nav a:nth-child(4):hover ~ #indicator
+{
+    background: linear-gradient(130deg, rgb(217, 255, 0), rgb(255, 217, 0));
 }

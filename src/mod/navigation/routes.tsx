@@ -8,6 +8,9 @@ const menuItems: ItemType<MenuItemType>[] = [
         key: '/option',
     },
     {
+        key: '/hud',
+    },
+    {
         key: '/about',
     },
 ];

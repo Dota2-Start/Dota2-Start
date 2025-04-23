@@ -29,7 +29,7 @@ export const DotaSource= [
                 "value": "-windowed -noborder"
             },
             {
-                "value": "-w 1920 -h 1080"
+                "value": "{ppi}"
             },
             {
                 "value": "+fps_max {fps}"

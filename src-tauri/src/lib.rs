@@ -1,14 +1,18 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 mod Local;
+mod gsi;
 mod steam;
+use std::fs;
 use std::path::Path;
 use std::process::Command;
+use std::sync::Mutex;
 use steam::dota_finder::find_dota2_dir;
 use steam::dota_finder::get_steam_path;
 use steam::ProcessStatus;
-use std::fs;
 use Local::language_file;
 use Local::LocaleManager;
+
+static PORT: Mutex<u16> = Mutex::new(3000);
 #[tauri::command]
 fn locale_load_i() -> String {
     // 使用 match 来处理 Result 类型
@@ -28,6 +32,44 @@ fn locale_load_i() -> String {
     println!("语言索引:\n{}", index_json);
     index_json
 }
+/// 启动 GSI 服务器
+#[tauri::command]async fn gsi_server() {
+    // 创建 GsiServer 实例
+    let server = gsi::GsiServer::new();
+
+    // 注册回调，处理接收到的 GameState 数据
+    server.register_callback(|state| {
+        println!("接收到游戏状态：{:#?}", state);
+    });
+
+    // 动态调整全局端口并启动服务器
+    let final_port = {
+        // 获取当前端口
+        let port = {
+            let port_guard = PORT.lock().unwrap();
+            *port_guard
+        };
+
+        // 使用同步检测方式启动服务器
+        let result = server.run_with_dynamic_port_sync(port);
+
+        // 更新全局端口为检测成功后的端口
+        {
+            let mut port_guard = PORT.lock().unwrap();
+            *port_guard = result;
+        }
+        result
+    };
+
+    println!("GSI 服务器最终启动端口为：{}", final_port);
+
+    // 主进程其它逻辑（例如 Tauri 界面保持响应）
+    loop {
+        tokio::time::sleep(tokio::time::Duration::from_secs(10)).await;
+        println!("主程序正常运行中...");
+    }
+}
+
 #[tauri::command]
 fn locale_load(key: &str) -> String {
     let path = format!("locale/{}.json", key);
@@ -51,7 +93,7 @@ fn getDota_path() -> String {
 fn start_monitoring(exe_path: &str) -> i32 {
     match ProcessStatus::check_process(exe_path) {
         Ok(status) => {
-            println!("进程状态: {} {}",exe_path, status.status);
+            println!("进程状态: {} {}", exe_path, status.status);
             status.status // 直接返回状态码
         }
         Err(err) => {
@@ -63,7 +105,7 @@ fn start_monitoring(exe_path: &str) -> i32 {
 #[tauri::command]
 async fn copy_file_command(source: String, destination_dir: String) -> Result<String, String> {
     let source_path = Path::new(&source);
-    
+
     // 检查源文件是否存在
     if !source_path.exists() {
         return Err(format!("源文件 '{}' 不存在。", source));
@@ -77,13 +119,16 @@ async fn copy_file_command(source: String, destination_dir: String) -> Result<St
 
     // 拼接目标文件路径
     let destination_file_path = destination_path.join(source_path.file_name().unwrap());
-    
+
     // 确保路径字符串正确
-    println!("准备复制文件: 源路径: {:?}, 目标路径: {:?}", source_path, destination_file_path);
+    println!(
+        "准备复制文件: 源路径: {:?}, 目标路径: {:?}",
+        source_path, destination_file_path
+    );
 
     // 执行文件复制操作
     match fs::copy(&source_path, &destination_file_path) {
-        Ok(_) => Ok("".to_string()),  // 复制成功，返回空字符串
+        Ok(_) => Ok("".to_string()), // 复制成功，返回空字符串
         Err(e) => Err(format!("文件复制失败: {}", e)),
     }
 }
@@ -117,7 +162,8 @@ pub fn run() {
             start_monitoring,
             locale_load_i,
             locale_load,
-            copy_file_command
+            copy_file_command,
+            gsi_server
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

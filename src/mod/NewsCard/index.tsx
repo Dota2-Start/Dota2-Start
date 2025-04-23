@@ -3,7 +3,9 @@ import { motion, Variants } from 'framer-motion';
 import { Typography } from 'antd';
 import { removeBBCodeTags } from './removeBBCodeTags';
 import { appid, steamUrl } from '../dota2_init';
-import {createAndClickLink} from '@/mod/createAndClickLink';
+import { createAndClickLink } from '@/mod/createAndClickLink';
+import { Tags } from '../Tags';
+import { LocalStor } from '../locale_load';
 const { Paragraph } = Typography;
 
 export interface NewsCardProps {
@@ -12,6 +14,7 @@ export interface NewsCardProps {
   date: string;
   summary: string;
   gid: string
+  type: number
 }
 
 // 让容器悬浮时向上移动，避免标题超出
@@ -29,9 +32,17 @@ const summaryVariants: Variants = {
   initial: { opacity: 0 },
   hover: { opacity: 1 },
 };
-
-const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid }) => {
+export const NewType = {
+  13: '更新',
+  14: '公告',
+  28: '活动',
+}
+const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid, type }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { Local } = LocalStor()
+  const { event_type } = Local
+  console.log(type);
+  
   return (
     <div
       className="news-card"
@@ -50,6 +61,17 @@ const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => createAndClickLink(`${steamUrl}/news/app/${appid}/view/${gid}`)}
     >
+      <Tags
+        style={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+        }}
+
+        bordered={false}
+        color="green"
+        subtitle={event_type[type - 1]}>
+      </Tags>
       {/* 文本内容容器，默认靠底部，悬浮时高度扩展并整体上移 */}
       <motion.div
         className="content-container"
@@ -71,6 +93,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid
           overflow: 'hidden',
         }}
       >
+
         {/* 标题和日期 */}
         <motion.div
           variants={textVariants}

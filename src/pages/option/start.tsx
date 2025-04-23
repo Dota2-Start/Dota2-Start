@@ -42,7 +42,7 @@ export default () => {
                     type={['scaleBig', 'scale']}
                 >
                     {Start_cmd(args, replace).map((e, i) =>
-                        <Tag key={e} color='cyan' bordered={false}>{e}</Tag>
+                        <Tag key={i} color='cyan' bordered={false}>{e}</Tag>
 
                     )}
                 </QueueAnim>

@@ -70,7 +70,8 @@ export default () => {
                                 </Flex>
                             ) : (
                                 newData.map((item: any, index) => {
-                                    if (!item?.jsondata || item.event_type !== 13) return null;
+                                    if (!item?.jsondata || item.event_type === 12) return null;
+                                    //if (item.event_type !== 13 && item.event_type !== 28) return null;
                                     const jsondata = JSON.parse(item?.jsondata);
                                     const clanid = item.announcement_body.clanid;
                                     const imgurl = `https://clan.cloudflare.steamstatic.com/images/${clanid}/${jsondata?.localized_capsule_image[0]}`;
@@ -97,6 +98,7 @@ export default () => {
                                             <NewsCard
                                                 key={item.gid}
                                                 gid={item.gid}
+                                                type={item.event_type}
                                                 title={item.announcement_body.headline}
                                                 imageUrl={imgurl}
                                                 summary={item.announcement_body.body}
