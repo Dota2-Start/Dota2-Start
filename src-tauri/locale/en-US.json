@@ -1,0 +1,184 @@
+{
+    "value": "english",
+    "label": "English",
+    "navigation": {
+        "/": "Home",
+        "/about": "About",
+        "/settings": "Settings",
+        "/option": "Options",
+        "/strat": "Guides",
+        "/hud": "HUD"
+    },
+    "/": {
+        "stateCord": [
+            "{g} Install Status",
+            "{g} Launchable"
+        ],
+        "description": "Welcome",
+        "startBtn": "Launch {}",
+        "service": "{} Running"
+    },
+    "/option": {
+        "anchor": {
+            "part-1": "Launch Options",
+            "part-2": "File Injection"
+        },
+        "part-1": {
+            "basic_settings": "Basic Settings",
+            "performance_optimization": "Performance Optimization",
+            "network_settings": "Network Settings",
+            "developer_options": "Developer Options",
+            "miscellaneous_settings": "Miscellaneous Settings",
+            "-novid": "Skip Startup Movie",
+            "-novid_des": "Skips the startup animation of {g} and goes directly to the main interface.",
+            "-perfectworld": "Perfect World Mode",
+            "-perfectworld_des": "Launches {g} in Perfect World mode, suitable for players in China.",
+            "-console": "Enable Console",
+            "-console_des": "Enables the developer console in {g}, allowing input of debugging commands.",
+            "-language schinese": "Set Language to Simplified Chinese",
+            "-language schinese_des": "Sets the {g} interface language to Simplified Chinese but keeps English voiceovers.",
+            "-high": "High Priority",
+            "-high_des": "Sets the CPU priority of the {g} process to high, which may improve {g} performance.",
+            "-fullscreen": "Fullscreen Mode",
+            "-fullscreen_des": "Launches {g} in fullscreen mode.",
+            "-windowed -noborder": "Borderless Window Mode",
+            "-windowed -noborder_des": "Runs {g} in borderless window mode.",
+            "{ppi}": "Set Resolution",
+            "{ppi}_des": "Modifies the {g} resolution",
+            "+fps_max {fps}": "Increase Maximum FPS",
+            "+fps_max {fps}_des": "Sets the {g} frame rate, up to a maximum of 1000 FPS.",
+            "-tcp": "Use TCP Protocol",
+            "-tcp_des": "Forces {g} to use the TCP protocol for network connections, suitable for solving UDP connection issues.",
+            "-udp": "Use UDP Protocol",
+            "-udp_des": "Forces {g} to use the UDP protocol for network connections. This is the default setting.",
+            "-dev": "Enable Developer Mode",
+            "-dev_des": "Enables developer mode, unlocking additional debugging features.",
+            "-enable_addons": "Allow Custom Content",
+            "-enable_addons_des": "Allows the engine to load custom content within the {g} folder and replace VPK files.",
+            "-override_vpk": "Override VPK Files",
+            "-override_vpk_des": "Allows the engine to search for custom content within the {g} folder and replace VPK files. May affect matchmaking functionality.",
+            "-nomicsettings": "Disable Microphone Settings",
+            "-nomicsettings_des": "Prevents {g} from modifying microphone output values, suitable for players using other voice software.",
+            "-nosound": "Disable Sound",
+            "-nosound_des": "Turns off all sounds within {g}.",
+            "-map dota": "Load Map",
+            "-map dota_des": "Preloads the map at startup, reducing loading time when entering {g}.",
+            "-32bit": "Use 32-bit Mode",
+            "-32bit_des": "Runs {g} in 32-bit mode, suitable for older systems or hardware."
+        },
+        "part-2": {
+            "cn-harmony": "CN Anti-Harmony",
+            "cn-harmony_des": "Turns black blood into red blood, some skill/item icons are consistent with the international version when enabled.",
+            "cn-harmony_tip": "Effect files provided by Bilibili @iFuStudio"
+        }
+    },
+    "/about": {
+        "title": "About",
+        "description": "{D} is a smart launcher designed for 《Dota2》 players. It allows you to quickly manage {g} launch options and provides customized functional modules to help players quickly enter the battlefield and unleash their competitive potential.",
+        "version": "Current Version",
+        "author": "Developers",
+        "copyright": "Copyright",
+        "license": "License",
+        "blurbTitle": "About",
+        "blurb": "{D} is a professional {} launcher, providing convenient {g} management and optimization features.",
+        "UserAgreement": "User Agreement",
+        "BtnA": "Visit Official Website",
+        "BtnB": "Visit Source Code Repository"
+    },
+    "/hud": {
+        "Table_Header": [
+            "Task Name",
+            "Description",
+            "Execution Cycle (ms)",
+            "Status",
+            "Actions"
+        ],
+        "Table_option": [
+            "Modify",
+            "Delete"
+        ],
+        "Table_Add": "Add Task",
+        "Table_Modify": "Modify Task",
+        "Table_title": "Timed Reminders",
+        "Table_tooltip": "Reminders based on in-game time"
+    },
+    "$event_type": [
+        "News",
+        "{g} Event",
+        "Party",
+        "Meeting",
+        "Special",
+        "Music & Art",
+        "Sports",
+        "Travel",
+        "Chat",
+        "{g} Release",
+        "Live Stream",
+        "Minor Update",
+        "Update Preview",
+        "Major Update",
+        "DLC Release",
+        "Coming Soon",
+        "Esports Live",
+        "Dev Stream",
+        "Celeb Stream",
+        "{g} Sale",
+        "Item Sale",
+        "XP Bonus",
+        "{g} Drop",
+        "{g} Perk",
+        "{g} Challenge",
+        "{g} Contest",
+        "Offline Event",
+        "Announcement",
+        "Beta",
+        "{g} Content",
+        "Free Trial",
+        "Season Start",
+        "Season Update",
+        "Cross-Platform",
+        "{g} Activity"
+    ],
+    "$ShowMeg": {
+        "detection": "Detecting {g} status",
+        "content": "Do you want to exit {g}?",
+        "loading": "Waiting for {} to launch...",
+        "gameEnd": "{} has exited!",
+        "timeout": "{} launch timed out!",
+        "sNotStarted": "{s} is not running!",
+        "logOn": "Logging into {s}...",
+        "sstart": "{s} launched successfully",
+        "sloading": "Waiting for {s} to launch...",
+        "gameReady": "Launching {} soon",
+        "sReady": "Launching {s}...",
+        "serror": "Failed to launch {s}!"
+    },
+    "$upModal": {
+        "textA": [
+            "Checking:",
+            "New version found",
+            "Latest version"
+        ],
+        "textB": [
+            "Updating......",
+            "View Updates",
+            "Check for Updates"
+        ],
+        "title": "New version available:",
+        "cancelText": "Cancel",
+        "okText": "Go to Update",
+        "upData": "Changelog",
+        "noText": "Ignore This Update",
+        "noText2": "Confirm"
+    },
+    "$error": {
+        "403": "Sorry, this page is not yet available. Please wait patiently for it to be unlocked."
+    },
+    "$": {
+        "gameName": "Dota 2",
+        "D": "Dota2 Strat",
+        "g": "Game",
+        "s": "Steam",
+        "git": "Github"
+    }
+}

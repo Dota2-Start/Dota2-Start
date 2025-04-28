@@ -25,7 +25,6 @@ export default async function getVideoInfo() {
         // 提取视频地址
         const sourceElement = videoElement.querySelector("source");
         const videoUrl = sourceElement ? sourceElement.getAttribute("src") : null;
-
         // 返回提取的结果
         return {
             poster,

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
-import { Typography } from 'antd';
+import { Tooltip, Typography } from 'antd';
 import { removeBBCodeTags } from './removeBBCodeTags';
 import { appid, steamUrl } from '../dota2_init';
 import { createAndClickLink } from '@/mod/createAndClickLink';
 import { Tags } from '../Tags';
 import { LocalStor } from '../locale_load';
-const { Paragraph } = Typography;
+const { Paragraph, Title } = Typography;
 
 export interface NewsCardProps {
   imageUrl: string;
@@ -40,9 +40,7 @@ export const NewType = {
 const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid, type }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { Local } = LocalStor()
-  const { event_type } = Local
-  console.log(type);
-  
+  const event_type = Local?.['$event_type']
   return (
     <div
       className="news-card"
@@ -70,7 +68,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid
 
         bordered={false}
         color="green"
-        subtitle={event_type[type - 1]}>
+        subtitle={event_type?.[type - 1]}>
       </Tags>
       {/* 文本内容容器，默认靠底部，悬浮时高度扩展并整体上移 */}
       <motion.div
@@ -101,7 +99,11 @@ const NewsCard: React.FC<NewsCardProps> = ({ imageUrl, title, date, summary, gid
           animate={isHovered ? 'hover' : 'initial'}
           transition={{ duration: 0.3 }}
         >
-          <h3 style={{ margin: 0, fontSize: '18px' }}>{title}</h3>
+          <Tooltip title={title} >
+            <Title ellipsis={{ rows: 1, expandable: false }} style={{ margin: 0 }} level={4}>
+              {title}
+            </Title>
+          </Tooltip>
           <p style={{ margin: '4px 0 0', fontSize: '14px' }}>{date}</p>
         </motion.div>
         {/* 简介 */}

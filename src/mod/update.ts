@@ -84,12 +84,12 @@ export interface UpdateType {
             releaseNotes: latestBeta.body,
             releaseUrl: latestBeta.html_url,
           };
-          console.log(`检测到新测试版本: v${update.latestVersion}`);
+          //console.log(`检测到新测试版本: v${update.latestVersion}`);
           return update;
         } else {
           // 2. 如果没有新的 beta，回退检测正式版更新
           const officialReleases = releases.filter((r: any) => !r.prerelease && !r.draft);
-          console.log("beta fallback - 正式版本:", officialReleases.map((r: any) => formatVersion(r.tag_name)));
+         // console.log("beta fallback - 正式版本:", officialReleases.map((r: any) => formatVersion(r.tag_name)));
           // 优先查找与基础版本完全匹配的正式版
           const matchingOfficial = officialReleases.find((r: any) =>
             formatVersion(r.tag_name) === currentBase
@@ -103,7 +103,7 @@ export interface UpdateType {
                 releaseNotes: matchingOfficial.body,
                 releaseUrl: matchingOfficial.html_url,
               };
-              console.log(`beta fallback - 检测到正式版更新: v${update.latestVersion}`);
+              //console.log(`beta fallback - 检测到正式版更新: v${update.latestVersion}`);
               return update;
             }
           }
@@ -118,7 +118,7 @@ export interface UpdateType {
                 releaseNotes: latestOfficial.body,
                 releaseUrl: latestOfficial.html_url,
               };
-              console.log(`beta fallback - 检测到正式版更新: v${update.latestVersion}`);
+              //console.log(`beta fallback - 检测到正式版更新: v${update.latestVersion}`);
               return update;
             }
           }
@@ -138,7 +138,7 @@ export interface UpdateType {
             releaseNotes: latestOfficial.body,
             releaseUrl: latestOfficial.html_url,
           };
-          console.log(`检测到新正式版本: v${update.latestVersion}`);
+          //console.log(`检测到新正式版本: v${update.latestVersion}`);
           return update;
         }
         return null;

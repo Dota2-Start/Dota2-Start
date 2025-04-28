@@ -3,10 +3,10 @@
   "productName": "Dota2 Strat",
   "identifier": "com.Dota2-Strat.app",
   "build": {
-    "beforeDevCommand": "pnpm start",
+    "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:3680",
-    "beforeBuildCommand": "pnpm build",
-    "frontendDist": "../build"
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
   },
   "app": {
     "windows": [

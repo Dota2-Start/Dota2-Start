@@ -13,6 +13,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ videoUrl, poster }) =
       video.oncanplaythrough = () => setIsLoaded(true);
     }
   }, []);
+  console.log("poster",poster,"videoUrl",videoUrl);
 
   return (
     <div className='video-background'>

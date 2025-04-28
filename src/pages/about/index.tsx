@@ -3,9 +3,9 @@ import { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';
 import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import { UserProtocol } from '../protocol';
 import { MacScrollbar } from 'mac-scrollbar';
-import UpDatebtn from './updates'
+import UpDatebtn from './components/updates'
 import { LocalStor } from '@/mod/locale_load';
-import { AuthorT } from './author';
+import { AuthorT } from './components/author';
 import { motion } from 'framer-motion';
 import { VersionInfo } from '@/mod/V_analysis';
 import { Appinfo } from '@/mod/store';
@@ -28,7 +28,7 @@ interface ProgramInfo {
 
 const AboutProgramPage: React.FC = () => {
     const { Local } = LocalStor()
-    const about = Local?.about
+    const about = Local[location.pathname]
     const { v, name } = Appinfo()
     const programData: ProgramInfo = {
         name: name,

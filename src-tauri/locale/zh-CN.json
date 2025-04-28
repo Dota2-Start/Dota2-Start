@@ -18,7 +18,7 @@
         "startBtn": "启动 {}",
         "service": "{} 运行中"
     },
-    "option": {
+    "/option": {
         "anchor": {
             "part-1": "启动项",
             "part-2": "文件注入"
@@ -72,7 +72,7 @@
             "cn-harmony_tip": "由Bilibili @iFuStudio 提供特效文件"
         }
     },
-    "about": {
+    "/about": {
         "title": "关于程序",
         "description": "{D} 是一款专为《Dota2》玩家设计的智能启动工具，通过它你可以快速管理{g}的启动项、提供定制化功能模块，助力玩家快速进入战场，释放竞技潜能。",
         "version": "当前版本",
@@ -85,7 +85,24 @@
         "BtnA": "访问官网",
         "BtnB": "访问源码仓库"
     },
-    "event_type": [
+    "/hud": {
+        "Table_Header": [
+            "任务名称",
+            "描述",
+            "执行周期 (ms)",
+            "状态",
+            "操作"
+        ],
+        "Table_option": [
+            "修改",
+            "删除"
+        ],
+        "Table_Add": "添加任务",
+        "Table_Modify": "修改任务",
+        "Table_title":"定时提醒",
+        "Table_tooltip":"根据游戏时间做出提醒通知"
+    },
+    "$event_type": [
         "新闻",
         "{g}活动",
         "派对活动",
@@ -151,7 +168,8 @@
         "cancelText": "取消",
         "okText": "前往更新",
         "upData": "更新日志",
-        "noText": "忽略本次更新"
+        "noText": "忽略本次更新",
+        "noText2": "确认"
     },
     "$error": {
         "403": "抱歉，当前页面暂未开放，请耐心等待解锁。"

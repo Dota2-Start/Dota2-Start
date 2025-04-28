@@ -1,23 +1,27 @@
 import { Flex } from "antd";
 import Bgvideo from "@/mod/bg-video";
 import video, { VideoBackgroundProps } from "@/mod/http/video";
-import { PlayDota } from "./PlayDota";
-import NewBox from "./newBox";
+import { PlayDota } from "./components/PlayDota";
+import NewBox from "./components/newBox";
 import { motion } from "framer-motion";
-import { StateCard } from "./StateCard";
+import { StateCard } from "./components/StateCard";
 import { LocalStor } from "@/mod/locale_load";
 import { useEffect, useState } from "react";
-import Updates from "../about/updates";
+import Updates from "../about/components/updates";
 //const videoData = await video()
 function App() {
   const { Local } = LocalStor()
-  const iLocal = Local['/']
+
+  const iLocal = Local[location.pathname]
   const [videoData, setVideoData] = useState<VideoBackgroundProps>({ videoUrl: '', poster: 'video/mp4' });
+
+  
   useEffect(() => {
-    (async () => {
+    const videoRa =  async () => {
       const data = await video()
       setVideoData(data)
-    })()
+    }
+    videoRa()
   }, [])
   return (
     <>

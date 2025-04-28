@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { VersionInfo } from './V_analysis';
 
-export const navigatorlLanguage = navigator.language
+export const navigatorlLanguage = navigator.language === 'zh_TW' ? 'zh_HK' : navigator.language
 export interface Dota2PathType {
     path: string;
     exe: string;
@@ -73,11 +73,38 @@ export const Dota2ArgsLite = create<Dota2ArgsLiteType>()(
         (set) => ({
             args: [],
             replace: { fps: 60 },
-            setArgs: (args: Dota2ArgsLiteType['args']) => set({ args }),
-            setReplace: (replace: Dota2ArgsLiteType['replace']) => set(e => ({ ...e, replace })),
-        }),
+            setArgs: (args) => set(() => ({ args })),
+            setReplace: (replace) =>
+              set((state) => ({
+                replace: { ...state.replace, ...replace }, // ✅ 合并而不是覆盖
+              })),
+          }),
         {
             name: 'Dota2Start-local-Dota2SargsLite', // 存储在 localStorage 中的 key
+        }
+    )
+);
+export type TaskListItem = {
+    id: number
+    key: number;
+    name: string;
+    describe: string;
+    status: number;
+    time: number;
+};
+export interface TaskListType {
+    args: TaskListItem[];
+    setTask: (e: TaskListItem[]) => void,
+}
+// 使用双调用语法创建 store
+export const TaskListStore = create<TaskListType>()(
+    persist(
+        (set) => ({
+            args: [],
+            setTask: (replace) => set(e => ({ args: replace })),
+        }),
+        {
+            name: 'Dota2Start-local-TaskListItem', // 存储在 localStorage 中的 key
         }
     )
 ); 

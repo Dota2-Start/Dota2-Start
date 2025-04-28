@@ -1,7 +1,7 @@
 import React from 'react';
 import { Anchor, Col, Divider, Row, Typography } from 'antd';
-import Startop from './start';
-import FileRew from './FileRew';
+import Startop from './components/start';
+import FileRew from './components/FileRew';
 import { AnchorContainer, AnchorLinkItemProps } from 'antd/es/anchor/Anchor';
 import { motion } from 'framer-motion';
 import { LocalStor } from '@/mod/locale_load';
@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 const App: React.FC = () => {
     const { Local } = LocalStor()
-    const iLocal = Local?.option
+    const iLocal = Local[location.pathname]
 
     const anchorData = [
         {
