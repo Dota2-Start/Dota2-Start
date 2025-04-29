@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import React, { useEffect, useState } from 'react';
 import { ApplyPluginsType } from 'umi';
-import { renderClient, RenderClientOpts } from 'F:/UGit/dota2-start/node_modules/.store/@umijs+renderer-react@4.4.10/node_modules/@umijs/renderer-react';
+import { renderClient, RenderClientOpts } from 'F:/UGit/dota2-start/node_modules/@umijs/renderer-react';
 import { createHistory } from './core/history';
 import { createPluginManager } from './core/plugin';
 import { getRoutes } from './core/route';

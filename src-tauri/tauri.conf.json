@@ -20,7 +20,8 @@
         "center": true,
         "resizable": true,
         "minHeight": 572,
-        "minWidth": 360
+        "minWidth": 360,
+        "titleBarStyle":"Overlay"
       }
     ],
     "security": {

@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { } from 'react';
 import { FullscreenExitOutlined, FullscreenOutlined } from '@ant-design/icons';
 import { Button, ButtonProps, Divider, Flex } from 'antd';
 import { CloseIcon, ShrinkIcon } from "@/mod/svg";
@@ -14,15 +14,13 @@ interface Props {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const App: React.FC<Props> = ({setLoading}) => {
+const App: React.FC<Props> = ({ setLoading }) => {
     // 设置状态来存储 isMaximized 和 Webview
     const { isMaximized } = Appinfo()
 
     const TitleButton: ButtonProps[] = [
         {
             icon: <ShrinkIcon />,
-            size: 'small',
-            shape: "round",
             type: "text",
             onClick: e => {
                 // @ts-ignore
@@ -32,8 +30,6 @@ const App: React.FC<Props> = ({setLoading}) => {
         },
         {
             icon: isMaximized ? <FullscreenExitOutlined /> : <FullscreenOutlined />,
-            size: 'small',
-            shape: "round",
             type: "text",
             onClick: e => {
                 // @ts-ignore
@@ -48,9 +44,7 @@ const App: React.FC<Props> = ({setLoading}) => {
             }
         },
         {
-            size: 'small',
             color: "danger",
-            shape: "round",
             variant: "text",
             icon: <CloseIcon />,
             onClick: e => {
@@ -73,7 +67,10 @@ const App: React.FC<Props> = ({setLoading}) => {
             <div></div>
 
             <Flex align='center' gap={'small'}>
-                <Locale setLoading={setLoading}/>
+                <Locale setLoading={setLoading} />
+                <Divider
+                    style={{ marginInline: 2, marginBlock: 0 }}
+                    type='vertical' />
                 <Flex
                     className='ant-segmented ant-segmented-shape-round '
                     align='center'

@@ -43,7 +43,7 @@ const AboutProgramPage: React.FC = () => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }} // Start slightly below
+            initial={{ opacity: 0, y: 200 }} // Start slightly below
             animate={{ opacity: 1, y: 0 }}
             transition={{
                 type: "spring", // Use spring for elastic effect

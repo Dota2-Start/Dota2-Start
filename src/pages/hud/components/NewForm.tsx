@@ -19,6 +19,23 @@ const waitTime = (time: number = 100) => {
         }, time);
     });
 };
+//运算符处理
+const safeEval = (expr: string): number | null => {
+    try {
+        // 限制非法字符，仅允许数字、括号和运算符
+        if (/^[\d\s+\-*/().]+$/.test(expr)) {
+            // 使用 Function 替代 eval，更可控
+            // eslint-disable-next-line no-new-func
+            const result = Function(`"use strict"; return (${expr})`)();
+            if (typeof result === 'number' && !isNaN(result)) {
+                return result;
+            }
+        }
+    } catch {
+        return null;
+    }
+    return null;
+};
 
 /**
  * 生成唯一的 8 位 ID
@@ -31,7 +48,7 @@ const generateId = () => {
 export default () => {
     const { Local } = LocalStor()
     const iLocal = Local[location.pathname]
-    const [form] = Form.useForm<{ name: string; company: string }>();
+    const [form] = Form.useForm<TaskListItem>();
     const [editKey, setEditKey] = useState<number | null>(null);
     const [fromOpen, setFromOpen] = useState(false);
     const { args, setTask } = TaskListStore()
@@ -56,7 +73,7 @@ export default () => {
             setEditKey(null)
         } else {
             values.id = parseInt(generateId())
-            data.push({...values,status:0})
+            data.push({ ...values, status: 0 })
         }
         setTask(data)
         message.success('Submission successful');
@@ -116,10 +133,34 @@ export default () => {
                     placeholder="Please enter a name"
                     tooltip="支持运算符，如：4*60 = 4分钟"
                     rules={[
+                        { required: true, message: '任务时间不能为空' },
                         {
-                            required: true,
-                        },
+                            validator: (_, value) => {
+                                if (!value) return Promise.resolve(); // 空值交给 required 处理
+                                const num = Number(value);
+                                if (!isNaN(num) && isFinite(num)) {
+                                    return Promise.resolve();
+                                }
+                                return Promise.reject('请输入有效的数字，或回车确认计算');
+                            }
+                        }
                     ]}
+                    fieldProps={{
+                        onBlur: (e) => {
+                            const raw = e.target.value;
+                            const val = safeEval(raw);
+                            if (val !== null) {
+                                form.setFieldsValue({ time: val });
+                            }
+                        },
+                        onPressEnter: (e) => {
+                            const raw = e.currentTarget.value;
+                            const val = safeEval(raw);
+                            if (val !== null) {
+                                form.setFieldsValue({ time: val });
+                            }
+                        }
+                    }}
                 />
                 <ProFormDigit
                     width="md"

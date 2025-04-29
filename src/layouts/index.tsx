@@ -76,6 +76,9 @@ const App: React.FC = () => {
     times = setTimeout(Locals, 500);
   }, [])
   useEffect(() => {
+    console.log(Local?.label);
+    
+    if (!Local?.label) return
     setTimeout(() =>
       setLoading(false)
       , 660);

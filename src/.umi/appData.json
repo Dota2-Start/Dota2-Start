@@ -43,10 +43,11 @@
     "devDependencies": {
       "@applint/spec": "^1.2.3",
       "@tauri-apps/cli": "^2",
+      "@types/lodash": "^4.17.16",
       "@types/node": "^18.11.17",
       "@types/react": "^18.3.1",
       "@types/react-dom": "^18.3.1",
-      "eslint": "^8.35.0",
+      "eslint": "9.25.1",
       "file-loader": "^6.2.0",
       "stylelint": "^15.2.0",
       "typescript": "5.8.3"
@@ -57,7 +58,7 @@
   },
   "pkgPath": "F:\\UGit\\dota2-start\\package.json",
   "plugins": {
-    "./node_modules/.store/@umijs+core@4.4.10/node_modules/@umijs/core/dist/service/servicePlugin": {
+    "./node_modules/@umijs/core/dist/service/servicePlugin": {
       "config": {},
       "time": {
         "hooks": {},
@@ -65,39 +66,39 @@
       },
       "enableBy": "register",
       "type": "preset",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+core@4.4.10/node_modules/@umijs/core/dist/service/servicePlugin.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/core/dist/service/servicePlugin.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+core@4.4.10/node_modules/@umijs/core/dist/service/servicePlugin",
+      "id": "./node_modules/@umijs/core/dist/service/servicePlugin",
       "key": "servicePlugin"
     },
     "@umijs/preset-umi": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 26
+        "register": 15
       },
       "enableBy": "register",
       "type": "preset",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/index.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/index.js",
       "cwd": "F:\\UGit\\dota2-start",
       "id": "@umijs/preset-umi",
       "key": "umi"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/registerMethods": {
+    "./node_modules/@umijs/preset-umi/dist/registerMethods": {
       "config": {},
       "time": {
         "hooks": {
           "onStart": [
-            4
+            1
           ]
         },
-        "register": 7
+        "register": 4
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/registerMethods.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/registerMethods.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/registerMethods",
+      "id": "./node_modules/@umijs/preset-umi/dist/registerMethods",
       "key": "registerMethods"
     },
     "@umijs/did-you-know": {
@@ -105,23 +106,6 @@
       "time": {
         "hooks": {
           "onStart": [
-            2
-          ]
-        },
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+did-you-know@1.0.3/node_modules/@umijs/did-you-know/dist/plugin.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "@umijs/did-you-know",
-      "key": "umijsDidYouKnow"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/404/404": {
-      "config": {},
-      "time": {
-        "hooks": {
-          "modifyRoutes": [
             1
           ]
         },
@@ -129,29 +113,46 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/404/404.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/did-you-know/dist/plugin.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/404/404",
+      "id": "@umijs/did-you-know",
+      "key": "umijsDidYouKnow"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/404/404": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyRoutes": [
+            0
+          ]
+        },
+        "register": 0
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/404/404.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/404/404",
       "key": "404"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/appData/appData": {
+    "./node_modules/@umijs/preset-umi/dist/features/appData/appData": {
       "config": {},
       "time": {
         "hooks": {
           "modifyAppData": [
-            15
+            9
           ]
         },
-        "register": 30
+        "register": 24
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/appData/appData.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/appData/appData.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/appData/appData",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/appData/appData",
       "key": "appData"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/appData/umiInfo": {
+    "./node_modules/@umijs/preset-umi/dist/features/appData/umiInfo": {
       "config": {},
       "time": {
         "hooks": {},
@@ -159,12 +160,12 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/appData/umiInfo.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/appData/umiInfo.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/appData/umiInfo",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/appData/umiInfo",
       "key": "umiInfo"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/check/check": {
+    "./node_modules/@umijs/preset-umi/dist/features/check/check": {
       "config": {},
       "time": {
         "hooks": {
@@ -175,33 +176,33 @@
             0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/check/check.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/check/check.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/check/check",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/check/check",
       "key": "check"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/check/babel722": {
+    "./node_modules/@umijs/preset-umi/dist/features/check/babel722": {
       "config": {},
       "time": {
         "hooks": {
           "onCheck": [
-            1
+            0
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/check/babel722.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/check/babel722.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/check/babel722",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/check/babel722",
       "key": "babel722"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting": {
+    "./node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting": {
       "config": {},
       "time": {
         "hooks": {},
@@ -209,12 +210,12 @@
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/codeSplitting/codeSplitting",
       "key": "codeSplitting"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins": {
+    "./node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins": {
       "config": {},
       "time": {
         "hooks": {
@@ -222,13 +223,13 @@
             0
           ]
         },
-        "register": 17
+        "register": 8
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/configPlugins/configPlugins",
       "key": "configPlugins"
     },
     "virtual: config-title": {
@@ -758,7 +759,7 @@
       "enableBy": "register",
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       }
     },
     "virtual: config-hash": {
@@ -835,7 +836,7 @@
       "enableBy": "register",
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       }
     },
     "virtual: config-externals": {
@@ -1048,8 +1049,8 @@
           "umi": "@@/exports",
           "react": "F:\\UGit\\dota2-start\\node_modules\\react",
           "react-dom": "F:\\UGit\\dota2-start\\node_modules\\react-dom",
-          "react-router": "F:\\UGit\\dota2-start\\node_modules\\.store\\react-router@6.3.0\\node_modules\\react-router",
-          "react-router-dom": "F:\\UGit\\dota2-start\\node_modules\\.store\\react-router-dom@6.3.0\\node_modules\\react-router-dom"
+          "react-router": "F:\\UGit\\dota2-start\\node_modules\\react-router",
+          "react-router-dom": "F:\\UGit\\dota2-start\\node_modules\\react-router-dom"
         }
       },
       "type": "plugin",
@@ -1059,7 +1060,7 @@
         "register": 0
       }
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin": {
+    "./node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1067,81 +1068,81 @@
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/crossorigin/crossorigin",
       "key": "crossorigin"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand": {
+    "./node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand": {
       "config": {},
       "time": {
         "hooks": {
           "onStart": [
-            0
+            1
           ]
         },
-        "register": 4
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/depsOnDemand/depsOnDemand",
       "key": "depsOnDemand"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/devTool/devTool": {
+    "./node_modules/@umijs/preset-umi/dist/features/devTool/devTool": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/devTool/devTool.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/devTool/devTool.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/devTool/devTool",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/devTool/devTool",
       "key": "devTool"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker": {
+    "./node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 92
+        "register": 86
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/esbuildHelperChecker/esbuildHelperChecker",
       "key": "esbuildHelperChecker"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/esmi/esmi": {
+    "./node_modules/@umijs/preset-umi/dist/features/esmi/esmi": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 190
+        "register": 112
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/esmi/esmi.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/esmi/esmi.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/esmi/esmi",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/esmi/esmi",
       "key": "esmi"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic": {
+    "./node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 29
+        "register": 21
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/exportStatic/exportStatic",
       "key": "exportStatic"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/favicons/favicons": {
+    "./node_modules/@umijs/preset-umi/dist/features/favicons/favicons": {
       "config": {},
       "time": {
         "hooks": {
@@ -1153,92 +1154,92 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/favicons/favicons.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/favicons/favicons.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/favicons/favicons",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/favicons/favicons",
       "key": "favicons"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/helmet/helmet": {
+    "./node_modules/@umijs/preset-umi/dist/features/helmet/helmet": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/helmet/helmet.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/helmet/helmet",
+      "key": "helmet"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/icons/icons": {
       "config": {},
       "time": {
         "hooks": {},
         "register": 2
       },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/helmet/helmet.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/helmet/helmet",
-      "key": "helmet"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/icons/icons": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 5
-      },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/icons/icons.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/icons/icons.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/icons/icons",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/icons/icons",
       "key": "icons"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mock/mock": {
+    "./node_modules/@umijs/preset-umi/dist/features/mock/mock": {
       "config": {},
       "time": {
         "hooks": {
           "onStart": [
-            2
+            1
           ]
         },
-        "register": 38
+        "register": 31
       },
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/mock/mock.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mock/mock",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/mock/mock",
       "key": "mock"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mpa/mpa": {
+    "./node_modules/@umijs/preset-umi/dist/features/mpa/mpa": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mpa/mpa.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/mpa/mpa.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mpa/mpa",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/mpa/mpa",
       "key": "mpa"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/okam/okam": {
+    "./node_modules/@umijs/preset-umi/dist/features/okam/okam": {
       "config": {},
       "time": {
         "hooks": {},
         "register": 1
       },
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/okam/okam",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/okam/okam",
       "key": "okam"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/overrides/overrides": {
+    "./node_modules/@umijs/preset-umi/dist/features/overrides/overrides": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/overrides/overrides.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/overrides/overrides.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/overrides/overrides",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/overrides/overrides",
       "key": "overrides"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency": {
+    "./node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1246,28 +1247,28 @@
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/phantomDependency/phantomDependency",
       "key": "phantomDependency"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill": {
+    "./node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill": {
       "config": {},
       "time": {
         "hooks": {
           "modifyConfig": [
-            1
+            0
           ]
         },
-        "register": 4
+        "register": 2
       },
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill",
       "key": "polyfill"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill": {
+    "./node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1275,25 +1276,25 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/polyfill/publicPathPolyfill",
       "key": "publicPathPolyfill"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/prepare/prepare": {
+    "./node_modules/@umijs/preset-umi/dist/features/prepare/prepare": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/prepare/prepare.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/prepare/prepare.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/prepare/prepare",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/prepare/prepare",
       "key": "prepare"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch": {
+    "./node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1301,38 +1302,38 @@
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/routePrefetch/routePrefetch",
       "key": "routePrefetch"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/terminal/terminal": {
+    "./node_modules/@umijs/preset-umi/dist/features/terminal/terminal": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/terminal/terminal.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/terminal/terminal.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/terminal/terminal",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/terminal/terminal",
       "key": "terminal"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles": {
+    "./node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 13
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/tmpFiles/tmpFiles",
       "key": "tmpFiles"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader": {
+    "./node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1340,152 +1341,126 @@
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/clientLoader/clientLoader",
       "key": "clientLoader"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps": {
+    "./node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps",
       "key": "routeProps"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/ssr/ssr": {
+    "./node_modules/@umijs/preset-umi/dist/features/ssr/ssr": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 6
+        "register": 7
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/ssr/ssr.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/ssr/ssr.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/ssr/ssr",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/ssr/ssr",
       "key": "ssr"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes": {
+    "./node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 7
+        "register": 4
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/tmpFiles/configTypes",
       "key": "configTypes"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/transform/transform": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 7
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/transform/transform.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/transform/transform",
-      "key": "transform"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport": {
+    "./node_modules/@umijs/preset-umi/dist/features/transform/transform": {
       "config": {},
       "time": {
         "hooks": {},
         "register": 6
       },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/transform/transform.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/transform/transform",
+      "key": "transform"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/lowImport/lowImport",
       "key": "lowImport"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/vite/vite": {
+    "./node_modules/@umijs/preset-umi/dist/features/vite/vite": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/vite/vite.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/vite/vite.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/vite/vite",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/vite/vite",
       "key": "vite"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute": {
+    "./node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 16
+        "register": 8
       },
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute",
       "key": "apiRoute"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/monorepo/redirect": {
+    "./node_modules/@umijs/preset-umi/dist/features/monorepo/redirect": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 25
+        "register": 19
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/monorepo/redirect.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/monorepo/redirect.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/monorepo/redirect",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/monorepo/redirect",
       "key": "monorepoRedirect"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/test/test": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 3
-      },
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/test/test.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/test/test",
-      "key": "test"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent": {
+    "./node_modules/@umijs/preset-umi/dist/features/test/test": {
       "config": {},
       "time": {
         "hooks": {},
         "register": 2
       },
-      "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/test/test.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent",
-      "key": "clickToComponent"
+      "id": "./node_modules/@umijs/preset-umi/dist/features/test/test",
+      "key": "test"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/legacy/legacy": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 3
-      },
-      "enableBy": "config",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/legacy/legacy.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/legacy/legacy",
-      "key": "legacy"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose": {
+    "./node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1493,24 +1468,50 @@
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose",
-      "key": "classPropertiesLoose"
+      "id": "./node_modules/@umijs/preset-umi/dist/features/clickToComponent/clickToComponent",
+      "key": "clickToComponent"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/webpack/webpack": {
+    "./node_modules/@umijs/preset-umi/dist/features/legacy/legacy": {
       "config": {},
       "time": {
         "hooks": {},
         "register": 2
       },
+      "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/legacy/legacy.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/webpack/webpack",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/legacy/legacy",
+      "key": "legacy"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 0
+      },
+      "enableBy": "config",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/classPropertiesLoose/classPropertiesLoose",
+      "key": "classPropertiesLoose"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/webpack/webpack": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/webpack/webpack",
       "key": "preset-umi:webpack"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/swc/swc": {
+    "./node_modules/@umijs/preset-umi/dist/features/swc/swc": {
       "config": {},
       "time": {
         "hooks": {
@@ -1522,379 +1523,74 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/swc/swc.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/swc/swc.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/swc/swc",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/swc/swc",
       "key": "swc"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/ui/ui": {
+    "./node_modules/@umijs/preset-umi/dist/features/ui/ui": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 3
       },
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/ui/ui.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/ui/ui",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/ui/ui",
       "key": "ui"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mako/mako": {
+    "./node_modules/@umijs/preset-umi/dist/features/mako/mako": {
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mako/mako.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/mako/mako.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/mako/mako",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/mako/mako",
       "key": "mako"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 4
-      },
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian",
-      "key": "hmrGuardian"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 4
-      },
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad",
-      "key": "routePreloadOnLoad"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/forget/forget": {
+    "./node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian": {
       "config": {},
       "time": {
         "hooks": {},
         "register": 3
+      },
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/hmrGuardian/hmrGuardian",
+      "key": "hmrGuardian"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad",
+      "key": "routePreloadOnLoad"
+    },
+    "./node_modules/@umijs/preset-umi/dist/features/forget/forget": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/forget/forget.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/forget/forget.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/features/forget/forget",
+      "id": "./node_modules/@umijs/preset-umi/dist/features/forget/forget",
       "key": "forget"
     },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/build": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 10
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/build.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/build",
-      "key": "build"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/config/config": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 44
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/config/config.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/config/config",
-      "key": "config"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/dev/dev": {
-      "config": {},
-      "time": {
-        "hooks": {
-          "modifyAppData": [
-            20
-          ],
-          "onStart": [
-            0
-          ]
-        },
-        "register": 83
-      },
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/dev/dev",
-      "key": "dev"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/help": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/help.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/help",
-      "key": "help"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/lint": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/lint.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/lint",
-      "key": "lint"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/setup": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/setup.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/setup",
-      "key": "setup"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/deadcode": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/deadcode.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/deadcode",
-      "key": "deadcode"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/version": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/version.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/version",
-      "key": "version"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/page": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 5
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/page.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/page",
-      "key": "generator:page"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/prettier": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/prettier.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/prettier",
-      "key": "generator:prettier"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 2
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig",
-      "key": "generator:tsconfig"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/jest": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/jest.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/jest",
-      "key": "generator:jest"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss",
-      "key": "generator:tailwindcss"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/dva": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/dva.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/dva",
-      "key": "generator:dva"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/component": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 2
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/component.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/component",
-      "key": "generator:component"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/mock": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/mock.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/mock",
-      "key": "generator:mock"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/cypress": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/cypress.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/cypress",
-      "key": "generator:cypress"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/api": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 2
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/api.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/api",
-      "key": "generator:api"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/precommit": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/precommit.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/generators/precommit",
-      "key": "generator:precommit"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/plugin": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/plugin.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/plugin",
-      "key": "command:plugin"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/verify-commit": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 1
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/verify-commit.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/verify-commit",
-      "key": "verifyCommit"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/preview": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 26
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/preview.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/preview",
-      "key": "preview"
-    },
-    "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu": {
-      "config": {},
-      "time": {
-        "hooks": {},
-        "register": 3
-      },
-      "enableBy": "register",
-      "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu.js",
-      "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+preset-umi@4.4.10/node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu",
-      "key": "mfsu-cli"
-    },
-    "@umijs/plugin-run": {
+    "./node_modules/@umijs/preset-umi/dist/commands/build": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1902,12 +1598,44 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+plugin-run@4.4.10/node_modules/@umijs/plugin-run/dist/index.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/build.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "@umijs/plugin-run",
-      "key": "run"
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/build",
+      "key": "build"
     },
-    "./node_modules/.store/@umijs+core@4.4.10/node_modules/@umijs/core/dist/service/generatePlugin": {
+    "./node_modules/@umijs/preset-umi/dist/commands/config/config": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 30
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/config/config.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/config/config",
+      "key": "config"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/dev/dev": {
+      "config": {},
+      "time": {
+        "hooks": {
+          "modifyAppData": [
+            19
+          ],
+          "onStart": [
+            0
+          ]
+        },
+        "register": 48
+      },
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/dev/dev",
+      "key": "dev"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/help": {
       "config": {},
       "time": {
         "hooks": {},
@@ -1915,9 +1643,282 @@
       },
       "enableBy": "register",
       "type": "plugin",
-      "path": "F:/UGit/dota2-start/node_modules/.store/@umijs+core@4.4.10/node_modules/@umijs/core/dist/service/generatePlugin.js",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/help.js",
       "cwd": "F:\\UGit\\dota2-start",
-      "id": "./node_modules/.store/@umijs+core@4.4.10/node_modules/@umijs/core/dist/service/generatePlugin",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/help",
+      "key": "help"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/lint": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 0
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/lint.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/lint",
+      "key": "lint"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/setup": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/setup.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/setup",
+      "key": "setup"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/deadcode": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/deadcode.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/deadcode",
+      "key": "deadcode"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/version": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/version.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/version",
+      "key": "version"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/page": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/page.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/page",
+      "key": "generator:page"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/prettier": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/prettier.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/prettier",
+      "key": "generator:prettier"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 0
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/tsconfig",
+      "key": "generator:tsconfig"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/jest": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 0
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/jest.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/jest",
+      "key": "generator:jest"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/tailwindcss",
+      "key": "generator:tailwindcss"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/dva": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/dva.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/dva",
+      "key": "generator:dva"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/component": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/component.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/component",
+      "key": "generator:component"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/mock": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/mock.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/mock",
+      "key": "generator:mock"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/cypress": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 0
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/cypress.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/cypress",
+      "key": "generator:cypress"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/api": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/api.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/api",
+      "key": "generator:api"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/generators/precommit": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/generators/precommit.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/generators/precommit",
+      "key": "generator:precommit"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/plugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/plugin.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/plugin",
+      "key": "command:plugin"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/verify-commit": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/verify-commit.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/verify-commit",
+      "key": "verifyCommit"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/preview": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 20
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/preview.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/preview",
+      "key": "preview"
+    },
+    "./node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 2
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/preset-umi/dist/commands/mfsu/mfsu",
+      "key": "mfsu-cli"
+    },
+    "@umijs/plugin-run": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 3
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/plugin-run/dist/index.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "@umijs/plugin-run",
+      "key": "run"
+    },
+    "./node_modules/@umijs/core/dist/service/generatePlugin": {
+      "config": {},
+      "time": {
+        "hooks": {},
+        "register": 1
+      },
+      "enableBy": "register",
+      "type": "plugin",
+      "path": "F:/UGit/dota2-start/node_modules/@umijs/core/dist/service/generatePlugin.js",
+      "cwd": "F:\\UGit\\dota2-start",
+      "id": "./node_modules/@umijs/core/dist/service/generatePlugin",
       "key": "generatePlugin"
     }
   },
@@ -1958,7 +1959,8 @@
       ],
       "esbuild": true
     },
-    "define": {}
+    "define": {},
+    "esbuildMinifyIIFE": true
   },
   "mainConfigFile": "F:\\UGit\\dota2-start\\.umirc.ts",
   "config": {
@@ -1986,11 +1988,11 @@
       "umi": "@@/exports",
       "react": "F:\\UGit\\dota2-start\\node_modules\\react",
       "react-dom": "F:\\UGit\\dota2-start\\node_modules\\react-dom",
-      "react-router": "F:\\UGit\\dota2-start\\node_modules\\.store\\react-router@6.3.0\\node_modules\\react-router",
-      "react-router-dom": "F:\\UGit\\dota2-start\\node_modules\\.store\\react-router-dom@6.3.0\\node_modules\\react-router-dom",
+      "react-router": "F:\\UGit\\dota2-start\\node_modules\\react-router",
+      "react-router-dom": "F:\\UGit\\dota2-start\\node_modules\\react-router-dom",
       "@": "F:/UGit/dota2-start/src",
       "@@": "F:/UGit/dota2-start/src/.umi",
-      "regenerator-runtime": "F:\\UGit\\dota2-start\\node_modules\\.store\\regenerator-runtime@0.13.11\\node_modules\\regenerator-runtime"
+      "regenerator-runtime": "F:\\UGit\\dota2-start\\node_modules\\@umijs\\preset-umi\\node_modules\\regenerator-runtime"
     },
     "routes": [
       {
@@ -2017,6 +2019,7 @@
     ],
     "npmClient": "cnpm",
     "define": {},
+    "esbuildMinifyIIFE": true,
     "targets": {
       "chrome": 80
     }
@@ -2039,7 +2042,7 @@
       "parentId": "@@/global-layout",
       "id": "2",
       "absPath": "/about",
-      "__content": "import React, {  } from 'react';\r\nimport { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';\r\nimport { GithubOutlined, GlobalOutlined } from '@ant-design/icons';\r\nimport { UserProtocol } from '../protocol';\r\nimport { MacScrollbar } from 'mac-scrollbar';\r\nimport UpDatebtn from './components/updates'\r\nimport { LocalStor } from '@/mod/locale_load';\r\nimport { AuthorT } from './components/author';\r\nimport { motion } from 'framer-motion';\r\nimport { VersionInfo } from '@/mod/V_analysis';\r\nimport { Appinfo } from '@/mod/store';\r\nimport { createAndClickLink } from '@/mod/createAndClickLink';\r\n\r\nconst { Title, Paragraph, Link } = Typography;\r\n\r\n// 程序信息类型\r\ninterface ProgramInfo {\r\n    name: string;\r\n    version: VersionInfo;\r\n    license: string;\r\n    copyright: string;\r\n    description: string;\r\n    website: string;\r\n    repository: string;\r\n\r\n}\r\n\r\n\r\nconst AboutProgramPage: React.FC = () => {\r\n    const { Local } = LocalStor()\r\n    const about = Local[location.pathname]\r\n    const { v, name } = Appinfo()\r\n    const programData: ProgramInfo = {\r\n        name: name,\r\n        version: v,\r\n        license: 'GNU General Public License v3.0',\r\n        copyright: '© 2025 Made with love by TuyangJs',\r\n        description: about?.description,\r\n        website: 'https://dota2.com',\r\n        repository: 'https://github.com/Dota2-Start/Dota2-Start',\r\n\r\n    };\r\n\r\n    return (\r\n        <motion.div\r\n            initial={{ opacity: 0, y: 50 }} // Start slightly below\r\n            animate={{ opacity: 1, y: 0 }}\r\n            transition={{\r\n                type: \"spring\", // Use spring for elastic effect\r\n                stiffness: 150, // Controls speed of the bounce\r\n                damping: 25, // Controls how smooth the bounce is\r\n                duration: 0.36, // Controls the overall duration \r\n            }}\r\n            style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}\r\n        >\r\n            <Card title={about?.title} >\r\n                {/* 基础信息区块 */}\r\n                <Descriptions\r\n                    title={<Title level={4}>{programData.name}</Title>}\r\n                    column={1}\r\n                    bordered\r\n                >\r\n                    <Descriptions.Item label={about?.version}>\r\n                        <Space>\r\n                            {\r\n                                programData.version?.beta && <Tag color=\"gold\">Beta.{programData.version.beta}</Tag>\r\n                            }\r\n                            {\r\n                                programData.version?.alpha && <Tag color=\"red\">Alpha.{programData.version.alpha}</Tag>\r\n                            }\r\n                            {programData.version.version}\r\n\r\n                            <UpDatebtn />\r\n                        </Space>\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.copyright}>\r\n                        {programData.copyright}\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.author}>\r\n                        <AuthorT />\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.license}>\r\n                        <Link href={`${programData.repository}/blob/master/LICENSE`} target=\"_blank\">\r\n                            {programData.license}\r\n                        </Link>\r\n                    </Descriptions.Item>\r\n                </Descriptions>\r\n\r\n                {/* 程序描述 */}\r\n                <Paragraph style={{ marginTop: 24 }}>\r\n                    <Title level={5}>{about?.blurbTitle}</Title>\r\n                    {programData.description}\r\n                </Paragraph>\r\n\r\n\r\n                {/* 完整协议内容 */}\r\n                <Card\r\n                    title={about?.UserAgreement}\r\n                    style={{ marginTop: 24, }}\r\n                    styles={{\r\n                        body: {\r\n                        }\r\n                    }}\r\n                >\r\n                    <MacScrollbar\r\n                        skin=\"dark\"\r\n                        className='scroll-container'\r\n                        style={{\r\n                            height: '50vh'\r\n                        }}\r\n                        suppressScrollX>\r\n                        <UserProtocol />\r\n                    </MacScrollbar>\r\n                </Card>\r\n\r\n                {/* 操作按钮 */}\r\n                <Space style={{ marginTop: 24 }}>\r\n                    <Button\r\n                        type=\"primary\"\r\n                        icon={<GlobalOutlined />}\r\n                        onClick={() => createAndClickLink(programData.website)}\r\n                    >\r\n                        {about?.BtnA}\r\n                    </Button>\r\n                    <Button\r\n                        icon={<GithubOutlined />}\r\n                        onClick={() =>createAndClickLink(programData.repository)}\r\n                    >\r\n                        {about?.BtnB}\r\n                    </Button>\r\n                </Space>\r\n            </Card>\r\n        </motion.div>\r\n    );\r\n};\r\n\r\nexport default AboutProgramPage;",
+      "__content": "import React, {  } from 'react';\r\nimport { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';\r\nimport { GithubOutlined, GlobalOutlined } from '@ant-design/icons';\r\nimport { UserProtocol } from '../protocol';\r\nimport { MacScrollbar } from 'mac-scrollbar';\r\nimport UpDatebtn from './components/updates'\r\nimport { LocalStor } from '@/mod/locale_load';\r\nimport { AuthorT } from './components/author';\r\nimport { motion } from 'framer-motion';\r\nimport { VersionInfo } from '@/mod/V_analysis';\r\nimport { Appinfo } from '@/mod/store';\r\nimport { createAndClickLink } from '@/mod/createAndClickLink';\r\n\r\nconst { Title, Paragraph, Link } = Typography;\r\n\r\n// 程序信息类型\r\ninterface ProgramInfo {\r\n    name: string;\r\n    version: VersionInfo;\r\n    license: string;\r\n    copyright: string;\r\n    description: string;\r\n    website: string;\r\n    repository: string;\r\n\r\n}\r\n\r\n\r\nconst AboutProgramPage: React.FC = () => {\r\n    const { Local } = LocalStor()\r\n    const about = Local[location.pathname]\r\n    const { v, name } = Appinfo()\r\n    const programData: ProgramInfo = {\r\n        name: name,\r\n        version: v,\r\n        license: 'GNU General Public License v3.0',\r\n        copyright: '© 2025 Made with love by TuyangJs',\r\n        description: about?.description,\r\n        website: 'https://dota2.com',\r\n        repository: 'https://github.com/Dota2-Start/Dota2-Start',\r\n\r\n    };\r\n\r\n    return (\r\n        <motion.div\r\n            initial={{ opacity: 0, y: 200 }} // Start slightly below\r\n            animate={{ opacity: 1, y: 0 }}\r\n            transition={{\r\n                type: \"spring\", // Use spring for elastic effect\r\n                stiffness: 150, // Controls speed of the bounce\r\n                damping: 25, // Controls how smooth the bounce is\r\n                duration: 0.36, // Controls the overall duration \r\n            }}\r\n            style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}\r\n        >\r\n            <Card title={about?.title} >\r\n                {/* 基础信息区块 */}\r\n                <Descriptions\r\n                    title={<Title level={4}>{programData.name}</Title>}\r\n                    column={1}\r\n                    bordered\r\n                >\r\n                    <Descriptions.Item label={about?.version}>\r\n                        <Space>\r\n                            {\r\n                                programData.version?.beta && <Tag color=\"gold\">Beta.{programData.version.beta}</Tag>\r\n                            }\r\n                            {\r\n                                programData.version?.alpha && <Tag color=\"red\">Alpha.{programData.version.alpha}</Tag>\r\n                            }\r\n                            {programData.version.version}\r\n\r\n                            <UpDatebtn />\r\n                        </Space>\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.copyright}>\r\n                        {programData.copyright}\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.author}>\r\n                        <AuthorT />\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.license}>\r\n                        <Link href={`${programData.repository}/blob/master/LICENSE`} target=\"_blank\">\r\n                            {programData.license}\r\n                        </Link>\r\n                    </Descriptions.Item>\r\n                </Descriptions>\r\n\r\n                {/* 程序描述 */}\r\n                <Paragraph style={{ marginTop: 24 }}>\r\n                    <Title level={5}>{about?.blurbTitle}</Title>\r\n                    {programData.description}\r\n                </Paragraph>\r\n\r\n\r\n                {/* 完整协议内容 */}\r\n                <Card\r\n                    title={about?.UserAgreement}\r\n                    style={{ marginTop: 24, }}\r\n                    styles={{\r\n                        body: {\r\n                        }\r\n                    }}\r\n                >\r\n                    <MacScrollbar\r\n                        skin=\"dark\"\r\n                        className='scroll-container'\r\n                        style={{\r\n                            height: '50vh'\r\n                        }}\r\n                        suppressScrollX>\r\n                        <UserProtocol />\r\n                    </MacScrollbar>\r\n                </Card>\r\n\r\n                {/* 操作按钮 */}\r\n                <Space style={{ marginTop: 24 }}>\r\n                    <Button\r\n                        type=\"primary\"\r\n                        icon={<GlobalOutlined />}\r\n                        onClick={() => createAndClickLink(programData.website)}\r\n                    >\r\n                        {about?.BtnA}\r\n                    </Button>\r\n                    <Button\r\n                        icon={<GithubOutlined />}\r\n                        onClick={() =>createAndClickLink(programData.repository)}\r\n                    >\r\n                        {about?.BtnB}\r\n                    </Button>\r\n                </Space>\r\n            </Card>\r\n        </motion.div>\r\n    );\r\n};\r\n\r\nexport default AboutProgramPage;",
       "__isJSFile": true,
       "__absFile": "F:/UGit/dota2-start/src/pages/about/index.tsx"
     },
@@ -2049,7 +2052,7 @@
       "parentId": "@@/global-layout",
       "id": "3",
       "absPath": "/hud",
-      "__content": "\r\nimport Tasks from './components/Task';\r\nexport default () => {\r\n    return (\r\n        <Tasks />\r\n\r\n    );\r\n};",
+      "__content": "\r\nimport { motion } from 'framer-motion';\r\nimport Tasks from './components/Task';\r\nexport default () => {\r\n    return (\r\n        <motion.div\r\n         \r\n            key=\"anchor\"\r\n            initial={{ opacity: 0, x: 0, y: 200 }} // Start slightly below\r\n            animate={{ opacity: 1, x: 0, y: 0 }} // Animate to original position\r\n            transition={{\r\n                type: \"spring\", // Use spring for elastic effect\r\n                stiffness: 300, // Controls speed of the bounce\r\n                damping: 25, // Controls how smooth the bounce is\r\n                duration: 0.6, // Controls the overall duration\r\n            }}\r\n        >\r\n            <Tasks />\r\n        </motion.div>\r\n    );\r\n};",
       "__isJSFile": true,
       "__absFile": "F:/UGit/dota2-start/src/pages/hud/index.tsx"
     },
@@ -2116,7 +2119,8 @@
   },
   "framework": "react",
   "typescript": {
-    "tsVersion": "5.8.3"
+    "tsVersion": "5.8.3",
+    "tslibVersion": "2.8.1"
   },
   "faviconFiles": [],
   "port": 3680,

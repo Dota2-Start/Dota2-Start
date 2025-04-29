@@ -3,7 +3,7 @@
 // DO NOT CHANGE IT MANUALLY!
 import './core/polyfill';
 
-import { renderClient } from 'F:/UGit/dota2-start/node_modules/.store/@umijs+renderer-react@4.4.10/node_modules/@umijs/renderer-react';
+import { renderClient } from 'F:/UGit/dota2-start/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/route';
 import { createPluginManager } from './core/plugin';
 import { createHistory } from './core/history';

@@ -52,7 +52,7 @@ const App: React.FC<Props> = ({ loading }) => {
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
                         >
-                            <Logosvg width={200} height={200} />
+                            <Logosvg width={160} height={160} />
                         </motion.div>
                     </motion.div>
                 )}

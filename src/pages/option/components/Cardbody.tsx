@@ -14,13 +14,12 @@ export interface DotaSourceItem {
     children?: DotaSourceItem[];  // 可能包含 children
 }
 function parseResolution(args: string) {
-    const input = '-w 1924 -h 1080';
     const regex = /-(\w+)\s+(\d+)/g;
 
     const result: Record<string, string> = {};
     let match;
 
-    while ((match = regex.exec(input)) !== null) {
+    while ((match = regex.exec(args)) !== null) {
         const key = match[1]; // 'w'
         const value = match[2]; // '1924'
         result[key] = value;

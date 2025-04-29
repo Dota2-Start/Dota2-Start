@@ -4,6 +4,7 @@ import { Button, Popconfirm } from 'antd';
 import newfrom from './NewForm';
 import { TaskListItem, TaskListStore } from '@/mod/store';
 import { LocalStor } from '@/mod/locale_load';
+import { a } from 'framer-motion/client';
 const valueEnum = {
     0: 'close',
     1: 'running',
@@ -19,7 +20,7 @@ export default () => {
         const newData = args.filter(item => item.id !== id);
         setTask(newData);
     };
-    const openForm = (record) => {
+    const openForm = (record: TaskListItem) => {
         const id = args.findIndex(item => item.id === record.id);
         setEditKey(id)
         setFromOpen(true)
@@ -76,9 +77,17 @@ export default () => {
 
     return (
         <ProTable<TaskListItem>
-            dataSource={args}
+            //dataSource={args}
             rowKey="id"
             pagination={{ showQuickJumper: true }}
+            options={false}
+            request={async () => {
+                
+                return Promise.resolve({
+                    data: args,
+                    success: true,
+                });
+            }}
             columns={columns}
             search={false}
             dateFormatter="string"
