@@ -43,6 +43,7 @@
     "devDependencies": {
       "@applint/spec": "^1.2.3",
       "@tauri-apps/cli": "^2",
+      "@types/lodash": "^4.17.16",
       "@types/node": "^18.11.17",
       "@types/react": "^18.3.1",
       "@types/react-dom": "^18.3.1",
@@ -74,7 +75,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 13
+        "register": 14
       },
       "enableBy": "register",
       "type": "preset",
@@ -88,7 +89,7 @@
       "time": {
         "hooks": {
           "onStart": [
-            1
+            0
           ]
         },
         "register": 3
@@ -105,10 +106,10 @@
       "time": {
         "hooks": {
           "onStart": [
-            1
+            2
           ]
         },
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -139,10 +140,10 @@
       "time": {
         "hooks": {
           "modifyAppData": [
-            11
+            9
           ]
         },
-        "register": 22
+        "register": 20
       },
       "enableBy": "register",
       "type": "plugin",
@@ -155,7 +156,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -169,13 +170,13 @@
       "time": {
         "hooks": {
           "onCheckConfig": [
-            0
+            1
           ],
           "onCheck": [
-            0
+            1
           ]
         },
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -205,7 +206,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -222,7 +223,7 @@
             0
           ]
         },
-        "register": 7
+        "register": 8
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1106,7 +1107,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 63
+        "register": 61
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1119,7 +1120,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 88
+        "register": 98
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1132,7 +1133,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 11
+        "register": 205
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1149,7 +1150,7 @@
             0
           ]
         },
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1175,7 +1176,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1200,7 +1201,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1213,7 +1214,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/okam/okam.js",
@@ -1225,7 +1226,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1255,7 +1256,7 @@
             1
           ]
         },
-        "register": 2
+        "register": 3
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/polyfill/polyfill.js",
@@ -1293,7 +1294,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1306,7 +1307,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1345,7 +1346,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/routeProps/routeProps.js",
@@ -1370,7 +1371,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 3
+        "register": 2
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1383,7 +1384,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 5
+        "register": 6
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1409,7 +1410,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1422,7 +1423,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 8
+        "register": 6
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/apiRoute/apiRoute.js",
@@ -1434,7 +1435,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 17
+        "register": 18
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1447,7 +1448,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/test/test.js",
@@ -1471,7 +1472,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1484,7 +1485,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1497,7 +1498,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/webpack/webpack.js",
@@ -1563,7 +1564,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/features/routePreloadOnLoad/routePreloadOnLoad.js",
@@ -1575,7 +1576,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 2
       },
       "enableBy": "config",
       "type": "plugin",
@@ -1601,7 +1602,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 29
+        "register": 30
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1614,7 +1615,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 35
+        "register": 40
       },
       "type": "plugin",
       "path": "F:/UGit/dota2-start/node_modules/@umijs/preset-umi/dist/commands/dev/dev.js",
@@ -1665,7 +1666,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1678,7 +1679,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1691,7 +1692,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1717,7 +1718,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1730,7 +1731,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1769,7 +1770,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1795,7 +1796,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1821,7 +1822,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 1
+        "register": 0
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1834,7 +1835,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 0
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1860,7 +1861,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 18
+        "register": 19
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1873,7 +1874,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 1
       },
       "enableBy": "register",
       "type": "plugin",
@@ -1886,7 +1887,7 @@
       "config": {},
       "time": {
         "hooks": {},
-        "register": 2
+        "register": 3
       },
       "enableBy": "register",
       "type": "plugin",
@@ -2029,7 +2030,7 @@
       "parentId": "@@/global-layout",
       "id": "2",
       "absPath": "/about",
-      "__content": "import React, {  } from 'react';\r\nimport { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';\r\nimport { GithubOutlined, GlobalOutlined } from '@ant-design/icons';\r\nimport { UserProtocol } from '../protocol';\r\nimport { MacScrollbar } from 'mac-scrollbar';\r\nimport UpDatebtn from './components/updates'\r\nimport { LocalStor } from '@/mod/locale_load';\r\nimport { AuthorT } from './components/author';\r\nimport { motion } from 'framer-motion';\r\nimport { VersionInfo } from '@/mod/V_analysis';\r\nimport { Appinfo } from '@/mod/store';\r\nimport { createAndClickLink } from '@/mod/createAndClickLink';\r\n\r\nconst { Title, Paragraph, Link } = Typography;\r\n\r\n// 程序信息类型\r\ninterface ProgramInfo {\r\n    name: string;\r\n    version: VersionInfo;\r\n    license: string;\r\n    copyright: string;\r\n    description: string;\r\n    website: string;\r\n    repository: string;\r\n\r\n}\r\n\r\n\r\nconst AboutProgramPage: React.FC = () => {\r\n    const { Local } = LocalStor()\r\n    const about = Local[location.pathname]\r\n    const { v, name } = Appinfo()\r\n    const programData: ProgramInfo = {\r\n        name: name,\r\n        version: v,\r\n        license: 'GNU General Public License v3.0',\r\n        copyright: '© 2025 Made with love by TuyangJs',\r\n        description: about?.description,\r\n        website: 'https://dota2.com',\r\n        repository: 'https://github.com/Dota2-Start/Dota2-Start',\r\n\r\n    };\r\n\r\n    return (\r\n        <motion.div\r\n            initial={{ opacity: 0, y: 50 }} // Start slightly below\r\n            animate={{ opacity: 1, y: 0 }}\r\n            transition={{\r\n                type: \"spring\", // Use spring for elastic effect\r\n                stiffness: 150, // Controls speed of the bounce\r\n                damping: 25, // Controls how smooth the bounce is\r\n                duration: 0.36, // Controls the overall duration \r\n            }}\r\n            style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}\r\n        >\r\n            <Card title={about?.title} >\r\n                {/* 基础信息区块 */}\r\n                <Descriptions\r\n                    title={<Title level={4}>{programData.name}</Title>}\r\n                    column={1}\r\n                    bordered\r\n                >\r\n                    <Descriptions.Item label={about?.version}>\r\n                        <Space>\r\n                            {\r\n                                programData.version?.beta && <Tag color=\"gold\">Beta.{programData.version.beta}</Tag>\r\n                            }\r\n                            {\r\n                                programData.version?.alpha && <Tag color=\"red\">Alpha.{programData.version.alpha}</Tag>\r\n                            }\r\n                            {programData.version.version}\r\n\r\n                            <UpDatebtn />\r\n                        </Space>\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.copyright}>\r\n                        {programData.copyright}\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.author}>\r\n                        <AuthorT />\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.license}>\r\n                        <Link href={`${programData.repository}/blob/master/LICENSE`} target=\"_blank\">\r\n                            {programData.license}\r\n                        </Link>\r\n                    </Descriptions.Item>\r\n                </Descriptions>\r\n\r\n                {/* 程序描述 */}\r\n                <Paragraph style={{ marginTop: 24 }}>\r\n                    <Title level={5}>{about?.blurbTitle}</Title>\r\n                    {programData.description}\r\n                </Paragraph>\r\n\r\n\r\n                {/* 完整协议内容 */}\r\n                <Card\r\n                    title={about?.UserAgreement}\r\n                    style={{ marginTop: 24, }}\r\n                    styles={{\r\n                        body: {\r\n                        }\r\n                    }}\r\n                >\r\n                    <MacScrollbar\r\n                        skin=\"dark\"\r\n                        className='scroll-container'\r\n                        style={{\r\n                            height: '50vh'\r\n                        }}\r\n                        suppressScrollX>\r\n                        <UserProtocol />\r\n                    </MacScrollbar>\r\n                </Card>\r\n\r\n                {/* 操作按钮 */}\r\n                <Space style={{ marginTop: 24 }}>\r\n                    <Button\r\n                        type=\"primary\"\r\n                        icon={<GlobalOutlined />}\r\n                        onClick={() => createAndClickLink(programData.website)}\r\n                    >\r\n                        {about?.BtnA}\r\n                    </Button>\r\n                    <Button\r\n                        icon={<GithubOutlined />}\r\n                        onClick={() =>createAndClickLink(programData.repository)}\r\n                    >\r\n                        {about?.BtnB}\r\n                    </Button>\r\n                </Space>\r\n            </Card>\r\n        </motion.div>\r\n    );\r\n};\r\n\r\nexport default AboutProgramPage;",
+      "__content": "import React, {  } from 'react';\r\nimport { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';\r\nimport { GithubOutlined, GlobalOutlined } from '@ant-design/icons';\r\nimport { UserProtocol } from '../protocol';\r\nimport { MacScrollbar } from 'mac-scrollbar';\r\nimport UpDatebtn from './components/updates'\r\nimport { LocalStor } from '@/mod/locale_load';\r\nimport { AuthorT } from './components/author';\r\nimport { motion } from 'framer-motion';\r\nimport { VersionInfo } from '@/mod/V_analysis';\r\nimport { Appinfo } from '@/mod/store';\r\nimport { createAndClickLink } from '@/mod/createAndClickLink';\r\n\r\nconst { Title, Paragraph, Link } = Typography;\r\n\r\n// 程序信息类型\r\ninterface ProgramInfo {\r\n    name: string;\r\n    version: VersionInfo;\r\n    license: string;\r\n    copyright: string;\r\n    description: string;\r\n    website: string;\r\n    repository: string;\r\n\r\n}\r\n\r\n\r\nconst AboutProgramPage: React.FC = () => {\r\n    const { Local } = LocalStor()\r\n    const about = Local[location.pathname]\r\n    const { v, name } = Appinfo()\r\n    const programData: ProgramInfo = {\r\n        name: name,\r\n        version: v,\r\n        license: 'GNU General Public License v3.0',\r\n        copyright: '© 2025 Made with love by TuyangJs',\r\n        description: about?.description,\r\n        website: 'https://dota2.com',\r\n        repository: 'https://github.com/Dota2-Start/Dota2-Start',\r\n\r\n    };\r\n\r\n    return (\r\n        <motion.div\r\n            initial={{ opacity: 0, y: 200 }} // Start slightly below\r\n            animate={{ opacity: 1, y: 0 }}\r\n            transition={{\r\n                type: \"spring\", // Use spring for elastic effect\r\n                stiffness: 150, // Controls speed of the bounce\r\n                damping: 25, // Controls how smooth the bounce is\r\n                duration: 0.36, // Controls the overall duration \r\n            }}\r\n            style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}\r\n        >\r\n            <Card title={about?.title} >\r\n                {/* 基础信息区块 */}\r\n                <Descriptions\r\n                    title={<Title level={4}>{programData.name}</Title>}\r\n                    column={1}\r\n                    bordered\r\n                >\r\n                    <Descriptions.Item label={about?.version}>\r\n                        <Space>\r\n                            {\r\n                                programData.version?.beta && <Tag color=\"gold\">Beta.{programData.version.beta}</Tag>\r\n                            }\r\n                            {\r\n                                programData.version?.alpha && <Tag color=\"red\">Alpha.{programData.version.alpha}</Tag>\r\n                            }\r\n                            {programData.version.version}\r\n\r\n                            <UpDatebtn />\r\n                        </Space>\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.copyright}>\r\n                        {programData.copyright}\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.author}>\r\n                        <AuthorT />\r\n                    </Descriptions.Item>\r\n                    <Descriptions.Item label={about?.license}>\r\n                        <Link href={`${programData.repository}/blob/master/LICENSE`} target=\"_blank\">\r\n                            {programData.license}\r\n                        </Link>\r\n                    </Descriptions.Item>\r\n                </Descriptions>\r\n\r\n                {/* 程序描述 */}\r\n                <Paragraph style={{ marginTop: 24 }}>\r\n                    <Title level={5}>{about?.blurbTitle}</Title>\r\n                    {programData.description}\r\n                </Paragraph>\r\n\r\n\r\n                {/* 完整协议内容 */}\r\n                <Card\r\n                    title={about?.UserAgreement}\r\n                    style={{ marginTop: 24, }}\r\n                    styles={{\r\n                        body: {\r\n                        }\r\n                    }}\r\n                >\r\n                    <MacScrollbar\r\n                        skin=\"dark\"\r\n                        className='scroll-container'\r\n                        style={{\r\n                            height: '50vh'\r\n                        }}\r\n                        suppressScrollX>\r\n                        <UserProtocol />\r\n                    </MacScrollbar>\r\n                </Card>\r\n\r\n                {/* 操作按钮 */}\r\n                <Space style={{ marginTop: 24 }}>\r\n                    <Button\r\n                        type=\"primary\"\r\n                        icon={<GlobalOutlined />}\r\n                        onClick={() => createAndClickLink(programData.website)}\r\n                    >\r\n                        {about?.BtnA}\r\n                    </Button>\r\n                    <Button\r\n                        icon={<GithubOutlined />}\r\n                        onClick={() =>createAndClickLink(programData.repository)}\r\n                    >\r\n                        {about?.BtnB}\r\n                    </Button>\r\n                </Space>\r\n            </Card>\r\n        </motion.div>\r\n    );\r\n};\r\n\r\nexport default AboutProgramPage;",
       "__isJSFile": true,
       "__absFile": "F:/UGit/dota2-start/src/pages/about/index.tsx"
     },
@@ -2039,7 +2040,7 @@
       "parentId": "@@/global-layout",
       "id": "3",
       "absPath": "/hud",
-      "__content": "\r\nimport Tasks from './components/Task';\r\nexport default () => {\r\n    return (\r\n        <Tasks />\r\n\r\n    );\r\n};",
+      "__content": "\r\nimport { motion } from 'framer-motion';\r\nimport Tasks from './components/Task';\r\nexport default () => {\r\n    return (\r\n        <motion.div\r\n         \r\n            key=\"anchor\"\r\n            initial={{ opacity: 0, x: 0, y: 200 }} // Start slightly below\r\n            animate={{ opacity: 1, x: 0, y: 0 }} // Animate to original position\r\n            transition={{\r\n                type: \"spring\", // Use spring for elastic effect\r\n                stiffness: 300, // Controls speed of the bounce\r\n                damping: 25, // Controls how smooth the bounce is\r\n                duration: 0.6, // Controls the overall duration\r\n            }}\r\n        >\r\n            <Tasks />\r\n        </motion.div>\r\n    );\r\n};",
       "__isJSFile": true,
       "__absFile": "F:/UGit/dota2-start/src/pages/hud/index.tsx"
     },
@@ -2096,7 +2097,7 @@
     "path": "F:\\UGit\\dota2-start\\node_modules\\react-dom"
   },
   "appJS": null,
-  "locale": "en-US",
+  "locale": "zh-CN",
   "globalCSS": [],
   "globalJS": [],
   "overridesCSS": [],

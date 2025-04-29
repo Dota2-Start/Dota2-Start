@@ -24,3 +24,11 @@ dist-ssr
 *.sln
 *.sw?
 pnpm-lock.yaml
+/node_modules
+/.env.local
+/.umirc.local.ts
+/config/config.local.ts
+/src/.umi
+/src/.umi-production
+/src/.umi-test
+.swc
