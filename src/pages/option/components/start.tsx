@@ -2,12 +2,11 @@ import { CheckCard } from '@ant-design/pro-components';
 import { DotaSource } from './opdata';
 import { Dota2ArgsLite } from '@/mod/store';
 import { LocalStor } from '@/mod/locale_load';
-
+import { AnimatePresence, motion } from "framer-motion";
 import { Cardbody, DotaSourceItem } from './Cardbody';
-import { Flex, Tag } from 'antd';
+import { Flex, Tag, Typography } from 'antd';
 import { Start_cmd } from '../../index/components/Start_cmd';
-import QueueAnim from 'rc-queue-anim';
-
+const { Text } = Typography;
 export default () => {
     const { args, setArgs, replace, setReplace } = Dota2ArgsLite(); // 从 Zustand 获取状态
     const { Local } = LocalStor(); // 从 LocalStor 获取语言数据
@@ -33,18 +32,31 @@ export default () => {
         });
         return updatedItem;
     });
+    const StartCmd = Start_cmd(args, replace)
+    console.log(StartCmd);
 
     return (
         <>
-            <Flex gap="4px 0" wrap>
-                <QueueAnim
-                    delay={580}
-                    type={['scaleBig', 'scale']}
-                >
-                    {Start_cmd(args, replace).map((e, i) =>
-                        <Tag key={i} color='cyan' bordered={false}>{e}</Tag>
-                    )}
-                </QueueAnim>
+            <Flex gap="8px 0" wrap>
+                <AnimatePresence>
+                    {StartCmd.map((e, i) =>
+                        <motion.p
+                            key={i}
+                            initial={{ opacity: 0, filter: "blur(5px)" }}
+                            animate={{ opacity: 1, filter: "blur(0px)" }}
+                            exit={{ opacity: 0, filter: "blur(5px)" }}
+                            transition={{
+                                duration: 0.3,
+                                delay: (i + 0.3) * 0.1,
+                            }}
+                            layout
+                        >
+                            <Text code >
+                                {e}
+                            </Text>
+                        </motion.p>)
+                    }
+                </AnimatePresence>
             </Flex>
             <CheckCard.Group
                 style={{ width: '100%' }}

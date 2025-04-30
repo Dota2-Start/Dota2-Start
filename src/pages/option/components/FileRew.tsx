@@ -8,7 +8,7 @@ import { InfoCircleOutlined } from '@ant-design/icons';
 import { Dota2File } from '@/mod/store';
 export default () => {
     const { Local } = LocalStor()
-    const iLocal = Local?.option?.['part-2']
+    const iLocal = Local?.['/option']?.['part-2']
     const { path } = Dota2File();
     const destinationPath = `${path}\\game\\dota_lv` 
     const [messageApi, contextHolder] = message.useMessage();

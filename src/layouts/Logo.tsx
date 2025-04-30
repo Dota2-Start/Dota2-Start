@@ -42,21 +42,37 @@ const App: React.FC<Props> = ({ loading }) => {
                             alignItems: 'center',
                             background: '#1a1f26',
                             zIndex: 999,
+                            borderRadius: '0%', // 初始非圆形
+                            overflow: 'hidden', // 保证 clipPath 起作用
                         }}
-                        initial={{ opacity: 1 }}
-                        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+                        initial={{
+                            opacity: 1,
+                            clipPath: 'circle(100% at 50% 50%)'
+                        }}
+
+                        exit={{
+                            clipPath: 'circle(0% at 0% 0%)',
+                            opacity: 0,
+                            transition: {
+                                clipPath: { duration: 0.6, ease: 'easeInOut' },
+                                opacity: { duration: 0.5, ease: "easeInOut" },
+                            },
+                        }}
+
                     >
                         <motion.div
                             layoutId="logo"
                             initial={{ scale: 1 }}
                             animate={{ scale: [1, 1.2, 1] }}
-                            transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
+                            transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut', delay: 0.1 }}
                         >
                             <Logosvg width={160} height={160} />
+
                         </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
 
             {/* 正常头部 */}
             {!loading && (
