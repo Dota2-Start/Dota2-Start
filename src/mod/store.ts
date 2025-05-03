@@ -40,9 +40,13 @@ export const Appinfo = create<AppinfoType>((set) => ({
     })),
 }
 ))
+
 export interface AppDataType {
     Skipversion: string;
     Language: string;
+    devMode: boolean;
+    devOption: any
+    winBgEffect: 'Mica' | 'Acrylic' | 'Default'
     setAppData: (e: Partial<AppDataType>) => void
 }
 // 使用双调用语法创建 store
@@ -51,6 +55,9 @@ export const AppDataStore = create<AppDataType>()(
         (set) => ({
             Skipversion: '',
             Language: navigatorlLanguage,
+            devMode: false,
+            devOption: null,
+            winBgEffect: 'Default',
             setAppData: (e) => set((err) => ({
                 ...err, // 保留现有的状态
                 ...e,     // 更新传入的字段
@@ -75,10 +82,10 @@ export const Dota2ArgsLite = create<Dota2ArgsLiteType>()(
             replace: { fps: 60 },
             setArgs: (args) => set(() => ({ args })),
             setReplace: (replace) =>
-              set((state) => ({
-                replace: { ...state.replace, ...replace }, // ✅ 合并而不是覆盖
-              })),
-          }),
+                set((state) => ({
+                    replace: { ...state.replace, ...replace }, // ✅ 合并而不是覆盖
+                })),
+        }),
         {
             name: 'Dota2Start-local-Dota2SargsLite', // 存储在 localStorage 中的 key
         }
@@ -94,14 +101,18 @@ export type TaskListItem = {
 };
 export interface TaskListType {
     args: TaskListItem[];
+    remind: boolean
     setTask: (e: TaskListItem[]) => void,
+    setRemind: (e: TaskListType['remind']) => void,
 }
 // 使用双调用语法创建 store
 export const TaskListStore = create<TaskListType>()(
     persist(
         (set) => ({
             args: [],
-            setTask: (replace) => set(e => ({ args: replace })),
+            remind: false,
+            setTask: (replace) => set(() => ({ args: replace })),
+            setRemind: (replace) => set(() => ({ remind: replace })),
         }),
         {
             name: 'Dota2Start-local-TaskListItem', // 存储在 localStorage 中的 key

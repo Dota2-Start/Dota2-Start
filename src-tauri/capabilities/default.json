@@ -23,7 +23,15 @@
     "core:window:allow-set-title",
     "core:window:allow-set-effects",
     "core:window:allow-set-theme",
+    "core:webview:allow-create-webview-window",
+    "core:window:allow-center",
+    "core:window:allow-set-size",
+    "core:window:allow-set-focus",
+    "core:window:allow-is-maximized",
+    "core:window:allow-toggle-maximize",
+    "decorum:allow-show-snap-overlay",
     "http:default",
+    "os:default",
     {
       "identifier": "http:default",
       "allow": [
@@ -37,7 +45,6 @@
           "url": "https://store.steampowered.com"
         }
       ]
-    },
-    "fs:default"
+    }
   ]
 }

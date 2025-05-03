@@ -1,6 +1,6 @@
+use serde::{Deserialize, Serialize};
 use std::sync::{Arc, Mutex};
 use warp::Filter;
-use serde::{Deserialize, Serialize};
 
 // 定义 GameState 数据结构
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -56,7 +56,7 @@ impl GsiServer {
                     }
                     warp::reply::with_status("GameState received", warp::http::StatusCode::OK)
                 });
-    
+
             // 注意，此处返回的元组，第一个元素为 SocketAddr，第二个元素为服务 Future。
             let server_result = warp::serve(route).try_bind_ephemeral(([0, 0, 0, 0], port));
             if let Ok((bound_addr, _server_future)) = server_result {
@@ -69,5 +69,4 @@ impl GsiServer {
             }
         }
     }
-    
 }

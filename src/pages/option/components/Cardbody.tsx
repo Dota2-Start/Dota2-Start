@@ -59,18 +59,14 @@ export const Cardbody = (es: ComponentProps) => {
                 break;
             case 'ppi':
                 const result = parseResolution(iValue);
-                console.log('result', result);
-                
                 let newjson = result;
                 const onPpi = (type: 'w' | 'h', value: number | null) => {
-                    console.log('onPpi', type, value);
                     newjson = {
                         ...newjson,
                         [type]: value,
                     }
                     debouncedUpdate(`-w ${newjson.w} -h ${newjson.h}`)
                 }
-                console.log('newjson', iValue)
                 backDiv = (
                     <div onClick={(e) => e.stopPropagation()}>
                         <Space >

@@ -15,6 +15,7 @@
         "width": 1246,
         "height": 702,
         "decorations": false,
+        "hiddenTitle": true,
         "focus": false,
         "transparent": true,
         "center": true,
@@ -24,6 +25,7 @@
         "titleBarStyle":"Overlay"
       }
     ],
+    "withGlobalTauri": true,
     "security": {
       "csp": null
     }

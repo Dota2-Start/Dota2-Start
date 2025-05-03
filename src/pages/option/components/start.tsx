@@ -33,8 +33,6 @@ export default () => {
         return updatedItem;
     });
     const StartCmd = Start_cmd(args, replace)
-    console.log(StartCmd);
-
     return (
         <>
             <Flex gap="8px 0" wrap>
@@ -63,7 +61,7 @@ export default () => {
                 multiple
                 options={updatedDotaSource} // 使用更新后的 DotaSource
                 value={args} // 当前选中的值
-                onChange={setArgs} // 更新选中的值
+                onChange={e=>setArgs(e as string[])} // 更新选中的值
             /></>
     );
 };

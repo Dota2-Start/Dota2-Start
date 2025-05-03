@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Flex, Tag, Typography } from 'antd';
 import { useLocation } from 'umi';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
@@ -41,7 +41,7 @@ const App: React.FC<Props> = ({ loading }) => {
                             justifyContent: 'center',
                             alignItems: 'center',
                             background: '#1a1f26',
-                            zIndex: 999,
+                            zIndex: 9999,
                             borderRadius: '0%', // 初始非圆形
                             overflow: 'hidden', // 保证 clipPath 起作用
                         }}
@@ -80,7 +80,7 @@ const App: React.FC<Props> = ({ loading }) => {
                     align="center"
                     gap="small"
                     style={{
-                        margin: 8,
+                        margin: "6px 8px",
                         pointerEvents: 'none',
                     }}
                 >

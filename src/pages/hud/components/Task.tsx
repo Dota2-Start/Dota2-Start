@@ -1,21 +1,16 @@
 import type { ProColumns } from '@ant-design/pro-components';
 import { ProTable } from '@ant-design/pro-components';
-import { Button, Popconfirm } from 'antd';
+import { Button, Popconfirm, Space, Switch } from 'antd';
 import newfrom from './NewForm';
 import { TaskListItem, TaskListStore } from '@/mod/store';
 import { LocalStor } from '@/mod/locale_load';
-import { a } from 'framer-motion/client';
-const valueEnum = {
-    0: 'close',
-    1: 'running',
-    2: 'online',
-    3: 'error',
-};
+
 export default () => {
-    const { args, setTask } = TaskListStore();
+    const { args, setTask, remind, setRemind } = TaskListStore();
     const { NewForm, setEditKey, setFromOpen } = newfrom();
     const { Local } = LocalStor()
-    const iLocal = Local[location.pathname]
+    const iLocal = Local?.[location.pathname]
+    const dict = Local?.$dict
     const handleDelete = (id: number) => {
         const newData = args.filter(item => item.id !== id);
         setTask(newData);
@@ -77,12 +72,11 @@ export default () => {
 
     return (
         <ProTable<TaskListItem>
-            //dataSource={args}
             rowKey="id"
             pagination={{ showQuickJumper: true }}
             options={false}
             request={async () => {
-                
+
                 return Promise.resolve({
                     data: args,
                     success: true,
@@ -102,6 +96,11 @@ export default () => {
                 tooltip: iLocal?.Table_tooltip,
             }}
             toolBarRender={() => [
+                <Space>
+                    <span>{dict?.enable}</span>
+                    <Switch value={remind} onChange={setRemind} />
+                </Space>
+                ,
                 <Button key="log">查看日志</Button>,
                 <NewForm />,
             ]}

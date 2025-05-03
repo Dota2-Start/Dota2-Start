@@ -1,17 +1,20 @@
 import React from 'react';
-import { Anchor, Col, Divider, Row, Typography } from 'antd';
+import { Anchor, Col, Row } from 'antd';
 import Startop from './components/start';
 import FileRew from './components/FileRew';
 import { AnchorContainer, AnchorLinkItemProps } from 'antd/es/anchor/Anchor';
 import { motion } from 'framer-motion';
 import { LocalStor } from '@/mod/locale_load';
-
-const { Title } = Typography;
+import Section from './components/Section';
+import DevPage from './components/developer';
+import { AppDataStore } from '@/mod/store';
+import { isWin11 } from '@/mod/ThemeConfig';
 
 const App: React.FC = () => {
+    const { devMode } = AppDataStore()
     const { Local } = LocalStor()
-    const iLocal = Local[location.pathname]
-
+    const iLocal = Local?.[location.pathname]
+    const { devOption } = AppDataStore()
     const anchorData = [
         {
             key: 'part-1',
@@ -25,19 +28,29 @@ const App: React.FC = () => {
             title: iLocal?.anchor?.['part-2'],
             children: <FileRew />,
         },
+        ...(devMode
+            ? [{
+                key: 'part-3',
+                href: '#part-3',
+                title: iLocal?.anchor?.['part-3'],
+                children: <DevPage />,
+            }]
+            : [])
     ];
 
     return (
         <Row>
-            <div className='video-background'
+            {(isWin11 && devOption?.effect) ? null : <div className='video-background'
                 style={{
                     backgroundImage: 'url(https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react/backgrounds/greyfade.jpg)',
                 }}
             />
+            }
             <Col flex="200px">
                 <motion.div
                     style={{
                         position: 'fixed', // 保证 motion.div 也悬浮
+                        width: 160,
                     }}
                     key="anchor"
                     initial={{ opacity: 0, x: -260, y: -80 }} // Start slightly below
@@ -57,32 +70,14 @@ const App: React.FC = () => {
                         items={anchorData as unknown as AnchorLinkItemProps[]}
                         getContainer={() => document.querySelector(".scroll-container") as AnchorContainer}
 
-
                     />
                 </motion.div>
             </Col>
             <Col flex="1" style={{ marginTop: 18 }}>
-                {anchorData.map((item, index) => (
-                    <motion.div
-                        key={item.key}
-                        id={item.key}
-                        style={{ minHeight: '60vh' }}
-                        initial={{ opacity: 0, y: 50 }} // Start slightly below
-                        animate={{ opacity: 1, y: 0 }} // Animate to original position
-                        transition={{
-                            type: "spring", // Use spring for elastic effect
-                            stiffness: 300, // Controls speed of the bounce
-                            damping: 25, // Controls how smooth the bounce is
-                            duration: 0.6, // Controls the overall duration
-                            delay: (index + 1) * 0.2,
-                        }}
-                    >
-                        <Title level={4} style={{ margin: 0 }}>
-                            {item.title}
-                        </Title>
-                        <Divider />
-                        {item?.children}
-                    </motion.div>
+                {anchorData.map(item => (
+                    <Section key={item.key} id={item.key} title={item.title}>
+                        {item.children}
+                    </Section>
                 ))}
             </Col>
         </Row>

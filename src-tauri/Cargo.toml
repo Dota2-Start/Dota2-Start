@@ -1,6 +1,6 @@
 [package]
 name = "Dota2-Strat"
-version = "1.1.6-beta.1"
+version = "1.1.7"
 description = "Dota2 Strat"
 authors = ["you"]
 edition = "2021"
@@ -22,7 +22,6 @@ tauri = { version = "2.5.1", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-tauri-plugin-os = "2.2.1"
 tauri-plugin-http = "2"
 dirs = "6.0.0"                                   # 用于跨平台获取主目录
 anyhow = "1.0"
@@ -31,3 +30,5 @@ sysinfo = "0.34.2"
 tauri-plugin-fs = "2"
 tokio = { version = "1", features = ["full"] }
 warp = "0.3"
+tauri-plugin-decorum = { git = "https://github.com/clearlysid/tauri-plugin-decorum.git" }
+tauri-plugin-os = "2"

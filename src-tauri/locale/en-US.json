@@ -11,7 +11,7 @@
     },
     "/": {
         "stateCord": [
-            "{g} Install Status",
+            "{g} Installation Status",
             "{g} Launchable"
         ],
         "description": "Welcome",
@@ -21,7 +21,8 @@
     "/option": {
         "anchor": {
             "part-1": "Launch Options",
-            "part-2": "File Injection"
+            "part-2": "File Injection",
+            "part-3": "Developer Options"
         },
         "part-1": {
             "basic_settings": "Basic Settings",
@@ -30,56 +31,66 @@
             "developer_options": "Developer Options",
             "miscellaneous_settings": "Miscellaneous Settings",
             "-novid": "Skip Startup Movie",
-            "-novid_des": "Skips the startup animation of {g} and goes directly to the main interface.",
+            "-novid_des": "Skip the startup movie when launching {g} and go directly to the main interface.",
             "-perfectworld": "Perfect World Mode",
-            "-perfectworld_des": "Launches {g} in Perfect World mode, suitable for players in China.",
+            "-perfectworld_des": "Launch {g} in Perfect World mode, suitable for players in China.",
             "-console": "Enable Console",
-            "-console_des": "Enables the developer console in {g}, allowing input of debugging commands.",
+            "-console_des": "Enable the developer console within {g}, allowing input of debugging commands.",
             "-language schinese": "Set Language to Simplified Chinese",
-            "-language schinese_des": "Sets the {g} interface language to Simplified Chinese but keeps English voiceovers.",
+            "-language schinese_des": "Set the {g} interface language to Simplified Chinese, but keep English voiceovers.",
             "-high": "High Priority",
-            "-high_des": "Sets the CPU priority of the {g} process to high, which may improve {g} performance.",
+            "-high_des": "Set the CPU priority of the {g} process to high, which may improve {g} performance.",
             "-fullscreen": "Fullscreen Mode",
-            "-fullscreen_des": "Launches {g} in fullscreen mode.",
+            "-fullscreen_des": "Launch {g} in fullscreen mode.",
             "-windowed -noborder": "Borderless Window Mode",
-            "-windowed -noborder_des": "Runs {g} in borderless window mode.",
+            "-windowed -noborder_des": "Run {g} in borderless window mode.",
             "{ppi}": "Set Resolution",
-            "{ppi}_des": "Modifies the {g} resolution",
+            "{ppi}_des": "Modify {g} resolution",
             "+fps_max {fps}": "Increase Maximum FPS",
-            "+fps_max {fps}_des": "Sets the {g} frame rate, up to a maximum of 1000 FPS.",
+            "+fps_max {fps}_des": "Set the {g} frame rate, up to a maximum of 1000 FPS.",
             "-tcp": "Use TCP Protocol",
-            "-tcp_des": "Forces {g} to use the TCP protocol for network connections, suitable for solving UDP connection issues.",
+            "-tcp_des": "Force {g} to use the TCP protocol for network connections, suitable for solving UDP connection issues.",
             "-udp": "Use UDP Protocol",
-            "-udp_des": "Forces {g} to use the UDP protocol for network connections. This is the default setting.",
+            "-udp_des": "Force {g} to use the UDP protocol for network connections. This is the default setting.",
             "-dev": "Enable Developer Mode",
-            "-dev_des": "Enables developer mode, unlocking additional debugging features.",
-            "-enable_addons": "Allow Custom Content",
-            "-enable_addons_des": "Allows the engine to load custom content within the {g} folder and replace VPK files.",
+            "-dev_des": "Enable developer mode, unlocking additional debugging features.",
+            "-enable_addons": "Allow Loading Custom Content",
+            "-enable_addons_des": "Allow the engine to load custom content within the {g} folder and replace VPK files.",
             "-override_vpk": "Override VPK Files",
-            "-override_vpk_des": "Allows the engine to search for custom content within the {g} folder and replace VPK files. May affect matchmaking functionality.",
+            "-override_vpk_des": "Allow the engine to search for custom content within the {g} folder and replace VPK files. Using this may affect matchmaking functionality.",
             "-nomicsettings": "Disable Microphone Settings",
-            "-nomicsettings_des": "Prevents {g} from modifying microphone output values, suitable for players using other voice software.",
+            "-nomicsettings_des": "Prevent {g} from modifying microphone output values, suitable for players using other voice software.",
             "-nosound": "Disable Sound",
-            "-nosound_des": "Turns off all sounds within {g}.",
+            "-nosound_des": "Turn off all sounds within {g}.",
             "-map dota": "Load Map",
-            "-map dota_des": "Preloads the map at startup, reducing loading time when entering {g}.",
+            "-map dota_des": "Preload the map at startup, reducing loading time when entering {g}.",
             "-32bit": "Use 32-bit Mode",
-            "-32bit_des": "Runs {g} in 32-bit mode, suitable for older systems or hardware."
+            "-32bit_des": "Run {g} in 32-bit mode, suitable for older systems or hardware."
         },
         "part-2": {
-            "cn-harmony": "CN Anti-Harmony",
-            "cn-harmony_des": "Turns black blood into red blood, some skill/item icons are consistent with the international version when enabled.",
+            "cn-harmony": "CN Anti-Censorship",
+            "cn-harmony_des": "After enabling, black blood becomes red blood, and some skill/item icons are consistent with the international version.",
             "cn-harmony_tip": "Effect files provided by Bilibili @iFuStudio"
-        }
+        },
+        "part-3": [
+            {
+                "title": "DevTools",
+                "description": "After enabling, use F12 to open developer tools to view program running status and debug information."
+            },
+            {
+                "title": "Background Material",
+                "description": "System background material is a Windows 11 feature. When enabled, some page backgrounds will use background material."
+            }
+        ]
     },
     "/about": {
         "title": "About",
-        "description": "{D} is a smart launcher designed for 《Dota2》 players. It allows you to quickly manage {g} launch options and provides customized functional modules to help players quickly enter the battlefield and unleash their competitive potential.",
+        "description": "{D} is a smart launcher designed for 《Dota2》 players. It allows you to quickly manage {g}'s launch options, provides customized functional modules, and helps players quickly enter the battlefield and unleash their competitive potential.",
         "version": "Current Version",
         "author": "Developers",
         "copyright": "Copyright",
-        "license": "License",
-        "blurbTitle": "About",
+        "license": "Open Source License",
+        "blurbTitle": "Program Introduction",
         "blurb": "{D} is a professional {} launcher, providing convenient {g} management and optimization features.",
         "UserAgreement": "User Agreement",
         "BtnA": "Visit Official Website",
@@ -91,7 +102,7 @@
             "Description",
             "Execution Cycle (ms)",
             "Status",
-            "Actions"
+            "Action"
         ],
         "Table_option": [
             "Modify",
@@ -100,44 +111,44 @@
         "Table_Add": "Add Task",
         "Table_Modify": "Modify Task",
         "Table_title": "Timed Reminders",
-        "Table_tooltip": "Reminders based on in-game time"
+        "Table_tooltip": "Provide reminder notifications based on game time"
     },
     "$event_type": [
         "News",
         "{g} Event",
-        "Party",
-        "Meeting",
-        "Special",
-        "Music & Art",
-        "Sports",
-        "Travel",
-        "Chat",
+        "Party Event",
+        "Conference Event",
+        "Special Theme Event",
+        "Music & Art Event",
+        "Sports Event",
+        "Travel Event",
+        "Chat Event",
         "{g} Release",
-        "Live Stream",
+        "Broadcast/Live Event",
         "Minor Update",
         "Update Preview",
         "Major Update",
         "DLC Release",
         "Coming Soon",
         "Esports Live",
-        "Dev Stream",
-        "Celeb Stream",
-        "{g} Sale",
-        "Item Sale",
-        "XP Bonus",
-        "{g} Drop",
-        "{g} Perk",
-        "{g} Challenge",
-        "{g} Contest",
+        "Developer Live",
+        "Celebrity Live",
+        "{g} Promotion",
+        "Item Promotion",
+        "Bonus Experience",
+        "{g} In-Game Drop",
+        "{g} In-Game Benefit",
+        "{g} In-Game Challenge",
+        "{g} In-Game Competition",
         "Offline Event",
-        "Announcement",
-        "Beta",
-        "{g} Content",
+        "News Announcement",
+        "Beta Release",
+        "{g} Content Broadcast",
         "Free Trial",
-        "Season Start",
+        "Season Release",
         "Season Update",
-        "Cross-Platform",
-        "{g} Activity"
+        "Cross-Platform Forward",
+        "{g} Comprehensive Event"
     ],
     "$ShowMeg": {
         "detection": "Detecting {g} status",
@@ -145,11 +156,11 @@
         "loading": "Waiting for {} to launch...",
         "gameEnd": "{} has exited!",
         "timeout": "{} launch timed out!",
-        "sNotStarted": "{s} is not running!",
-        "logOn": "Logging into {s}...",
+        "sNotStarted": "{s} is not started!",
+        "logOn": "Logging in to {s}...",
         "sstart": "{s} launched successfully",
         "sloading": "Waiting for {s} to launch...",
-        "gameReady": "Launching {} soon",
+        "gameReady": "Preparing to launch {}",
         "sReady": "Launching {s}...",
         "serror": "Failed to launch {s}!"
     },
@@ -167,12 +178,17 @@
         "title": "New version available:",
         "cancelText": "Cancel",
         "okText": "Go to Update",
-        "upData": "Changelog",
+        "upData": "Update Log",
         "noText": "Ignore This Update",
         "noText2": "Confirm"
     },
     "$error": {
-        "403": "Sorry, this page is not yet available. Please wait patiently for it to be unlocked."
+        "403": "Sorry, this page is not yet open, please wait patiently for it to be unlocked."
+    },
+    "$dict": {
+        "open": "Open",
+        "enable": "Enable",
+        "close": "Close"
     },
     "$": {
         "gameName": "Dota 2",

@@ -4,8 +4,10 @@ import routes from './routes';
 import './index.less';
 import { motion } from 'framer-motion';
 import { LocalStor } from '../locale_load';
-
-const Nav: React.FC = () => {
+export interface NavProps {
+  onChange?: (key: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+}
+const Nav: React.FC<NavProps> = ({ onChange }) => {
   const location = useLocation();
   const navRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
@@ -39,9 +41,12 @@ const Nav: React.FC = () => {
           <Link
             key={item?.key}
             to={item?.key as string}
+            onClick={e => {
+              if (onChange) onChange(item?.key as string, e);
+            }}
             className={location.pathname === item?.key ? 'active' : ''}
             onMouseEnter={e => moveIndicator(e.currentTarget)}
-            onMouseLeave={() => {
+            onMouseLeave={(e) => {
               const activeLink = navRef.current?.querySelector('a.active') as HTMLElement;
               moveIndicator(activeLink);
             }}

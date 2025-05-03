@@ -19,6 +19,7 @@ import { parseVersion } from '@/mod/V_analysis';
 import { Dota2_detection, Dota2stateStore } from '@/mod/status';
 import { windowEvent } from '../pages/windowEvent';
 import { Outlet, useLocation } from 'umi';
+import Cmdinput from './cmdinput';
 // antd 语言包初始化
 const locals = localStorage.getItem('Dota2Start-local-AppData') || '{}'
 const jsonLocal = JSON.parse(locals)
@@ -26,7 +27,7 @@ const formattedKey = (jsonLocal?.state?.Language || navigatorlLanguage).replace(
 const antdLocal = (await import(`antd/es/locale/${formattedKey}.js`)).default;
 // 初始化语言包 END
 const { Header, Content } = Layout;
-
+//newWebviewWindow('start-Hud','/hudwindow')
 
 document.addEventListener('keydown', function (e) {
   if ((e.key === 'F5') || (e.ctrlKey && e.key === 'r')) {
@@ -76,8 +77,6 @@ const App: React.FC = () => {
     times = setTimeout(Locals, 500);
   }, [])
   useEffect(() => {
-    console.log(Local?.label);
-    
     if (!Local?.label) return
     setTimeout(() =>
       setLoading(false)
@@ -96,6 +95,7 @@ const App: React.FC = () => {
       setDota2State(err)
       const pathname = locationRef.current.pathname
       const end = pathname !== '/'
+     
       return end || isMinimi.current
     })
   }, [exe, location, isMinimized])
@@ -110,6 +110,7 @@ const App: React.FC = () => {
       <Layout
         className="drag-region"
       >
+        <Cmdinput />
         <Content>
           <div
             style={{
@@ -118,7 +119,7 @@ const App: React.FC = () => {
               transform: 'scale(1)',
             }}
           >
-
+ 
             <Header
               className='HeaderAx vague'
               data-tauri-drag-region
@@ -129,7 +130,7 @@ const App: React.FC = () => {
               <Flex justify='space-between' data-tauri-drag-region>
                 <Logo loading={loading} />
                 <Navigation />
-                <TitleBar setLoading={setLoading}/>
+                <TitleBar setLoading={setLoading} />
               </Flex>
             </Header>
             <MacScrollbar

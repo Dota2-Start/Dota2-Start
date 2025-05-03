@@ -9,6 +9,9 @@ use std::sync::Mutex;
 use steam::dota_finder::find_dota2_dir;
 use steam::dota_finder::get_steam_path;
 use steam::ProcessStatus;
+use tauri::Manager;
+use tauri_plugin_decorum::init as decorum;
+use tauri_plugin_decorum::WebviewWindowExt;
 use Local::language_file;
 use Local::LocaleManager;
 
@@ -33,7 +36,8 @@ fn locale_load_i() -> String {
     index_json
 }
 /// 启动 GSI 服务器
-#[tauri::command]async fn gsi_server() {
+#[tauri::command]
+async fn gsi_server() {
     // 创建 GsiServer 实例
     let server = gsi::GsiServer::new();
 
@@ -150,10 +154,22 @@ fn open_exe(exe_path: &str, args: Vec<String>) -> i32 {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_http::init())
-        .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_opener::init())
+        .plugin(decorum())
+        .setup(|app| {
+            // Create a custom titlebar for main window
+            // On Windows this will hide decoration and render custom window controls
+            // On macOS it expects a hiddenTitle: true and titleBarStyle: overlay
+            let main_window = app.get_webview_window("main").unwrap();
+            main_window.create_overlay_titlebar().unwrap();
+
+            #[cfg(target_os = "macos")]
+            main_window.set_traffic_lights_inset(16.0, 20.0).unwrap();
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             getDota_path,
             exists,

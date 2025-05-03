@@ -4,7 +4,7 @@ use anyhow::{Context, Result};
 use std::path::PathBuf;
 
 #[cfg(target_os = "windows")]
-use winreg::{RegKey, enums::HKEY_LOCAL_MACHINE};
+use winreg::{enums::HKEY_LOCAL_MACHINE, RegKey};
 
 /// 查找 Dota 2 安装目录的单一模块
 pub fn find_dota2_dir() -> Result<PathBuf> {
@@ -19,7 +19,7 @@ pub fn find_dota2_dir() -> Result<PathBuf> {
     // 检查其他库目录
     let library_file = steam_path.join("steamapps/libraryfolders.vdf");
     let content = std::fs::read_to_string(library_file)?;
-    
+
     parse_library_paths(&content)?
         .into_iter()
         .map(|p| p.join("steamapps/common/dota 2 beta"))
@@ -33,7 +33,8 @@ pub fn get_steam_path() -> Result<PathBuf> {
     {
         let reg_key = RegKey::predef(HKEY_LOCAL_MACHINE)
             .open_subkey("SOFTWARE\\WOW6432Node\\Valve\\Steam")?;
-        reg_key.get_value::<String, _>("InstallPath")
+        reg_key
+            .get_value::<String, _>("InstallPath")
             .map(PathBuf::from)
             .context("Failed to read Steam path from registry")
     }
@@ -57,7 +58,8 @@ pub fn get_steam_path() -> Result<PathBuf> {
 
 /// 解析 libraryfolders.vdf 文件
 fn parse_library_paths(content: &str) -> Result<Vec<PathBuf>> {
-    content.lines()
+    content
+        .lines()
         .filter(|line| line.contains("\"path\""))
         .filter_map(|line| {
             line.split('"')

@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { } from 'react';
 import { Card, Typography, Descriptions, Tag, Space, Button } from 'antd';
 import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import { UserProtocol } from '../protocol';
@@ -56,7 +56,7 @@ const AboutProgramPage: React.FC = () => {
             <Card title={about?.title} >
                 {/* 基础信息区块 */}
                 <Descriptions
-                    title={<Title level={4}>{programData.name}</Title>}
+                    title={<Title level={4} style={{ margin: 0 }}>{programData.name}</Title>}
                     column={1}
                     bordered
                 >
@@ -124,7 +124,7 @@ const AboutProgramPage: React.FC = () => {
                     </Button>
                     <Button
                         icon={<GithubOutlined />}
-                        onClick={() =>createAndClickLink(programData.repository)}
+                        onClick={() => createAndClickLink(programData.repository)}
                     >
                         {about?.BtnB}
                     </Button>

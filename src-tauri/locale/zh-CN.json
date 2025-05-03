@@ -21,7 +21,8 @@
     "/option": {
         "anchor": {
             "part-1": "启动项",
-            "part-2": "文件注入"
+            "part-2": "文件注入",
+            "part-3": "开发者选项"
         },
         "part-1": {
             "basic_settings": "基本设置",
@@ -70,7 +71,17 @@
             "cn-harmony": "国服反和谐",
             "cn-harmony_des": "开启后黑血变红血，部分技能/装备图标与国际版一致",
             "cn-harmony_tip": "由Bilibili @iFuStudio 提供特效文件"
-        }
+        },
+        "part-3": [
+            {
+                "title": "DevTools",
+                "description": "开启后使用F12打开开发者工具，可查看程序的运行状态和调试信息。"
+            },
+            {
+                "title":"背景材料",
+                "description": "系统背景材料是Windows11的特性，开启后在部分页面的背景将使用背景材料。"
+            }
+        ]
     },
     "/about": {
         "title": "关于程序",
@@ -99,8 +110,8 @@
         ],
         "Table_Add": "添加任务",
         "Table_Modify": "修改任务",
-        "Table_title":"定时提醒",
-        "Table_tooltip":"根据游戏时间做出提醒通知"
+        "Table_title": "定时提醒",
+        "Table_tooltip": "根据游戏时间做出提醒通知"
     },
     "$event_type": [
         "新闻",
@@ -173,6 +184,11 @@
     },
     "$error": {
         "403": "抱歉，当前页面暂未开放，请耐心等待解锁。"
+    },
+    "$dict": {
+        "open": "打开",
+        "enable": "启用",
+        "close": "关闭"
     },
     "$": {
         "gameName": "Dota 2",

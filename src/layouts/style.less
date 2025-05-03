@@ -100,9 +100,32 @@ p {
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   backdrop-filter: saturate(180%) blur(16px);
   border-radius: 6px;
- 
+
 }
 
 .tagt {
   border-radius: 0px;
+}
+
+button#decorum-tb-minimize,
+button#decorum-tb-maximize,
+button#decorum-tb-close {
+  width: 45px !important;
+  color: #d1d1d1ef;
+  pointer-events: all;
+  border-radius: 6px !important;
+}
+button#decorum-tb-close{
+  margin-right: 8px;
+}
+button#decorum-tb-minimize:hover,
+button#decorum-tb-maximize:hover,
+button#decorum-tb-close:hover {
+}
+
+div[data-tauri-decorum-tb] {
+  z-index: 9999 !important;
+  pointer-events: none;
+  height: 38px !important;
+  padding-block:4px ;
 }

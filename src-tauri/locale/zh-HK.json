@@ -2,183 +2,199 @@
     "value": "tchinese",
     "label": "繁體中文",
     "navigation": {
-      "/": "開始",
-      "/about": "關於",
-      "/settings": "設定",
-      "/option": "選項",
-      "/strat": "攻略",
-      "/hud": "HUD"
+        "/": "開始",
+        "/about": "關於",
+        "/settings": "設定",
+        "/option": "選項",
+        "/strat": "攻略",
+        "/hud": "HUD"
     },
     "/": {
-      "stateCord": [
-        "{g}安裝狀態",
-        "{g}是否可啟動"
-      ],
-      "description": "歡迎使用",
-      "startBtn": "啟動 {}",
-      "service": "{} 執行中"
+        "stateCord": [
+            "{g} 安裝狀態",
+            "{g} 是否可啟動"
+        ],
+        "description": "歡迎使用",
+        "startBtn": "啟動 {}",
+        "service": "{} 運行中"
     },
     "/option": {
-      "anchor": {
-        "part-1": "啟動項",
-        "part-2": "檔案注入"
-      },
-      "part-1": {
-        "basic_settings": "基本設定",
-        "performance_optimization": "效能優化",
-        "network_settings": "網路設定",
-        "developer_options": "開發者選項",
-        "miscellaneous_settings": "其他設定",
-        "-novid": "跳過啟動動畫",
-        "-novid_des": "跳過{g}啟動時的動畫，直接進入主介面。",
-        "-perfectworld": "國服模式",
-        "-perfectworld_des": "以國服模式啟動{g}，適用於中國地區玩家。",
-        "-console": "啟用控制台",
-        "-console_des": "在{g}內啟用開發者控制台，允許輸入除錯命令。",
-        "-language schinese": "設定語言為簡體中文",
-        "-language schinese_des": "將{g}介面語言設定為簡體中文，但保留英文配音。",
-        "-high": "高優先順序執行",
-        "-high_des": "將{g}進程的CPU優先順序設為高，可能提升{g}效能。",
-        "-fullscreen": "全螢幕模式",
-        "-fullscreen_des": "以全螢幕模式啟動{g}。",
-        "-windowed -noborder": "無邊框視窗模式",
-        "-windowed -noborder_des": "以無邊框視窗模式執行{g}。",
-        "{ppi}": "設定解析度",
-        "{ppi}_des": "修改{g}解析度",
-        "+fps_max {fps}": "提高最大幀率",
-        "+fps_max {fps}_des": "設定{g}幀率，最高可以設為1000幀。",
-        "-tcp": "使用TCP協定",
-        "-tcp_des": "強制{g}使用TCP協定進行網路連線，適用於解決UDP連線問題。",
-        "-udp": "使用UDP協定",
-        "-udp_des": "強制{g}使用UDP協定進行網路連線，這是預設設定。",
-        "-dev": "啟用開發者模式",
-        "-dev_des": "啟用開發者模式，解鎖額外的除錯功能。",
-        "-enable_addons": "允許載入自訂內容",
-        "-enable_addons_des": "允許引擎載入{g}資料夾內的自訂內容並替換VPK檔案。",
-        "-override_vpk": "覆蓋VPK檔案",
-        "-override_vpk_des": "允許引擎搜尋{g}資料夾內的自訂內容並替換VPK檔案。使用後可能影響配對功能。",
-        "-nomicsettings": "禁用麥克風設定",
-        "-nomicsettings_des": "防止{g}修改麥克風的輸出值，適用於使用其他語音軟體的玩家。",
-        "-nosound": "禁用聲音",
-        "-nosound_des": "關閉{g}內所有聲音。",
-        "-map dota": "載入地圖",
-        "-map dota_des": "啟動時預先載入地圖，減少進入{g}時的載入時間。",
-        "-32bit": "使用32位元模式",
-        "-32bit_des": "以32位元模式執行{g}，適用於舊款系統或硬體。"
-      },
-      "part-2": {
-        "cn-harmony": "國服反和諧",
-        "cn-harmony_des": "開啟後黑血變紅血，部分技能/裝備圖示與國際版一致",
-        "cn-harmony_tip": "由Bilibili @iFuStudio 提供特效檔案"
-      }
+        "anchor": {
+            "part-1": "啟動選項",
+            "part-2": "檔案注入",
+            "part-3": "開發者選項"
+        },
+        "part-1": {
+            "basic_settings": "基本設定",
+            "performance_optimization": "效能優化",
+            "network_settings": "網路設定",
+            "developer_options": "開發者選項",
+            "miscellaneous_settings": "其他設定",
+            "-novid": "跳過啟動動畫",
+            "-novid_des": "跳過啟動 {g} 時的動畫，直接進入主介面。",
+            "-perfectworld": "國服模式",
+            "-perfectworld_des": "以國服模式啟動 {g}，適用於中國地區玩家。",
+            "-console": "啟用控制台",
+            "-console_des": "在 {g} 內啟用開發者控制台，允許輸入偵錯命令。",
+            "-language schinese": "設定語言為簡體中文",
+            "-language schinese_des": "將 {g} 介面語言設定為簡體中文，但保留英文配音。",
+            "-high": "高優先權執行",
+            "-high_des": "將 {g} 進程的 CPU 優先權設為高，可能提升 {g} 效能。",
+            "-fullscreen": "全螢幕模式",
+            "-fullscreen_des": "以全螢幕模式啟動 {g}。",
+            "-windowed -noborder": "無邊框視窗模式",
+            "-windowed -noborder_des": "以無邊框視窗模式運行 {g}。",
+            "{ppi}": "設定解析度",
+            "{ppi}_des": "修改 {g} 解析度",
+            "+fps_max {fps}": "提高最大幀率",
+            "+fps_max {fps}_des": "設定 {g} 幀率，最高可以設為 1000 幀。",
+            "-tcp": "使用 TCP 協定",
+            "-tcp_des": "強制 {g} 使用 TCP 協定進行網路連線，適用於解決 UDP 連線問題。",
+            "-udp": "使用 UDP 協定",
+            "-udp_des": "強制 {g} 使用 UDP 協定進行網路連線，這是預設設定。",
+            "-dev": "啟用開發者模式",
+            "-dev_des": "啟用開發者模式，解鎖額外的偵錯功能。",
+            "-enable_addons": "允許載入自訂內容",
+            "-enable_addons_des": "允許引擎載入 {g} 資料夾內的自訂內容並替換 VPK 檔案。",
+            "-override_vpk": "覆蓋 VPK 檔案",
+            "-override_vpk_des": "允許引擎搜尋 {g} 資料夾內的自訂內容並替換 VPK 檔案。使用後可能影響配對功能。",
+            "-nomicsettings": "禁用麥克風設定",
+            "-nomicsettings_des": "防止 {g} 修改麥克風的輸出值，適用於使用其他語音軟體的玩家。",
+            "-nosound": "禁用聲音",
+            "-nosound_des": "關閉 {g} 內所有聲音。",
+            "-map dota": "載入地圖",
+            "-map dota_des": "啟動時預先載入地圖，減少進入 {g} 時的載入時間。",
+            "-32bit": "使用 32 位元模式",
+            "-32bit_des": "以 32 位元模式運行 {g}，適用於舊款系統或硬體。"
+        },
+        "part-2": {
+            "cn-harmony": "國服反和諧",
+            "cn-harmony_des": "開啟後黑血變紅血，部分技能/裝備圖示與國際版一致",
+            "cn-harmony_tip": "由 Bilibili @iFuStudio 提供特效檔案"
+        },
+        "part-3": [
+            {
+                "title": "DevTools",
+                "description": "開啟後使用 F12 打開開發者工具，可查看程式的運行狀態和偵錯資訊。"
+            },
+            {
+                "title": "背景材料",
+                "description": "系統背景材料是 Windows 11 的特性，開啟後在部分頁面的背景將使用背景材料。"
+            }
+        ]
     },
     "/about": {
-      "title": "關於程式",
-      "description": "{D} 是一款專為《Dota2》玩家設計的智慧啟動工具，透過它你可以快速管理{g}的啟動項、提供客製化功能模組，助力玩家快速進入戰場，釋放競技潛能。",
-      "version": "目前版本",
-      "author": "開發人員",
-      "copyright": "版權聲明",
-      "license": "開源協議",
-      "blurbTitle": "程式簡介",
-      "blurb": "{D} 是一個專業的 {} 啟動器，提供便捷的{g}管理和優化功能。",
-      "UserAgreement": "使用者協議",
-      "BtnA": "造訪官網",
-      "BtnB": "造訪原始碼倉庫"
+        "title": "關於程式",
+        "description": "{D} 是一款專為《Dota 2》玩家設計的智慧啟動工具，透過它你可以快速管理 {g} 的啟動選項、提供客製化功能模組，助力玩家快速進入戰場，釋放競技潛能。",
+        "version": "目前版本",
+        "author": "開發人員",
+        "copyright": "版權聲明",
+        "license": "開源協議",
+        "blurbTitle": "程式簡介",
+        "blurb": "{D} 是一個專業的 {} 啟動器，提供便捷的 {g} 管理和優化功能。",
+        "UserAgreement": "使用者協議",
+        "BtnA": "造訪官網",
+        "BtnB": "造訪原始碼倉庫"
     },
     "/hud": {
-      "Table_Header": [
-        "任務名稱",
-        "描述",
-        "執行週期 (ms)",
-        "狀態",
-        "操作"
-      ],
-      "Table_option": [
-        "修改",
-        "刪除"
-      ],
-      "Table_Add": "新增任務",
-      "Table_Modify": "修改任務",
-      "Table_title": "定時提醒",
-      "Table_tooltip": "根據遊戲時間做出提醒通知"
+        "Table_Header": [
+            "任務名稱",
+            "描述",
+            "執行週期 (ms)",
+            "狀態",
+            "操作"
+        ],
+        "Table_option": [
+            "修改",
+            "刪除"
+        ],
+        "Table_Add": "新增任務",
+        "Table_Modify": "修改任務",
+        "Table_title": "定時提醒",
+        "Table_tooltip": "根據遊戲時間做出提醒通知"
     },
     "$event_type": [
-      "新聞",
-      "{g}活動",
-      "派對活動",
-      "會議活動",
-      "特殊主題活動",
-      "音樂與藝術活動",
-      "體育賽事",
-      "旅行活動",
-      "聊天活動",
-      "{g}發布",
-      "廣播/直播活動",
-      "小規模更新",
-      "更新預告",
-      "重大更新",
-      "DLC 發布",
-      "即將發布",
-      "電競賽事直播",
-      "開發者直播",
-      "名人直播",
-      "{g}促銷",
-      "道具促銷",
-      "贈送經驗值",
-      "{g}內掉落",
-      "{g}內福利",
-      "{g}內挑戰",
-      "{g}內競賽",
-      "線下活動",
-      "新聞公告",
-      "測試版發布",
-      "{g}內容放送",
-      "免費試玩",
-      "賽季發布",
-      "賽季更新",
-      "跨平台轉發",
-      "{g}內綜合活動"
+        "新聞",
+        "{g} 活動",
+        "派對活動",
+        "會議活動",
+        "特殊主題活動",
+        "音樂與藝術活動",
+        "體育賽事",
+        "旅行活動",
+        "聊天活動",
+        "{g} 發布",
+        "廣播/直播活動",
+        "小規模更新",
+        "更新預告",
+        "重大更新",
+        "DLC 發布",
+        "即將發布",
+        "電競賽事直播",
+        "開發者直播",
+        "名人直播",
+        "{g} 促銷",
+        "道具促銷",
+        "贈送經驗值",
+        "{g} 內掉落",
+        "{g} 內福利",
+        "{g} 內挑戰",
+        "{g} 內競賽",
+        "線下活動",
+        "新聞公告",
+        "測試版發布",
+        "{g} 內容放送",
+        "免費試玩",
+        "賽季發布",
+        "賽季更新",
+        "跨平台轉發",
+        "{g} 內綜合活動"
     ],
     "$ShowMeg": {
-      "detection": "偵測{g}狀態中",
-      "content": "是否要退出{g}？",
-      "loading": "等待{} 啟動...",
-      "gameEnd": "{} 已退出！",
-      "timeout": "{} 啟動逾時！",
-      "sNotStarted": "{s} 未啟動！",
-      "logOn": "正在登入{s}...",
-      "sstart": "{s}啟動成功",
-      "sloading": "等待{s}啟動...",
-      "gameReady": "即將啟動{}",
-      "sReady": "啟動{s}中...",
-      "serror": "啟動{s}失敗！"
+        "detection": "偵測 {g} 狀態中",
+        "content": "是否要退出 {g}？",
+        "loading": "等待 {} 啟動...",
+        "gameEnd": "{} 已退出！",
+        "timeout": "{} 啟動逾時！",
+        "sNotStarted": "{s} 未啟動！",
+        "logOn": "正在登入 {s}...",
+        "sstart": "{s} 啟動成功",
+        "sloading": "等待 {s} 啟動...",
+        "gameReady": "即將啟動 {}",
+        "sReady": "啟動 {s} 中...",
+        "serror": "啟動 {s} 失敗！"
     },
     "$upModal": {
-      "textA": [
-        "正在檢查：",
-        "發現新版本",
-        "已是最新版"
-      ],
-      "textB": [
-        "更新......",
-        "查看更新",
-        "檢查更新"
-      ],
-      "title": "程式有新版本：",
-      "cancelText": "取消",
-      "okText": "前往更新",
-      "upData": "更新日誌",
-      "noText": "忽略本次更新",
-      "noText2": "確認"
+        "textA": [
+            "正在檢查：",
+            "發現新版本",
+            "已是最新版"
+        ],
+        "textB": [
+            "更新中......",
+            "查看更新",
+            "檢查更新"
+        ],
+        "title": "程式有新版本：",
+        "cancelText": "取消",
+        "okText": "前往更新",
+        "upData": "更新日誌",
+        "noText": "忽略本次更新",
+        "noText2": "確認"
     },
     "$error": {
-      "403": "抱歉，目前頁面暫未開放，請耐心等待解鎖。"
+        "403": "抱歉，目前頁面尚未開放，請耐心等待解鎖。"
+    },
+    "$dict": {
+        "open": "打開",
+        "enable": "啟用",
+        "close": "關閉"
     },
     "$": {
-      "gameName": "Dota 2",
-      "D": "Dota2 Strat",
-      "g": "遊戲",
-      "s": "Steam",
-      "git": "Github"
+        "gameName": "Dota 2",
+        "D": "Dota2 Strat",
+        "g": "遊戲",
+        "s": "Steam",
+        "git": "Github"
     }
-  }
+}

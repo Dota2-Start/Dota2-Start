@@ -7,6 +7,14 @@ export default defineConfig({
     { path: "/hud", component: "hud" },
     { path: "/option", component: "option" },
     { path: "/*", component: "@/pages/404.tsx" },
+    {
+      path: "/hudwindow",
+      component: "Hudwindow",
+      layout: false,
+      routes:  [
+        { path: "hudwindow/timer", component: "Hudwindow/timer.tsx" },
+      ]
+    }
   ],
   npmClient: 'cnpm',
   mfsu: {
