@@ -29,7 +29,7 @@ const useTheme = () => {
     const { devOption } = AppDataStore()
     useEffect(() => {
         if (isWin11) {
-            setWindowBg(devOption.effect ? "Acrylic" : "Default")
+            setWindowBg(devOption?.effect ? "Acrylic" : "Default")
         }
     }, [devOption])
     let BgLayout = (isWin11 && devOption?.effect) ? 'transparent' : '#081600';
